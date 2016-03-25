@@ -25,50 +25,13 @@ public class asd {
         return datas;
     }
 
-    @Override
-    public String toString() {
-        return "HomeViewpagerData{" +
-                "datas=" + datas +
-                '}';
-    }
+
 
     public  class DatasEntity {
         public String wenzi;
         public String imageurl;
 
-        @Override
-        public String toString() {
-            return "DatasEntity{" +
-                    "wenzi='" + wenzi + '\'' +
-                    ", imageurl='" + imageurl + '\'' +
-                    ", id='" + id + '\'' +
-                    '}';
-        }
 
-        public String id;
 
-        public void setWenzi(String wenzi) {
-            this.wenzi = wenzi;
-        }
-
-        public void setImageurl(String imageurl) {
-            this.imageurl = imageurl;
-        }
-
-        public void setId(String id) {
-            this.id = id;
-        }
-
-        public String getWenzi() {
-            return wenzi;
-        }
-
-        public String getImageurl() {
-            return imageurl;
-        }
-
-        public String getId() {
-            return id;
-        }
     }
 }

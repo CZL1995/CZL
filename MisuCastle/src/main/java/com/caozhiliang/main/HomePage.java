@@ -41,6 +41,8 @@ public class HomePage extends BaseFragment {
     private ViewPager iv_homepage_viewpager;
 
     //    @ViewInject(R.id.tv_intro)
+
+
     private TextView tv_intro;
 
     //    @ViewInject(R.id.dot_layout)
@@ -71,6 +73,7 @@ public class HomePage extends BaseFragment {
 
 
     /**
+     *
      * 判断是否自动滚动
      */
 
@@ -90,7 +93,7 @@ public class HomePage extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle
             savedInstanceState) {
-        //一头布局加入listview
+        //    头布局加入listview
 
         initview();
 
