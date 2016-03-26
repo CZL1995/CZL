@@ -173,9 +173,9 @@ public class RefreshListView extends ListView {
                 ivArrow.setVisibility(View.INVISIBLE);
                 pbProgress.setVisibility(View.VISIBLE);
 
-//                if (mListener != null) {
-//                    mListener.onRefresh();
-//                }
+                if (mListener != null) {
+                    mListener.onRefresh();
+                }
                 break;
 
             default:
@@ -183,5 +183,40 @@ public class RefreshListView extends ListView {
         }
     }
 
+
+    OnRefreshListener mListener;
+//    private View mFooterView;
+//    private int mFooterViewHeight;
+
+    public void setOnRefreshListener(OnRefreshListener listener) {
+        mListener = listener;
+    }
+
+    public interface OnRefreshListener {
+        public void onRefresh();
+
+//        public void onLoadMore();// 加载下一页数据
+    }
+
+    /*
+         * 收起下拉刷新的控件
+         */
+    public void onRefreshComplete() {
+//        if (isLoadingMore) {// 正在加载更多...
+//            mFooterView.setPadding(0, -mFooterViewHeight, 0, 0);// 隐藏脚布局
+//            isLoadingMore = false;
+//        } else {
+            mCurrrentState = STATE_PULL_REFRESH;
+            tvTitle.setText("下拉刷新");
+            ivArrow.setVisibility(View.VISIBLE);
+            pbProgress.setVisibility(View.INVISIBLE);
+
+            mHeaderView.setPadding(0, -mHeaderViewHeight, 0, 0);// 隐藏
+
+//            if (success) {
+//                tvTime.setText("最后刷新时间:" + getCurrentTime());
+//            }
+//        }
+    }
 
 }
