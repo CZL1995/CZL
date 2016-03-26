@@ -132,7 +132,7 @@ public class HomePage extends BaseFragment {
             @Override
             public void onRefresh() {
                 getServiceData();
-
+                pictureview();
             }
 
             @Override
@@ -161,6 +161,7 @@ public class HomePage extends BaseFragment {
                 //                Toast.makeText(getContext(), result, Toast.LENGTH_SHORT).show();
                 getData(result, false);
                 listview.onRefreshComplete(true);
+                pictureview();//多次使用，让其一直动
 
 
             }
@@ -234,9 +235,10 @@ public class HomePage extends BaseFragment {
 
         if (!isMore) {
             mviewpagers = homedata.data.viewpagers;
-            mpictures = homedata.data.pictures;
             mlistviews = homedata.data.listviews;
-            //        System.out.println(mviewpagers.size());
+
+            mpictures = homedata.data.pictures;
+
             pictureview();
 
             updateIntroAndDot();
@@ -247,7 +249,6 @@ public class HomePage extends BaseFragment {
             listview.setAdapter(mlistadapter);
 
         } else {//如果是加载下一页
-//            pictureview();
             List<ListviewsEntity> mlistviews1 = homedata.data.listviews;
             mlistviews.addAll(mlistviews1);
             mlistadapter.notifyDataSetChanged();
@@ -326,6 +327,7 @@ public class HomePage extends BaseFragment {
         scale.setRepeatCount(Integer.MAX_VALUE);
         scale.setRepeatMode(Animation.REVERSE);
         imageview1.startAnimation(scale);
+
         imageview1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
