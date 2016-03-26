@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -69,11 +70,12 @@ public class HomePage extends BaseFragment {
     ImageOptions imageOptions1;
     View heardview;
     String datarusult;
+    private String mMoreUrl;//跟多页面地址
 
     public List<ViewpagersEntity> mviewpagers;
     public List<PicturesEntity> mpictures;
     public List<ListviewsEntity> mlistviews;
-
+    private listviewadpter mlistadapter;
 
     /**
      * 判断是否自动滚动
@@ -125,12 +127,23 @@ public class HomePage extends BaseFragment {
         iv_homepage_viewpager.setAdapter(new toViewpager());
 
         initDots();
-
         handler.sendEmptyMessageDelayed(0, 2000);
         listview.setOnRefreshListener(new RefreshListView.OnRefreshListener() {
             @Override
             public void onRefresh() {
                 getServiceData();
+
+            }
+
+            @Override
+            public void onLoadMore() {
+                if (mMoreUrl != null) {
+                    getMoreServiceData();
+                } else {
+                    Toast.makeText(getContext(), "最后一页了", Toast.LENGTH_SHORT).show();
+                    listview.onRefreshComplete(false);
+
+                }
             }
         });
 
@@ -146,14 +159,15 @@ public class HomePage extends BaseFragment {
             @Override
             public void onSuccess(String result) {
                 //                Toast.makeText(getContext(), result, Toast.LENGTH_SHORT).show();
-                getData(result);
+                getData(result, false);
+                listview.onRefreshComplete(true);
 
 
             }
 
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
-
+                listview.onRefreshComplete(false);
             }
 
             @Override
@@ -170,29 +184,74 @@ public class HomePage extends BaseFragment {
 
     }
 
-    public void getData(String result) {
+    private void getMoreServiceData() {
+
+        RequestParams requestParams = new RequestParams(mMoreUrl);
+        x.http().get(requestParams, new Callback.CommonCallback<String>() {
+
+            @Override
+            public void onSuccess(String result) {
+                //                Toast.makeText(getContext(), result, Toast.LENGTH_SHORT).show();
+                getData(result, true);
+                listview.onRefreshComplete(true);
+
+
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+                listview.onRefreshComplete(false);
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
+
+
+    }
+
+
+    public void getData(String result, boolean isMore) {
 
         Gson gs = new Gson();
         homedata = gs.fromJson(result, HomeViewpagerData.class);
         //                a=gs.fromJson(result,JsonData.class);
         System.out.println(homedata);
+        String more = homedata.data.more;
+        if (!TextUtils.isEmpty(more)) {
+            mMoreUrl = URL + more;
+            System.out.println(mMoreUrl);
+        } else {
+            mMoreUrl = null;
+        }
 
-        mviewpagers = homedata.data.viewpagers;
-        mpictures = homedata.data.pictures;
-        mlistviews = homedata.data.listviews;
-//        System.out.println(mviewpagers.size());
+        if (!isMore) {
+            mviewpagers = homedata.data.viewpagers;
+            mpictures = homedata.data.pictures;
+            mlistviews = homedata.data.listviews;
+            //        System.out.println(mviewpagers.size());
+            pictureview();
 
+            updateIntroAndDot();
 
-        updateIntroAndDot();
+            initListstener();
 
+            mlistadapter = new listviewadpter();
+            listview.setAdapter(mlistadapter);
 
-        listview.setAdapter(new listviewadpter());
-
-
-        pictureview();
-        initListstener();
-
-
+        } else {//如果是加载下一页
+//            pictureview();
+            List<ListviewsEntity> mlistviews1 = homedata.data.listviews;
+            mlistviews.addAll(mlistviews1);
+            mlistadapter.notifyDataSetChanged();
+        }
 
 
     }

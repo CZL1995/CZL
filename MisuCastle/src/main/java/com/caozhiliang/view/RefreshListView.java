@@ -6,6 +6,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
+import android.widget.AbsListView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -15,11 +16,14 @@ import com.caozhiliang.main.R;
 
 import org.xutils.x;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * @author CZL
  * @time 2016-03-25 10:02
  */
-public class RefreshListView extends ListView {
+public class RefreshListView extends ListView implements AbsListView.OnScrollListener {
 
     private static final int STATE_PULL_REFRESH = 0;// 下拉刷新
     private static final int STATE_RELEASE_REFRESH = 1;// 松开刷新
@@ -29,8 +33,8 @@ public class RefreshListView extends ListView {
     private View mHeaderView;
     private int startY = -1;// 滑动起点的y坐标
     int mHeaderViewHeight;
-
-
+    private int mFooterViewHeight;
+    private View mFooterView;
     private TextView tvTitle;
     private TextView tvTime;
     private ImageView ivArrow;
@@ -41,19 +45,22 @@ public class RefreshListView extends ListView {
     public RefreshListView(Context context) {
         super(context);
         adView();
+        initFooterView();
+
     }
 
 
     public RefreshListView(Context context, AttributeSet attrs) {
         super(context, attrs);
         adView();
-
+        initFooterView();
     }
 
 
     public RefreshListView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         adView();
+        initFooterView();
 
     }
 
@@ -74,6 +81,7 @@ public class RefreshListView extends ListView {
         //        System.out.println(mHeaderViewHeight);
         mHeaderView.setPadding(0, -mHeaderViewHeight, 0, 0);
         initArrowAnim();
+        tvTime.setText("最后更新时间:" + getCurrentTime());
     }
 
 
@@ -149,7 +157,6 @@ public class RefreshListView extends ListView {
     }
 
 
-
     /**
      * 刷新下拉控件的布局
      */
@@ -183,29 +190,79 @@ public class RefreshListView extends ListView {
         }
     }
 
+    private boolean isLoadingMore;
+
+    @Override
+    public void onScrollStateChanged(AbsListView view, int scrollState) {
+
+        if (scrollState == SCROLL_STATE_IDLE
+                || scrollState == SCROLL_STATE_FLING) {
+
+            if (getLastVisiblePosition() == getCount() - 1 && !isLoadingMore) {// 滑动到最后
+                System.out.println("到底了.....");
+                mFooterView.setPadding(0, 0, 0, 0);// 显示
+                setSelection(getCount() - 1);// 改变listview显示位置
+
+                isLoadingMore = true;
+                if (mListener != null) {
+                    mListener.onLoadMore();
+                }
+            }
+        }
+    }
+
+    @Override
+    public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int
+            totalItemCount) {
+
+    }
 
     OnRefreshListener mListener;
-//    private View mFooterView;
-//    private int mFooterViewHeight;
 
     public void setOnRefreshListener(OnRefreshListener listener) {
         mListener = listener;
     }
 
+
     public interface OnRefreshListener {
         public void onRefresh();
 
-//        public void onLoadMore();// 加载下一页数据
+        public void onLoadMore();// 加载下一页数据
+    }
+
+    /*
+    * 获取当前时间
+    * */
+    public String getCurrentTime() {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        return format.format(new Date());
+
+    }
+
+    /*
+      * 初始化脚布局
+      */
+    private void initFooterView() {
+        mFooterView = View.inflate(getContext(),
+                R.layout.refresh_listview_footer, null);
+        this.addFooterView(mFooterView);
+
+        mFooterView.measure(0, 0);
+        mFooterViewHeight = mFooterView.getMeasuredHeight();
+
+        mFooterView.setPadding(0, -mFooterViewHeight, 0, 0);// 隐藏
+
+        this.setOnScrollListener(this);
     }
 
     /*
          * 收起下拉刷新的控件
          */
-    public void onRefreshComplete() {
-//        if (isLoadingMore) {// 正在加载更多...
-//            mFooterView.setPadding(0, -mFooterViewHeight, 0, 0);// 隐藏脚布局
-//            isLoadingMore = false;
-//        } else {
+    public void onRefreshComplete(boolean success) {
+        if (isLoadingMore) {// 正在加载更多...
+            mFooterView.setPadding(0, -mFooterViewHeight, 0, 0);// 隐藏脚布局
+            isLoadingMore = false;
+        } else {
             mCurrrentState = STATE_PULL_REFRESH;
             tvTitle.setText("下拉刷新");
             ivArrow.setVisibility(View.VISIBLE);
@@ -213,10 +270,11 @@ public class RefreshListView extends ListView {
 
             mHeaderView.setPadding(0, -mHeaderViewHeight, 0, 0);// 隐藏
 
-//            if (success) {
-//                tvTime.setText("最后刷新时间:" + getCurrentTime());
-//            }
-//        }
+            if (success) {
+                tvTime.setText("最后刷新时间:" + getCurrentTime());
+
+            }
+        }
     }
 
 }

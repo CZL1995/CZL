@@ -30,7 +30,7 @@ public class HomeViewpagerData {
          * imageurl : http://xingxinga123.imwork.net/Fuwu1/image/home/home_hua3.jpg
          * id : 3
          */
-
+        public String more;
         public List<ViewpagersEntity> viewpagers;
         /**
          * wenzi : 新品上架
