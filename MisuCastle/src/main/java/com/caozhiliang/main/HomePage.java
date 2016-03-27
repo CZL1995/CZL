@@ -154,6 +154,9 @@ public class HomePage extends BaseFragment {
     private void getServiceData() {
 
         RequestParams requestParams = new RequestParams(URL + "/HomeData.json");
+        //        RequestParams requestParams = new RequestParams("http://xingxinga123.imwork" +
+        //                ".net/Fuwu1/HomeServlet");
+
         x.http().get(requestParams, new Callback.CommonCallback<String>() {
 
             @Override
@@ -222,8 +225,27 @@ public class HomePage extends BaseFragment {
     public void getData(String result, boolean isMore) {
 
         Gson gs = new Gson();
+
         homedata = gs.fromJson(result, HomeViewpagerData.class);
         //                a=gs.fromJson(result,JsonData.class);
+      /*
+      另一种解析的方式,
+
+      List<HomeDataObject> home1;
+        home1 = gs.fromJson(result, new TypeToken<List<HomeDataObject>>() {
+        }.getType());
+        HomeDataObject home11;
+        home11=home1.get(0);//这里的到pan
+        System.out.println(home11);
+
+       List <HomeDataBean> list11;
+        list11= home11.getDatas();//这里得到data
+        System.out.println(list11);
+
+        System.out.println(list11.get(0).getImageurl());
+*/
+
+
         System.out.println(homedata);
         String more = homedata.data.more;
         if (!TextUtils.isEmpty(more)) {
