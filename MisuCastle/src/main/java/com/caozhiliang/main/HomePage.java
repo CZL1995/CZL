@@ -42,7 +42,6 @@ public class HomePage extends BaseFragment {
     //    @ViewInject(R.id.iv_homepage_viewpager)
     private ViewPager iv_homepage_viewpager;
 
-    //    @ViewInject(R.id.tv_intro)
 
 
     private TextView tv_intro;
