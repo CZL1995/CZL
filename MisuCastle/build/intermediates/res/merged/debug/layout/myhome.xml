@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ffa042"
+        android:gravity="center"
+        android:text="我的小屋"
+        android:textColor="#353434"
+        android:textSize="18dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffeedd"
+        >
+
+        <ImageView
+            android:id="@+id/iv_my_home_heard_view"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            android:background="@mipmap/myhomeheardview"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_my_home_heard_view"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="点击登录"
+            android:textColor="#000000"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="#ffffff"
+
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/tv_cake"
+            style="@style/MyHometext"
+            android:text="我的蛋糕"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+
+
+        <TextView
+            android:id="@+id/tv_order"
+            style="@style/MyHometext"
+            android:text="我的订单"
+
+            />
+
+        <TextView
+            style="@style/MyHometext"
+
+            android:text="个人资料"
+            />
+
+
+        <TextView
+            style="@style/MyHometext"
+
+            android:text="我的收藏"
+            />
+
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="#ffffff"
+
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/tv_business"
+                style="@style/MyHometext"
+                android:text="我的商家"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

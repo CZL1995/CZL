@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/fl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rg">
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/rg"
+        android:background="#ffa042">
+
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_above="@+id/llbuttom"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_home"
+            style="@style/RadioGroup"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/home_page"
+            android:text="首页" />
+        <RadioButton
+            android:id="@+id/rb_location"
+            style="@style/RadioGroup"
+            android:layout_weight="1"
+
+            android:drawableTop="@drawable/location"
+            android:text="附近" />
+
+        <RadioButton
+            android:id="@+id/rb_search"
+            style="@style/RadioGroup"
+            android:layout_weight="1"
+
+            android:drawableTop="@drawable/scearch"
+            android:text="搜索" />
+
+        <RadioButton
+            android:id="@+id/rb_my_home"
+            style="@style/RadioGroup"
+            android:layout_weight="1"
+
+            android:drawableTop="@drawable/myhome"
+            android:text="我的" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/llbuttom"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="#ffa042"
+        android:orientation="horizontal">
+
+    </LinearLayout>
+
+</RelativeLayout>
