@@ -5,16 +5,13 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.graphics.PixelFormat;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.Toast;
 
-import com.baidu.location.f;
 import com.baidu.mapapi.SDKInitializer;
 import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.MapStatusUpdate;
@@ -31,7 +28,6 @@ public class Location extends Fragment {
     MapView mapView = null;
     private BaiduMap baiduMap;
     MyBaiduMapReceiver baiduMapReceiver;
-    private FrameLayout frameLayout;
 
 
     @Override
