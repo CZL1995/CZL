@@ -1,1 +1,1 @@
-include ':app', ':MisuCastle'
+include  ':MisuCastle'
