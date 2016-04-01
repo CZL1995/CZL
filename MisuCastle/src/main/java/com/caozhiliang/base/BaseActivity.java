@@ -11,7 +11,7 @@ import org.xutils.x;
  */
 public class BaseActivity extends AppCompatActivity{
 
-    public final String URL="http://xingxinga123.imwork.net:14553/Fuwu1";
+    public final String URL="http://119.29.148.150:8080/Fuwu1";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

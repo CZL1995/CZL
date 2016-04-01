@@ -187,8 +187,7 @@ public class HomePage extends BaseFragment {
 
     private void getServiceData() {
 
-//        RequestParams requestParams = new RequestParams(URL + "/HomeServlet");
-        RequestParams requestParams = new RequestParams("http://xingxinga123.imwork.net:14553/Fuwu1/HomeServlet");
+        RequestParams requestParams = new RequestParams(URL + "/HomeServlet");
         x.http().get(requestParams, new Callback.CommonCallback<String>() {
 
             @Override
@@ -365,7 +364,7 @@ public class HomePage extends BaseFragment {
                 .setImageScaleType(ImageView.ScaleType.FIT_XY)
                 .setRadius(DensityUtil.dip2px(5))
                 .setLoadingDrawableId(R.mipmap.loge)
-                .setPlaceholderScaleType(ImageView.ScaleType.MATRIX)
+                .setPlaceholderScaleType(ImageView.ScaleType.FIT_XY)
                 .setFailureDrawableId(R.mipmap.loge)
                 .build();
         x.image().bind(imageview1, mpictures.get(0).getImageurl(), imageOptions);

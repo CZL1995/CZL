@@ -14,7 +14,7 @@ import org.xutils.x;
  */
 public class BaseFragment extends Fragment {
     private boolean injected = false;
-    public final String URL="http://xingxinga123.imwork.net:14553/Fuwu1";
+    public final String URL="http://119.29.148.150:8080/Fuwu1";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
