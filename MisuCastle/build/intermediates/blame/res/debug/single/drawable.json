@@ -8,6 +8,10 @@
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\drawable\\scearch.xml"
     },
     {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable\\img_border.xml",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\drawable\\img_border.xml"
+    },
+    {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background_light.xml",
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_dialog_material_background_light.xml"
     },
@@ -102,6 +106,10 @@
     {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_switch_thumb_material.xml",
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable\\location_tips.9.png",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\drawable\\location_tips.9.png"
     },
     {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",

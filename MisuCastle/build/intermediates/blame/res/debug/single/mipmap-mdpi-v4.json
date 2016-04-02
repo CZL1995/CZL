@@ -1,9 +1,5 @@
 [
     {
-        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\common_listview_headview_red_arrow.png",
-        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\common_listview_headview_red_arrow.png"
-    },
-    {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\icon_geo.png",
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\icon_geo.png"
     },
@@ -12,52 +8,32 @@
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\eat_icon.png"
     },
     {
-        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\home_tian1.png",
-        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\home_tian1.png"
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\home_hua3.jpg",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\home_hua3.jpg"
     },
     {
-        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\splashbackground.jpg",
-        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\splashbackground.jpg"
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\bg_map_bottom.png",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\bg_map_bottom.png"
     },
     {
-        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\loge.jpg",
-        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\loge.jpg"
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\home_hua1.jpg",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\home_hua1.jpg"
     },
     {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\home_page_up.png",
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\home_page_up.png"
     },
     {
-        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\search_up.png",
-        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\search_up.png"
-    },
-    {
-        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\home_tian2.png",
-        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\home_tian2.png"
-    },
-    {
-        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\myhomeheardview.png",
-        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\myhomeheardview.png"
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\icon_location.png",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\icon_location.png"
     },
     {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\location_down.png",
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\location_down.png"
     },
     {
-        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\location_up.png",
-        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\location_up.png"
-    },
-    {
-        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\icon_location.png",
-        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\icon_location.png"
-    },
-    {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\myhome_up.png",
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\myhome_up.png"
-    },
-    {
-        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\myhome_down.png",
-        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\myhome_down.png"
     },
     {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\search_down.png",
@@ -74,5 +50,61 @@
     {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\ic_launcher.png",
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\home_hua5.jpg",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\home_hua5.jpg"
+    },
+    {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\home_hua2.jpg",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\home_hua2.jpg"
+    },
+    {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\common_listview_headview_red_arrow.png",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\common_listview_headview_red_arrow.png"
+    },
+    {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\maker.png",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\maker.png"
+    },
+    {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\home_tian1.png",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\home_tian1.png"
+    },
+    {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\splashbackground.jpg",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\splashbackground.jpg"
+    },
+    {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\loge.jpg",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\loge.jpg"
+    },
+    {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\search_up.png",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\search_up.png"
+    },
+    {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\home_tian2.png",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\home_tian2.png"
+    },
+    {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\myhomeheardview.png",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\myhomeheardview.png"
+    },
+    {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\location_up.png",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\location_up.png"
+    },
+    {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\home_hua4.jpg",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\home_hua4.jpg"
+    },
+    {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\myhome_down.png",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\myhome_down.png"
+    },
+    {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\map_zan.png",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\map_zan.png"
     }
 ]
