@@ -4,6 +4,14 @@
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\common_listview_headview_red_arrow.png"
     },
     {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\icon_geo.png",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\icon_geo.png"
+    },
+    {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\eat_icon.png",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\eat_icon.png"
+    },
+    {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\home_tian1.png",
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\home_tian1.png"
     },
@@ -38,6 +46,10 @@
     {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\location_up.png",
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\location_up.png"
+    },
+    {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\icon_location.png",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\icon_location.png"
     },
     {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\myhome_up.png",
