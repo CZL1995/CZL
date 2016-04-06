@@ -10,7 +10,7 @@ import android.view.ViewGroup;
  * @author CZL
  * @time 2016-04-06 22:19
  */
-public class Store_search extends Fragment{
+public class StoreSearch extends Fragment{
     private View view;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle
