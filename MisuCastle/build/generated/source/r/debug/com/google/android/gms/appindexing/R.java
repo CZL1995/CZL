@@ -8,9 +8,9 @@ package com.google.android.gms.appindexing;
 
 public final class R {
 	public static final class attr {
-		public static final int circleCrop = 0x7f010035;
-		public static final int imageAspectRatio = 0x7f010034;
-		public static final int imageAspectRatioAdjust = 0x7f010033;
+		public static final int circleCrop = 0x7f010040;
+		public static final int imageAspectRatio = 0x7f01003f;
+		public static final int imageAspectRatioAdjust = 0x7f01003e;
 	}
 	public static final class color {
 		public static final int common_action_bar_splitter = 0x7f0b0015;
@@ -23,8 +23,8 @@ public final class R {
 		public static final int common_signin_btn_light_text_disabled = 0x7f0b001c;
 		public static final int common_signin_btn_light_text_focused = 0x7f0b001d;
 		public static final int common_signin_btn_light_text_pressed = 0x7f0b001e;
-		public static final int common_signin_btn_text_dark = 0x7f0b0051;
-		public static final int common_signin_btn_text_light = 0x7f0b0052;
+		public static final int common_signin_btn_text_dark = 0x7f0b0062;
+		public static final int common_signin_btn_text_light = 0x7f0b0063;
 	}
 	public static final class drawable {
 		public static final int common_full_open_on_phone = 0x7f020045;
@@ -38,7 +38,7 @@ public final class R {
 		public static final int wrap_content = 0x7f0c0022;
 	}
 	public static final class integer {
-		public static final int google_play_services_version = 0x7f0a0004;
+		public static final int google_play_services_version = 0x7f0a0009;
 	}
 	public static final class raw {
 	}
@@ -79,7 +79,7 @@ public final class R {
 	public static final class style {
 	}
 	public static final class styleable {
-		public static final int[] LoadingImageView = { 0x7f010033, 0x7f010034, 0x7f010035 };
+		public static final int[] LoadingImageView = { 0x7f01003e, 0x7f01003f, 0x7f010040 };
 		public static final int LoadingImageView_circleCrop = 2;
 		public static final int LoadingImageView_imageAspectRatio = 1;
 		public static final int LoadingImageView_imageAspectRatioAdjust = 0;

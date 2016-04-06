@@ -61,7 +61,7 @@ public class HomePage extends BaseFragment {
     //    @ViewInject(R.id.listview)
     private RefreshListView listview;
     private TextView tv_location;
-
+    private ImageView imageView;
     //    HomeViewpagerData homedata = new HomeViewpagerData();
     //    JsonData a = new JsonData();
     ImageOptions imageOptions;
@@ -162,6 +162,8 @@ public class HomePage extends BaseFragment {
                 mMoreUrl = true;
                 i = 1;
                 getServiceData();
+                iv_homepage_viewpager.setAdapter(new toViewpager());
+
                 pictureview();
             }
 
@@ -229,6 +231,8 @@ public class HomePage extends BaseFragment {
             public void onSuccess(String result) {
                 //                Toast.makeText(getContext(), result, Toast.LENGTH_SHORT).show();
                 getData(result, true);
+                iv_homepage_viewpager.setAdapter(new toViewpager());
+
                 listview.onRefreshComplete(true);
 
                 System.out.println(mMoreUrl + "2");
@@ -258,22 +262,9 @@ public class HomePage extends BaseFragment {
     public void getData(String result, boolean isMore) {
 
 
-        //                a=gs.fromJson(result,JsonData.class);
-   /*     mlistviews = homedata.getList();
-        mviewpagers = homedata.getVp();
-        mlistviews = homedata.getList();*/
-
-//        System.out.println(mlistviews.get(0).getImageurl());
-//        System.out.println(mlistviews.get(0));
-//        System.out.println(mlistviews);
-//        System.out.println(mlistviews.size());
-//        System.out.println(homedata);
-
-
         if (!isMore) {
             Gson gs = new Gson();
-//        homedata = gs.fromJson(result, HomeViewpagerData.class);
-            //                a=gs.fromJson(result,JsonData.class);
+
 
             homedata = gs.fromJson(result, HomeDataObject.class);
             mpictures = homedata.getVp();
@@ -469,7 +460,7 @@ public class HomePage extends BaseFragment {
 
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
-            ImageView imageView = new ImageView(getContext());
+            imageView = new ImageView(getContext());
             imageView.setScaleType(ImageView.ScaleType.FIT_XY);
             imageView.setImageResource(R.mipmap.loge);
 

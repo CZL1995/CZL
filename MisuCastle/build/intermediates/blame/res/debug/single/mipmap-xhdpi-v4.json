@@ -1,7 +1,19 @@
 [
     {
+        "merged": "F:\\AndroidStudio\\AndroidStudio\\MyApplication\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\home_press.png",
+        "source": "F:\\AndroidStudio\\AndroidStudio\\MyApplication\\MisuCastle\\src\\main\\res\\mipmap-xhdpi\\home_press.png"
+    },
+    {
+        "merged": "F:\\AndroidStudio\\AndroidStudio\\MyApplication\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_citylist_gps.png",
+        "source": "F:\\AndroidStudio\\AndroidStudio\\MyApplication\\MisuCastle\\src\\main\\res\\mipmap-xhdpi\\ic_citylist_gps.png"
+    },
+    {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\home_press.png",
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-xhdpi\\home_press.png"
+    },
+    {
+        "merged": "F:\\AndroidStudio\\AndroidStudio\\MyApplication\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_search.png",
+        "source": "F:\\AndroidStudio\\AndroidStudio\\MyApplication\\MisuCastle\\src\\main\\res\\mipmap-xhdpi\\ic_search.png"
     },
     {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_citylist_gps.png",
@@ -24,11 +36,31 @@
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
+        "merged": "F:\\AndroidStudio\\AndroidStudio\\MyApplication\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\map_ico_ch.png",
+        "source": "F:\\AndroidStudio\\AndroidStudio\\MyApplication\\MisuCastle\\src\\main\\res\\mipmap-xhdpi\\map_ico_ch.png"
+    },
+    {
+        "merged": "F:\\AndroidStudio\\AndroidStudio\\MyApplication\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\home.png",
+        "source": "F:\\AndroidStudio\\AndroidStudio\\MyApplication\\MisuCastle\\src\\main\\res\\mipmap-xhdpi\\home.png"
+    },
+    {
+        "merged": "F:\\AndroidStudio\\AndroidStudio\\MyApplication\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_launcher.png",
+        "source": "F:\\AndroidStudio\\AndroidStudio\\MyApplication\\MisuCastle\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\map_ico_ch.png",
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-xhdpi\\map_ico_ch.png"
     },
     {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\searchedit.png",
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-xhdpi\\searchedit.png"
+    },
+    {
+        "merged": "F:\\AndroidStudio\\AndroidStudio\\MyApplication\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\searchedit.png",
+        "source": "F:\\AndroidStudio\\AndroidStudio\\MyApplication\\MisuCastle\\src\\main\\res\\mipmap-xhdpi\\searchedit.png"
+    },
+    {
+        "merged": "F:\\AndroidStudio\\AndroidStudio\\MyApplication\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\imgback.png",
+        "source": "F:\\AndroidStudio\\AndroidStudio\\MyApplication\\MisuCastle\\src\\main\\res\\mipmap-xhdpi\\imgback.png"
     }
 ]
