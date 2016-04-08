@@ -73,7 +73,7 @@
     },
     {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\vpi__tab_unselected_pressed_holo.9.png",
-        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\exploded-aar\\My\\viewPagerLibrary\\unspecified\\res\\drawable-mdpi-v4\\vpi__tab_unselected_pressed_holo.9.png"
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\exploded-aar\\My\\viewPagerIndicatorLibrary\\unspecified\\res\\drawable-mdpi-v4\\vpi__tab_unselected_pressed_holo.9.png"
     },
     {
         "merged": "F:\\AndroidStudio\\AndroidStudio\\MyApplication\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png",
@@ -197,7 +197,7 @@
     },
     {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\vpi__tab_selected_holo.9.png",
-        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\exploded-aar\\My\\viewPagerLibrary\\unspecified\\res\\drawable-mdpi-v4\\vpi__tab_selected_holo.9.png"
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\exploded-aar\\My\\viewPagerIndicatorLibrary\\unspecified\\res\\drawable-mdpi-v4\\vpi__tab_selected_holo.9.png"
     },
     {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_list_selector_disabled_holo_dark.9.png",
@@ -217,7 +217,7 @@
     },
     {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\vpi__tab_selected_focused_holo.9.png",
-        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\exploded-aar\\My\\viewPagerLibrary\\unspecified\\res\\drawable-mdpi-v4\\vpi__tab_selected_focused_holo.9.png"
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\exploded-aar\\My\\viewPagerIndicatorLibrary\\unspecified\\res\\drawable-mdpi-v4\\vpi__tab_selected_focused_holo.9.png"
     },
     {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_list_pressed_holo_dark.9.png",
@@ -277,11 +277,11 @@
     },
     {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\vpi__tab_unselected_focused_holo.9.png",
-        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\exploded-aar\\My\\viewPagerLibrary\\unspecified\\res\\drawable-mdpi-v4\\vpi__tab_unselected_focused_holo.9.png"
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\exploded-aar\\My\\viewPagerIndicatorLibrary\\unspecified\\res\\drawable-mdpi-v4\\vpi__tab_unselected_focused_holo.9.png"
     },
     {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\vpi__tab_unselected_holo.9.png",
-        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\exploded-aar\\My\\viewPagerLibrary\\unspecified\\res\\drawable-mdpi-v4\\vpi__tab_unselected_holo.9.png"
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\exploded-aar\\My\\viewPagerIndicatorLibrary\\unspecified\\res\\drawable-mdpi-v4\\vpi__tab_unselected_holo.9.png"
     },
     {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_ic_clear_mtrl_alpha.png",
@@ -321,7 +321,7 @@
     },
     {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\vpi__tab_selected_pressed_holo.9.png",
-        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\exploded-aar\\My\\viewPagerLibrary\\unspecified\\res\\drawable-mdpi-v4\\vpi__tab_selected_pressed_holo.9.png"
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\exploded-aar\\My\\viewPagerIndicatorLibrary\\unspecified\\res\\drawable-mdpi-v4\\vpi__tab_selected_pressed_holo.9.png"
     },
     {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_ic_search_api_mtrl_alpha.png",

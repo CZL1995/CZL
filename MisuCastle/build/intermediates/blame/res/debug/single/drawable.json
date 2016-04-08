@@ -20,6 +20,10 @@
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\drawable\\scearch.xml"
     },
     {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable\\vpi__tab_text_color_indicator.xml",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\exploded-aar\\My\\viewPagerIndicatorLibrary\\unspecified\\res\\drawable\\vpi__tab_text_color_indicator.xml"
+    },
+    {
         "merged": "F:\\AndroidStudio\\AndroidStudio\\MyApplication\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable\\dot_unfocus.xml",
         "source": "F:\\AndroidStudio\\AndroidStudio\\MyApplication\\MisuCastle\\src\\main\\res\\drawable\\dot_unfocus.xml"
     },
@@ -117,7 +121,7 @@
     },
     {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable\\vpi__tab_indicator.xml",
-        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\exploded-aar\\My\\viewPagerLibrary\\unspecified\\res\\drawable\\vpi__tab_indicator.xml"
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\exploded-aar\\My\\viewPagerIndicatorLibrary\\unspecified\\res\\drawable\\vpi__tab_indicator.xml"
     },
     {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_internal_bg.xml",

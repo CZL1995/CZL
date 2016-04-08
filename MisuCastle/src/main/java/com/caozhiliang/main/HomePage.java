@@ -43,7 +43,6 @@ public class HomePage extends BaseFragment {
     private ViewPager iv_homepage_viewpager;
 
 
-
     private TextView tv_intro;
 
     //    @ViewInject(R.id.dot_layout)
@@ -106,7 +105,7 @@ public class HomePage extends BaseFragment {
         getServiceData();
 
         initview();
-      inintlocation();
+        inintlocation();
 
         return neworderview;
     }
@@ -121,10 +120,11 @@ public class HomePage extends BaseFragment {
 
 
     }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         // TODO Auto-generated method stub
-        try{
+        try {
             switch (resultCode) {
                 case 99:
                     tv_location.setText(data.getStringExtra("lngCityName"));
@@ -133,11 +133,12 @@ public class HomePage extends BaseFragment {
                 default:
                     break;
             }
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
+
     private void initview() {
         neworderview = View.inflate(getContext(), R.layout.home_page, null);
         heardview = View.inflate(getContext(), R.layout.list_heardview,
@@ -278,7 +279,7 @@ public class HomePage extends BaseFragment {
             initListstener();
             mlistadapter = new listviewadpter();
             listview.setAdapter(mlistadapter);
-//            mMoreUrl=true;
+            //            mMoreUrl=true;
 
         } else {//如果是加载下一页
             Gson gs = new Gson();

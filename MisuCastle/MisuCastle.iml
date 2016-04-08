@@ -100,6 +100,6 @@
     <orderEntry type="library" exported="" name="appcompat-v7-23.1.1" level="project" />
     <orderEntry type="library" exported="" name="baidumapapi_map_v3_7_1" level="project" />
     <orderEntry type="library" exported="" name="baidumapapi_util_v3_7_1" level="project" />
-    <orderEntry type="module" module-name="viewPagerLibrary" exported="" />
+    <orderEntry type="module" module-name="viewPagerIndicatorLibrary" exported="" />
   </component>
 </module>

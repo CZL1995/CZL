@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_margin="5dp"
+        android:src="@mipmap/loge"/>
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@+id/iv_image"
+        android:text="蛋糕魔法师"
+
+        />
+
+    <LinearLayout
+        android:id="@+id/ll_rank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_name"
+        android:layout_toRightOf="@+id/iv_image"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RatingBar
+            android:id="@+id/room_ratingbar"
+
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:isIndicator="true"
+            android:numStars="5"
+
+            android:rating="4.6"
+            android:stepSize="0.2">
+
+        </RatingBar>
+
+
+        <TextView
+            android:id="@+id/tv_rank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_name"
+            android:gravity="center"
+            android:text="4.6"
+
+            android:textColor="#000000"/>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_brief"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_rank"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@+id/iv_image"
+        android:text="蛋糕魔法师"
+
+        />
+
+    <TextView
+        android:id="@+id/tv_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_rank"
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@+id/ll_rank"
+        android:text="南昌县"
+
+        />
+
+    <TextView
+        android:id="@+id/tv_per"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="60dp"
+        android:text="人均"
+
+        />
+
+    <TextView
+        android:id="@+id/tv_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_per"
+        android:text="0.5km"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+
+        />
+
+
+</RelativeLayout>
