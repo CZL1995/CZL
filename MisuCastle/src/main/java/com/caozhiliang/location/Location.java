@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Color;
 import android.graphics.Point;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -38,6 +39,7 @@ import com.baidu.mapapi.map.MyLocationConfiguration;
 import com.baidu.mapapi.map.MyLocationConfiguration.LocationMode;
 import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.map.OverlayOptions;
+import com.baidu.mapapi.map.TextOptions;
 import com.baidu.mapapi.model.LatLng;
 import com.caozhiliang.main.R;
 
@@ -57,6 +59,8 @@ public class Location extends Fragment {
     Button requestLocButton1;
     private double userLongitude;// 纬度
     private double userLatitude;// 经度
+    private LatLng ll;
+    private LatLng ll1;
     // 覆盖物相关
     private BitmapDescriptor mMarker;
     private RelativeLayout mMarkerLy;
@@ -77,22 +81,21 @@ public class Location extends Fragment {
         init();
         mCurrentMode = LocationMode.NORMAL;
         requestLocButton1.setText("普通地图");
-        mCurrentMarker = BitmapDescriptorFactory
-                .fromResource(R.mipmap.eat_icon);
-
         addOverlays(Info.infos);
+        Overlays();
+        LocationData();
 
+        return view;
+    }
+
+    private void Overlays() {
 
         View.OnClickListener btnClickListener = new View.OnClickListener() {
             public void onClick(View v) {
                 switch (mCurrentMode) {
                     case NORMAL:
                         requestLocButton1.setText("卫星地图");
-
-
                         mCurrentMode = LocationMode.COMPASS;
-
-
                         baiduMap
                                 .setMyLocationConfigeration(new MyLocationConfiguration(
                                         mCurrentMode, true, mCurrentMarker));
@@ -105,7 +108,6 @@ public class Location extends Fragment {
                                 .setMyLocationConfigeration(new MyLocationConfiguration(
                                         mCurrentMode, true, mCurrentMarker));
                         baiduMap.setMapType(BaiduMap.MAP_TYPE_NORMAL);
-
                         break;
                     default:
                         break;
@@ -135,17 +137,6 @@ public class Location extends Fragment {
                 Point p = baiduMap.getProjection().toScreenLocation(latLng);
                 p.y -= 47;
                 LatLng ll = baiduMap.getProjection().fromScreenLocation(p);
-
-                //                infoWindow = new InfoWindow(tv, ll,
-                //                        new InfoWindow.OnInfoWindowClickListener()
-                //                        {
-                //                            @Override
-                //                            public void onInfoWindowClick()
-                //                            {
-                //                                baiduMap.hideInfoWindow();
-                //                            }
-                //                        });
-                //                baiduMap.showInfoWindow(infoWindow);
                 mMarkerLy.setVisibility(View.VISIBLE);
                 return true;
             }
@@ -165,12 +156,11 @@ public class Location extends Fragment {
         });
 
 
-        LocationData();
-
-
-        return view;
-
     }
+
+
+
+
 
     /**
      * 添加覆盖物
@@ -263,10 +253,16 @@ public class Location extends Fragment {
                 System.out.println(userLatitude);
                 System.out.println(userLongitude);
 
-                LatLng ll = new LatLng(userLatitude,
+                ll = new LatLng(userLatitude,
                         userLongitude);
-
-
+                TextOptions textOptions = new TextOptions();
+                textOptions.fontColor(0x60FF0000)
+                        .text("米苏城堡")
+                        .position(ll)
+                        .fontSize(48)
+                        .typeface(Typeface.SERIF)
+                        .rotate(30);
+                baiduMap.addOverlay(textOptions);
                 MapStatus.Builder builder = new MapStatus.Builder();
                 builder.target(ll);
                 baiduMap.animateMapStatus(MapStatusUpdateFactory.newMapStatus(builder.build()));
