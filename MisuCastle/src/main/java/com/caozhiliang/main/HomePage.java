@@ -171,6 +171,8 @@ public class HomePage extends BaseFragment {
             @Override
             public void onLoadMore() {
                 System.out.println(mMoreUrl);
+                i++;
+
                 if (mMoreUrl) {
                     url = URL + "/ShuaxinServlet?pan=" + i;
                     getMoreServiceData();
@@ -224,7 +226,6 @@ public class HomePage extends BaseFragment {
 
     private void getMoreServiceData() {
         System.out.println(mMoreUrl + "1");
-        i++;
         RequestParams requestParams = new RequestParams(url);
         x.http().get(requestParams, new Callback.CommonCallback<String>() {
 

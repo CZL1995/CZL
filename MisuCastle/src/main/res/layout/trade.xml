@@ -6,9 +6,9 @@
     <ImageView
         android:id="@+id/iv_image"
         android:layout_width="100dp"
-        android:layout_height="80dp"
+        android:layout_height="100dp"
         android:layout_margin="5dp"
-        android:src="@mipmap/loge"/>
+        />
 
     <TextView
         android:id="@+id/tv_name"
@@ -16,7 +16,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_toRightOf="@+id/iv_image"
-        android:text="蛋糕魔法师"
 
         />
 
@@ -35,6 +34,7 @@
             style="?android:attr/ratingBarStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="2dp"
             android:layout_marginTop="2dp"
             android:isIndicator="true"
             android:numStars="5"
@@ -50,9 +50,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_name"
+            android:layout_marginLeft="8dp"
             android:gravity="center"
-            android:text="4.6"
-
             android:textColor="#000000"/>
 
 
@@ -63,20 +62,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ll_rank"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="12dp"
         android:layout_toRightOf="@+id/iv_image"
-        android:text="蛋糕魔法师"
+        android:ellipsize="end"
 
+        android:maxEms="11"
+        android:singleLine="true"
         />
 
     <TextView
         android:id="@+id/tv_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ll_rank"
-        android:layout_marginTop="15dp"
-        android:layout_toRightOf="@+id/ll_rank"
-        android:text="南昌县"
+        android:layout_below="@+id/tv_brief"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/iv_image"
+        android:ellipsize="end"
+        android:maxEms="11"
+        android:singleLine="true"
 
         />
 
@@ -86,8 +89,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_marginRight="5dp"
-        android:layout_marginTop="60dp"
-        android:text="人均"
+        android:layout_marginTop="65dp"
 
         />
 
@@ -95,12 +97,26 @@
         android:id="@+id/tv_distance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_per"
-        android:text="0.5km"
         android:layout_alignParentRight="true"
+        android:layout_below="@+id/tv_per"
         android:layout_marginRight="5dp"
 
         />
 
+    <ImageView
+        android:id="@+id/iv_dianzan"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentRight="true"
+        android:layout_margin="10dp"
+        android:layout_marginTop="15dp"
+        android:src="@mipmap/dianzana"/>
 
+    <TextView
+        android:id="@+id/tv_dianzan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/iv_dianzan"
+        android:layout_marginTop="15dp"
+        />
 </RelativeLayout>

@@ -73,7 +73,6 @@ public class CommoditySearch extends BaseFragment {
     }
 
 
-
     class CommodityAdapter extends FragmentPagerAdapter {
 
         public CommodityAdapter(FragmentManager fm) {
@@ -99,33 +98,31 @@ public class CommoditySearch extends BaseFragment {
                 case 0:
                     fragment = new MainFragmen();
                     bundle = new Bundle();
-                    bundle.putInt("arg", 0);
+                    bundle.putString("arg", "jiage");
                     fragment.setArguments(bundle);
                     break;
                 case 1:
                     fragment = new MainFragmen();
                     bundle = new Bundle();
-                    bundle.putInt("arg", 1);
+                    bundle.putString("arg", "renqi");
                     fragment.setArguments(bundle);
                     break;
                 case 2:
                     fragment = new MainFragmen();
                     bundle = new Bundle();
-                    bundle.putInt("arg", 2);
+                    bundle.putString("arg", "pinjia");
                     fragment.setArguments(bundle);
                     break;
                 case 3:
                     fragment = new MainFragmen();
                     bundle = new Bundle();
-                    bundle.putInt("arg", 3);
+                    bundle.putString("arg", "juli");
                     fragment.setArguments(bundle);
                     break;
             }
             return fragment;
         }
     }
-
-
 
 
 }

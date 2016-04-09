@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.caozhiliang.base.BaseFragment;
 import com.caozhiliang.httpdata.TradeBean;
@@ -32,9 +33,15 @@ public class MainFragmen extends BaseFragment {
 
     private View view = null;
     private List<TradeBean> list;
+    private List<TradeBean> list1;
     private RefreshListView listview;
     private listviewadpter mlistadapter;
+    private int i = 0;
+    private boolean mMoreUrl = true;//跟多页面地址
     ImageOptions imageOptions1;
+    private String url;
+
+    Bundle mBundle;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle
@@ -44,28 +51,52 @@ public class MainFragmen extends BaseFragment {
             view = inflater.inflate(R.layout.tradelist, container, false);
         }
         listview = (RefreshListView) view.findViewById(R.id.trade_listview);
-
-        Bundle mBundle = getArguments();
-        String title = mBundle.getString("arg");
-        getServerData();
-        return view;
-    }
-
-    public void getServerData() {
-        RequestParams requestParams = new RequestParams(URL +
-                "/TabServlet?first=Trade&&second=jiage&&third=0");
-        x.http().get(requestParams, new Callback.CommonCallback<String>() {
+        listview.setOnRefreshListener(new RefreshListView.OnRefreshListener() {
             @Override
-            public void onSuccess(String result) {
-                getData(result);
-                //                System.out.println(result);
-
+            public void onRefresh() {
+                mMoreUrl = true;
+                i = 1;
+                getServerData();
 
             }
 
             @Override
+            public void onLoadMore() {
+                i++;
+                System.out.println(i);
+                if (mMoreUrl) {
+                    url = URL + "/TabServlet?first=Trade&&second=" + mBundle.getString("arg") +
+                            "&&third=" + i;
+                    getMoreServiceData();
+
+                } else {
+                    Toast.makeText(getContext(), "最后一页了", Toast.LENGTH_SHORT).show();
+                    listview.onRefreshComplete(false);
+
+                }
+            }
+        });
+
+        mBundle = getArguments();
+        mBundle.getString("arg");
+        getServerData();
+
+        return view;
+    }
+
+    private void getMoreServiceData() {
+        RequestParams requestParams = new RequestParams(url);
+        x.http().get(requestParams, new Callback.CommonCallback<String>() {
+
+            @Override
+            public void onSuccess(String result) {
+                getData(result, true);
+                listview.onRefreshComplete(true);
+            }
+
+            @Override
             public void onError(Throwable ex, boolean isOnCallback) {
-                System.out.println("错误");
+                listview.onRefreshComplete(false);
             }
 
             @Override
@@ -82,19 +113,70 @@ public class MainFragmen extends BaseFragment {
 
     }
 
-    public void getData(String result) {
+
+    public void getServerData() {
+        RequestParams requestParams = new RequestParams(URL +
+                "/TabServlet?first=Trade&&second=" + mBundle.getString("arg") + "&&third=0");
+        x.http().get(requestParams, new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+                getData(result, false);
+                //                System.out.println(result);
+                listview.onRefreshComplete(true);
+
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+                System.out.println("错误");
+                listview.onRefreshComplete(true);
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
 
 
-        Gson gs = new Gson();
-        list = gs.fromJson(result, new TypeToken<List<TradeBean>>() {
-        }.getType());
-        System.out.println(list.get(1).toString());
+    }
+
+    public void getData(String result, boolean isMore) {
+
+
+  /*      System.out.println(list.get(1).toString());
         System.out.println(list.toString());
-        System.out.println(list.size());
+        System.out.println(list.size());*/
 
 
-        mlistadapter = new listviewadpter();
-        listview.setAdapter(mlistadapter);
+        if (!isMore) {
+            Gson gs = new Gson();
+            list = gs.fromJson(result, new TypeToken<List<TradeBean>>() {
+            }.getType());
+
+
+            mlistadapter = new listviewadpter();
+            listview.setAdapter(mlistadapter);
+
+        } else {
+            Gson gs = new Gson();
+            list1 = gs.fromJson(result, new TypeToken<List<TradeBean>>() {
+            }.getType());
+            if (list1.isEmpty()) {
+                Toast.makeText(getContext(), "最后一页了", Toast.LENGTH_SHORT).show();
+                listview.onRefreshComplete(false);
+
+            } else {
+                list.addAll(list1);
+                mlistadapter.notifyDataSetChanged();
+            }
+
+        }
 
 
     }
@@ -137,7 +219,7 @@ public class MainFragmen extends BaseFragment {
                 holder.tv_per = (TextView) convertView.findViewById(R.id.tv_per);
                 holder.tv_distance = (TextView) convertView.findViewById(R.id.tv_distance);
                 holder.room_ratingbar = (RatingBar) convertView.findViewById(R.id.room_ratingbar);
-
+                holder.tv_dianzan = (TextView) convertView.findViewById(R.id.tv_dianzan);
 
                 holder.iv_image.setScaleType(ImageView.ScaleType.FIT_XY);
 
@@ -148,11 +230,11 @@ public class MainFragmen extends BaseFragment {
 
             }
             holder.tv_name.setText(list.get(position).getStorename());
-            holder.tv_rank.setText((int) list.get(position).getXingpj());
+            holder.tv_rank.setText(list.get(position).getXingpj());
             holder.tv_brief.setText(list.get(position).getJianjie());
-            holder.tv_distance.setText((int) list.get(position).getJuli());
+            holder.tv_distance.setText("<" + list.get(position).getJuli() + "km");
             holder.tv_location.setText(list.get(position).getAddress());
-            holder.tv_per.setText(list.get(position).getXfrenshu());
+            holder.tv_dianzan.setText(list.get(position).getXfrenshu());
 
 
             x.image().bind(holder.iv_image, list.get(position).getImages(), imageOptions1);
@@ -167,6 +249,7 @@ public class MainFragmen extends BaseFragment {
             public TextView tv_location;
             public TextView tv_per;
             public TextView tv_distance;
+            public TextView tv_dianzan;
             public RatingBar room_ratingbar;
             public ImageView iv_image;
 

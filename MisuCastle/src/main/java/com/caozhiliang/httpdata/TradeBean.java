@@ -33,9 +33,9 @@ public class TradeBean {
 	String images;
 	String xiangq;
 	String pingl;
-	float juli;
-	float xingpj;
-	int xfrenshu;
+	String juli;
+	String xingpj;
+	String xfrenshu;
 
 	public TradeBean() {
 		super();
@@ -44,7 +44,7 @@ public class TradeBean {
 	public TradeBean(int number, int storeNumber, String storename,
 					 String jianjie, int price1, int price2, String address,
 					 String phone, String images, String xiangq, String pingl,
-					 float juli, float xingpj, int xfrenshu) {
+					 String juli, String xingpj, String xfrenshu) {
 		super();
 		this.number = number;
 		StoreNumber = storeNumber;
@@ -70,11 +70,11 @@ public class TradeBean {
 		this.pingl = pingl;
 	}
 
-	public float getXingpj() {
+	public String getXingpj() {
 		return xingpj;
 	}
 
-	public void setXingpj(float xingpj) {
+	public void setXingpj(String xingpj) {
 		this.xingpj = xingpj;
 	}
 
@@ -160,21 +160,21 @@ public class TradeBean {
 
 
 
-	public float getJuli() {
+	public String getJuli() {
 		return juli;
 	}
 
-	public void setJuli(float juli) {
+	public void setJuli(String juli) {
 		this.juli = juli;
 	}
 
 
 
-	public int getXfrenshu() {
+	public String getXfrenshu() {
 		return xfrenshu;
 	}
 
-	public void setXfrenshu(int xfrenshu) {
+	public void setXfrenshu(String xfrenshu) {
 		this.xfrenshu = xfrenshu;
 	}
 
