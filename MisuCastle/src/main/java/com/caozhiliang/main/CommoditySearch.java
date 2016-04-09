@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.caozhiliang.base.BaseFragment;
-import com.caozhiliang.fragment.MainFragmen;
+import com.caozhiliang.fragment.MainTradeFragmen;
 import com.caozhiliang.httpdata.TradeBean;
 import com.caozhiliang.view.RefreshListView;
 import com.viewpagerindicator.TabPageIndicator;
@@ -96,25 +96,25 @@ public class CommoditySearch extends BaseFragment {
             Bundle bundle = null;
             switch (position) {
                 case 0:
-                    fragment = new MainFragmen();
+                    fragment = new MainTradeFragmen();
                     bundle = new Bundle();
                     bundle.putString("arg", "jiage");
                     fragment.setArguments(bundle);
                     break;
                 case 1:
-                    fragment = new MainFragmen();
+                    fragment = new MainTradeFragmen();
                     bundle = new Bundle();
                     bundle.putString("arg", "renqi");
                     fragment.setArguments(bundle);
                     break;
                 case 2:
-                    fragment = new MainFragmen();
+                    fragment = new MainTradeFragmen();
                     bundle = new Bundle();
                     bundle.putString("arg", "pinjia");
                     fragment.setArguments(bundle);
                     break;
                 case 3:
-                    fragment = new MainFragmen();
+                    fragment = new MainTradeFragmen();
                     bundle = new Bundle();
                     bundle.putString("arg", "juli");
                     fragment.setArguments(bundle);

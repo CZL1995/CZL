@@ -60,6 +60,9 @@ public class HomePage extends BaseFragment {
     //    @ViewInject(R.id.listview)
     private RefreshListView listview;
     private TextView tv_location;
+    private TextView tv_1;
+    private TextView tv_2;
+    private TextView tv_3;
     private ImageView imageView;
     //    HomeViewpagerData homedata = new HomeViewpagerData();
     //    JsonData a = new JsonData();
@@ -152,7 +155,9 @@ public class HomePage extends BaseFragment {
         imageview1 = (ImageView) heardview.findViewById(R.id.imageview1);
         imageview2 = (ImageView) heardview.findViewById(R.id.imageview2);
         imageview3 = (ImageView) heardview.findViewById(R.id.imageview3);
-
+        tv_1 = (TextView) heardview.findViewById(R.id.tv_1);
+        tv_2 = (TextView) heardview.findViewById(R.id.tv_2);
+        tv_3 = (TextView) heardview.findViewById(R.id.tv_3);
         iv_homepage_viewpager.setAdapter(new toViewpager());
 
         initDots();
@@ -172,7 +177,6 @@ public class HomePage extends BaseFragment {
             public void onLoadMore() {
                 System.out.println(mMoreUrl);
                 i++;
-
                 if (mMoreUrl) {
                     url = URL + "/ShuaxinServlet?pan=" + i;
                     getMoreServiceData();
@@ -385,6 +389,12 @@ public class HomePage extends BaseFragment {
         imageview2.startAnimation(scale);
 
         imageview3.startAnimation(scale);
+        tv_1.setText(mpictures.get(0).getWenzi());
+        tv_2.setText(mpictures.get(1).getWenzi());
+        tv_3.setText(mpictures.get(2).getWenzi());
+
+
+
 
     }
 

@@ -5,7 +5,7 @@ public class TradeBean {
 	int StoreNumber;
 	String Storename;
 	String jianjie;
-	int price1;
+	String price1;
 
 	@Override
 	public String toString() {
@@ -27,7 +27,7 @@ public class TradeBean {
 				'}';
 	}
 
-	int price2;
+	String price2;
 	String address;
 	String phone;
 	String images;
@@ -42,7 +42,7 @@ public class TradeBean {
 	}
 
 	public TradeBean(int number, int storeNumber, String storename,
-					 String jianjie, int price1, int price2, String address,
+					 String jianjie, String price1, String price2, String address,
 					 String phone, String images, String xiangq, String pingl,
 					 String juli, String xingpj, String xfrenshu) {
 		super();
@@ -110,19 +110,19 @@ public class TradeBean {
 		this.jianjie = jianjie;
 	}
 
-	public int getPrice1() {
+	public String getPrice1() {
 		return price1;
 	}
 
-	public void setPrice1(int price1) {
+	public void setPrice1(String price1) {
 		this.price1 = price1;
 	}
 
-	public int getPrice2() {
+	public String getPrice2() {
 		return price2;
 	}
 
-	public void setPrice2(int price2) {
+	public void setPrice2(String price2) {
 		this.price2 = price2;
 	}
 

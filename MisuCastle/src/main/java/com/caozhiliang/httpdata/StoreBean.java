@@ -8,12 +8,12 @@ public class StoreBean {
 	String phone;
 	String xiangq;
 	String comment;
-	int renjun;
+	String renjun;
 	String images;
-	int xfrenshu;
-	int pjrenshu;
-	float juli;
-	float xingpj;
+	String xfrenshu;
+	String pjrenshu;
+	String juli;
+	String xingpj;
 	String diqu;
 
 	public StoreBean() {
@@ -21,8 +21,8 @@ public class StoreBean {
 	}
 
 	public StoreBean(int storeNumber, String name, String address, String phone,
-					 String xiangq, String comment, int renjun, String images, int xfrenshu,
-					 int pjrenshu, float juli, float xingpj, String diqu) {
+					 String xiangq, String comment, String renjun, String images, String xfrenshu,
+					 String pjrenshu, String juli, String xingpj, String diqu) {
 		super();
 		StoreNumber = storeNumber;
 		this.name = name;
@@ -97,11 +97,11 @@ public class StoreBean {
 		this.comment = comment;
 	}
 
-	public int getRenjun() {
+	public String getRenjun() {
 		return renjun;
 	}
 
-	public void setRenjun(int renjun) {
+	public void setRenjun(String renjun) {
 		this.renjun = renjun;
 	}
 
@@ -113,35 +113,35 @@ public class StoreBean {
 		this.images = images;
 	}
 
-	public int getXfrenshu() {
+	public String getXfrenshu() {
 		return xfrenshu;
 	}
 
-	public void setXfrenshu(int xfrenshu) {
+	public void setXfrenshu(String xfrenshu) {
 		this.xfrenshu = xfrenshu;
 	}
 
-	public int getPjrenshu() {
+	public String getPjrenshu() {
 		return pjrenshu;
 	}
 
-	public void setPjrenshu(int pjrenshu) {
+	public void setPjrenshu(String pjrenshu) {
 		this.pjrenshu = pjrenshu;
 	}
 
-	public float getJuli() {
+	public String getJuli() {
 		return juli;
 	}
 
-	public void setJuli(float juli) {
+	public void setJuli(String juli) {
 		this.juli = juli;
 	}
 
-	public float getXingpj() {
+	public String getXingpj() {
 		return xingpj;
 	}
 
-	public void setXingpj(float xingpj) {
+	public void setXingpj(String xingpj) {
 		this.xingpj = xingpj;
 	}
 
