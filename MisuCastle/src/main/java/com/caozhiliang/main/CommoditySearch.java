@@ -32,7 +32,7 @@ public class CommoditySearch extends BaseFragment {
     private View mview;
     private String pos;
 
-    private static final String[] CONTENT = new String[]{"价格", "人气", "销量", "距离"};
+    private static final String[] CONTENT = new String[]{"评价", "人气", "价格", "距离"};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle
@@ -98,7 +98,7 @@ public class CommoditySearch extends BaseFragment {
                 case 0:
                     fragment = new MainTradeFragmen();
                     bundle = new Bundle();
-                    bundle.putString("arg", "jiage");
+                    bundle.putString("arg", "pinjia");
                     fragment.setArguments(bundle);
                     break;
                 case 1:
@@ -110,7 +110,7 @@ public class CommoditySearch extends BaseFragment {
                 case 2:
                     fragment = new MainTradeFragmen();
                     bundle = new Bundle();
-                    bundle.putString("arg", "pinjia");
+                    bundle.putString("arg", "jiage");
                     fragment.setArguments(bundle);
                     break;
                 case 3:

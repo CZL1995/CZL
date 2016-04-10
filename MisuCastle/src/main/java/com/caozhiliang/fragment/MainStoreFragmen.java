@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.caozhiliang.base.BaseFragment;
-import com.caozhiliang.httpdata.TradeBean;
+import com.caozhiliang.httpdata.StoreBean;
 import com.caozhiliang.main.R;
 import com.caozhiliang.view.RefreshListView;
 import com.google.gson.Gson;
@@ -32,8 +32,8 @@ import java.util.List;
 public class MainStoreFragmen extends BaseFragment {
 
     private View view = null;
-    private List<TradeBean> list;
-    private List<TradeBean> list1;
+    private List<StoreBean> list;
+    private List<StoreBean> list1;
     private RefreshListView listview;
     private listviewadpter mlistadapter;
     private int i = 0;
@@ -116,7 +116,7 @@ public class MainStoreFragmen extends BaseFragment {
 
     public void getServerData() {
         RequestParams requestParams = new RequestParams(URL +
-                "/TabServlet?first=Trade&&second=" + mBundle.getString("arg") + "&&third=0");
+                "/TabServlet?first=Store&&second=" + mBundle.getString("arg") + "&&third=0");
         x.http().get(requestParams, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
@@ -156,7 +156,7 @@ public class MainStoreFragmen extends BaseFragment {
 
         if (!isMore) {
             Gson gs = new Gson();
-            list = gs.fromJson(result, new TypeToken<List<TradeBean>>() {
+            list = gs.fromJson(result, new TypeToken<List<StoreBean>>() {
             }.getType());
 
 
@@ -165,7 +165,7 @@ public class MainStoreFragmen extends BaseFragment {
 
         } else {
             Gson gs = new Gson();
-            list1 = gs.fromJson(result, new TypeToken<List<TradeBean>>() {
+            list1 = gs.fromJson(result, new TypeToken<List<StoreBean>>() {
             }.getType());
             if (list1.isEmpty()) {
                 Toast.makeText(getContext(), "最后一页了", Toast.LENGTH_SHORT).show();
@@ -209,7 +209,7 @@ public class MainStoreFragmen extends BaseFragment {
 
             ViewHolder holder;
             if (convertView == null) {
-                convertView = View.inflate(getContext(), R.layout.trade, null);
+                convertView = View.inflate(getContext(), R.layout.store, null);
                 holder = new ViewHolder();
                 holder.iv_image = (ImageView) convertView.findViewById(R.id.iv_image);
                 holder.tv_name = (TextView) convertView.findViewById(R.id.tv_name);
@@ -229,11 +229,11 @@ public class MainStoreFragmen extends BaseFragment {
                 holder = (ViewHolder) convertView.getTag();
 
             }
-            holder.tv_name.setText(list.get(position).getStorename());
+            holder.tv_name.setText(list.get(position).getName());
             holder.tv_rank.setText(list.get(position).getXingpj());
-            holder.tv_brief.setText(list.get(position).getJianjie());
+            holder.tv_brief.setText("¥"+list.get(position).getRenjun()+"/人");
             holder.tv_distance.setText("<" + list.get(position).getJuli() + "km");
-            holder.tv_location.setText(list.get(position).getAddress());
+            holder.tv_location.setText(list.get(position).getDiqu());
             holder.tv_dianzan.setText(list.get(position).getXfrenshu());
 
 

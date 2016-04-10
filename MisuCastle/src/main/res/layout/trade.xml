@@ -16,52 +16,55 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_toRightOf="@+id/iv_image"
-
+        android:ellipsize="end"
+        android:maxEms="9"
+        android:singleLine="true"
         />
 
-    <LinearLayout
-        android:id="@+id/ll_rank"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_name"
-        android:layout_toRightOf="@+id/iv_image"
-        android:gravity="center"
-        android:orientation="horizontal">
+    <!--<LinearLayout-->
+    <!--android:id="@+id/ll_rank"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_below="@+id/tv_name"-->
+    <!--android:layout_toRightOf="@+id/iv_image"-->
+    <!--android:gravity="center"-->
+    <!--android:orientation="horizontal">-->
 
-        <RatingBar
-            android:id="@+id/room_ratingbar"
+    <!--<RatingBar-->
+    <!--android:id="@+id/room_ratingbar"-->
 
-            style="?android:attr/ratingBarStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="2dp"
-            android:layout_marginTop="2dp"
-            android:isIndicator="true"
-            android:numStars="5"
+    <!--style="?android:attr/ratingBarStyleSmall"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginRight="2dp"-->
+    <!--android:layout_marginTop="2dp"-->
+    <!--android:isIndicator="true"-->
+    <!--android:numStars="5"-->
 
-            android:rating="4.6"
-            android:stepSize="0.2">
+    <!--android:rating="4.6"-->
+    <!--android:stepSize="0.2">-->
 
-        </RatingBar>
-
-
-        <TextView
-            android:id="@+id/tv_rank"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_name"
-            android:layout_marginLeft="8dp"
-            android:gravity="center"
-            android:textColor="#000000"/>
+    <!--</RatingBar>-->
 
 
-    </LinearLayout>
+    <!--<TextView-->
+    <!--android:id="@+id/tv_rank"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_below="@+id/tv_name"-->
+    <!--android:layout_marginLeft="8dp"-->
+    <!--android:gravity="center"-->
+    <!--android:layout_marginTop="2dp"-->
+    <!--android:textColor="#000000"/>-->
+
+
+    <!--</LinearLayout>-->
 
     <TextView
         android:id="@+id/tv_brief"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ll_rank"
+        android:layout_below="@+id/tv_name"
         android:layout_marginTop="12dp"
         android:layout_toRightOf="@+id/iv_image"
         android:ellipsize="end"
@@ -71,17 +74,41 @@
         />
 
     <TextView
-        android:id="@+id/tv_location"
+        android:id="@+id/tv_prices1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_brief"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#ffa042"
         android:layout_toRightOf="@+id/iv_image"
-        android:ellipsize="end"
-        android:maxEms="11"
-        android:singleLine="true"
 
+        android:textSize="18sp"
         />
+
+    <TextView
+        android:id="@+id/tv_prices2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_brief"
+
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="7dp"
+        android:layout_toRightOf="@+id/tv_prices1"
+        android:textSize="12sp"/>
+
+
+    <!--<TextView-->
+        <!--android:id="@+id/tv_location"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/tv_brief"-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--android:layout_toRightOf="@+id/iv_image"-->
+        <!--android:ellipsize="end"-->
+        <!--android:maxEms="11"-->
+        <!--android:singleLine="true"-->
+
+        <!--/>-->
 
     <TextView
         android:id="@+id/tv_per"
@@ -116,7 +143,7 @@
         android:id="@+id/tv_dianzan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toLeftOf="@+id/iv_dianzan"
         android:layout_marginTop="15dp"
+        android:layout_toLeftOf="@+id/iv_dianzan"
         />
 </RelativeLayout>

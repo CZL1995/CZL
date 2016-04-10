@@ -1,5 +1,6 @@
 package com.caozhiliang.fragment;
 
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -213,30 +214,35 @@ public class MainTradeFragmen extends BaseFragment {
                 holder = new ViewHolder();
                 holder.iv_image = (ImageView) convertView.findViewById(R.id.iv_image);
                 holder.tv_name = (TextView) convertView.findViewById(R.id.tv_name);
-                holder.tv_rank = (TextView) convertView.findViewById(R.id.tv_rank);
+                //                holder.tv_rank = (TextView) convertView.findViewById(R.id
+                // .tv_rank);
                 holder.tv_brief = (TextView) convertView.findViewById(R.id.tv_brief);
-                holder.tv_location = (TextView) convertView.findViewById(R.id.tv_location);
+                //                holder.tv_location = (TextView) convertView.findViewById(R.id
+                // .tv_location);
                 holder.tv_per = (TextView) convertView.findViewById(R.id.tv_per);
                 holder.tv_distance = (TextView) convertView.findViewById(R.id.tv_distance);
-                holder.room_ratingbar = (RatingBar) convertView.findViewById(R.id.room_ratingbar);
+                //                holder.room_ratingbar = (RatingBar) convertView.findViewById(R
+                // .id.room_ratingbar);
                 holder.tv_dianzan = (TextView) convertView.findViewById(R.id.tv_dianzan);
 
                 holder.iv_image.setScaleType(ImageView.ScaleType.FIT_XY);
 
-
+                holder.tv_prices1 = (TextView) convertView.findViewById(R.id.tv_prices1);
+                holder.tv_prices2 = (TextView) convertView.findViewById(R.id.tv_prices2);
                 convertView.setTag(holder);
             } else {
                 holder = (ViewHolder) convertView.getTag();
 
             }
             holder.tv_name.setText(list.get(position).getStorename());
-            holder.tv_rank.setText(list.get(position).getXingpj());
+            //            holder.tv_rank.setText(list.get(position).getXingpj());
             holder.tv_brief.setText(list.get(position).getJianjie());
             holder.tv_distance.setText("<" + list.get(position).getJuli() + "km");
-            holder.tv_location.setText(list.get(position).getAddress());
+            //            holder.tv_location.setText(list.get(position).getAddress());
             holder.tv_dianzan.setText(list.get(position).getXfrenshu());
-
-
+            holder.tv_prices1.setText("¥"+list.get(position).getPrice1());
+            holder.tv_prices2.setText("¥"+list.get(position).getPrice2());
+            holder.tv_prices2.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
             x.image().bind(holder.iv_image, list.get(position).getImages(), imageOptions1);
             return convertView;
         }
@@ -248,6 +254,8 @@ public class MainTradeFragmen extends BaseFragment {
             public TextView tv_brief;
             public TextView tv_location;
             public TextView tv_per;
+            public TextView tv_prices1;
+            public TextView tv_prices2;
             public TextView tv_distance;
             public TextView tv_dianzan;
             public RatingBar room_ratingbar;
