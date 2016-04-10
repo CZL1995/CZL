@@ -4,6 +4,10 @@
         "source": "F:\\AndroidStudio\\AndroidStudio\\MyApplication\\MisuCastle\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_text_cursor_material.xml"
     },
     {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable\\round.xml",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\drawable\\round.xml"
+    },
+    {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable\\textcolor.xml",
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\drawable\\textcolor.xml"
     },
@@ -64,8 +68,16 @@
         "source": "F:\\AndroidStudio\\AndroidStudio\\MyApplication\\MisuCastle\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_dialog_material_background_dark.xml"
     },
     {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable\\round_red1.xml",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\drawable\\round_red1.xml"
+    },
+    {
         "merged": "F:\\AndroidStudio\\AndroidStudio\\MyApplication\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable\\location.xml",
         "source": "F:\\AndroidStudio\\AndroidStudio\\MyApplication\\MisuCastle\\src\\main\\res\\drawable\\location.xml"
+    },
+    {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable\\mine_money_bg.xml",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\drawable\\mine_money_bg.xml"
     },
     {
         "merged": "F:\\AndroidStudio\\AndroidStudio\\MyApplication\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
@@ -156,6 +168,10 @@
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_btn_radio_material.xml"
     },
     {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable\\item_button_red.xml",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\drawable\\item_button_red.xml"
+    },
+    {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable\\dot_unfocus.xml",
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\drawable\\dot_unfocus.xml"
     },
@@ -236,6 +252,14 @@
         "source": "F:\\AndroidStudio\\AndroidStudio\\MyApplication\\MisuCastle\\src\\main\\res\\drawable\\scearch.xml"
     },
     {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable\\round_red2.xml",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\drawable\\round_red2.xml"
+    },
+    {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable\\item_button_person.xml",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\drawable\\item_button_person.xml"
+    },
+    {
         "merged": "F:\\AndroidStudio\\AndroidStudio\\MyApplication\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_top_material.xml",
         "source": "F:\\AndroidStudio\\AndroidStudio\\MyApplication\\MisuCastle\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_cab_background_top_material.xml"
     },
@@ -260,6 +284,10 @@
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
     },
     {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable\\mine_message_bg.xml",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\drawable\\mine_message_bg.xml"
+    },
+    {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable\\home_page.xml",
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\drawable\\home_page.xml"
     },
@@ -270,6 +298,10 @@
     {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_textfield_search_material.xml",
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable\\round2.xml",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\drawable\\round2.xml"
     },
     {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
@@ -326,5 +358,9 @@
     {
         "merged": "F:\\AndroidStudio\\AndroidStudio\\MyApplication\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_default_mtrl_shape.xml",
         "source": "F:\\AndroidStudio\\AndroidStudio\\MyApplication\\MisuCastle\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
+    },
+    {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable\\mine_package_bg.xml",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\drawable\\mine_package_bg.xml"
     }
 ]

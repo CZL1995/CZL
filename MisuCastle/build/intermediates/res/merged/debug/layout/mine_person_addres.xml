@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffeedd">
+  <RelativeLayout
+       android:id="@+id/title2"
+       android:layout_width="fill_parent"
+       android:layout_height="45dp"
+       android:background="#FFA042"
+       android:gravity="center_vertical"
+       android:orientation="horizontal" >
+
+        <ImageButton
+                    android:id="@+id/person_addres_back"
+                    android:layout_width="50dp"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center" 
+                    android:background="@mipmap/back"/>
+
+       <TextView
+           android:id="@+id/addres"
+           android:layout_width="fill_parent"
+           android:layout_height="match_parent"
+           android:layout_gravity="center"
+           
+           android:gravity="center"
+           android:text="管理地址"
+           android:textColorLink="#ffffff"
+           android:textSize="20sp" />
+
+   </RelativeLayout>
+
+  <TextView
+      android:id="@+id/Mine_person_addres"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentLeft="true"
+      android:layout_below="@+id/title2"
+      android:layout_marginTop="36dp"
+      android:paddingTop="10dp"
+      android:text="TextView"
+      android:textSize="20dp" />
+
+  <Button
+      android:id="@+id/person_addres_add"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_centerHorizontal="true"
+      android:layout_centerVertical="true"
+      android:text="新增地址"
+      android:textSize="20dp" />
+
+</RelativeLayout>

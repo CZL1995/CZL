@@ -35,11 +35,12 @@
         android:id="@+id/listview"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginRight="3dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         android:layout_gravity="center"
-        android:background="#e7d7bc"
-        android:dividerHeight="3dp"
+        android:background="#ffffff"
+        android:divider="#ffffff"
+        android:dividerHeight="5dp"
         android:scrollbars="none"
         android:layout_weight="1">
 

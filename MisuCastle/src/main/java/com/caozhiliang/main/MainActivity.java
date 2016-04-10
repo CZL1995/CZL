@@ -8,6 +8,7 @@ import android.widget.RadioGroup;
 
 import com.caozhiliang.base.BaseActivity;
 import com.caozhiliang.location.Location;
+import com.caozhiliang.mysetting.MineActivity;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
@@ -75,7 +76,7 @@ public class MainActivity extends BaseActivity {
                         FragmentTransaction fragmentTmyhome = fragmentmohome
                                 .beginTransaction();
 
-                        Myhome myhome = new Myhome();
+                        MineActivity myhome = new MineActivity();
                         fragmentTmyhome.replace(R.id.fl, myhome);
                         fragmentTmyhome.commit();
                         break;

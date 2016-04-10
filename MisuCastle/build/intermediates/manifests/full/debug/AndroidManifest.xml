@@ -40,8 +40,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.caozhiliang.main.MainActivity" />
-        <activity android:name="com.caozhiliang.location.ActivitySelectCity" />
+        <activity android:name="com.caozhiliang.main.MainActivity" >
+        </activity>
+        <activity android:name="com.caozhiliang.mysetting.Mine_cake" />
+        <activity android:name="com.caozhiliang.mysetting.Mine_collection" />
+        <activity android:name="com.caozhiliang.mysetting.Mine_new_version" />
+        <activity android:name="com.caozhiliang.mysetting.Mine_order" />
+        <activity android:name="com.caozhiliang.mysetting.Mine_person" />
+        <activity android:name="com.caozhiliang.mysetting.Mine_shangjia" />
+        <activity android:name="com.caozhiliang.mysetting.Mine_person_touxiang" />
+        <activity android:name="com.caozhiliang.mysetting.Mine_person_addres" />
+        <activity android:name="com.caozhiliang.mysetting.Mine_person_key" />
+        <activity android:name="com.caozhiliang.mysetting.Mine_person_name" />
+        <activity android:name="com.caozhiliang.mysetting.Mine_person_phone" />
+        <activity android:name="com.caozhiliang.mysetting.Mine_person_addres_tianjia" />
+        <activity android:name="com.caozhiliang.mysetting.Zhuce" />
+        <activity android:name="com.caozhiliang.mysetting.Denglu" />
+        <activity android:name="com.caozhiliang.location.ActivitySelectCity" >
+        </activity>
 
         <!--
              ATTENTION: This was auto-generated to add Google Play services to your project for

@@ -33,4 +33,5 @@ dependencies {
     compile files('libs/baidumapapi_search_v3_7_1.jar')
     compile files('libs/baidumapapi_util_v3_7_1.jar')
     compile files('libs/locSDK_6.13.jar')
+    compile project(':viewPagerIndicatorLibrary')
 }

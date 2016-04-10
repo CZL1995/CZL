@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">米苏城堡</string>
+    <string name="person_ziliao1_name">昵称</string>
+    <string name="person_ziliao1_phone">手机号码</string>
+    <string name="person_ziliao1_Password">密码</string>
+    <string name="person_ziliao1_ima">头像</string>
+    <string name="person_ziliao1_gai">修改</string>
+    <string name="person_ziliao1_imagai">头像</string>
+    <string name="person_ziliao1_dizhi">常用地址</string>
+    <string name="account01">账号/邮箱/手机号</string>
+    <string name="pwd">请输入您的密码</string>
+    <string name="forget_pwd">忘记密码？</string>
+    <string name="remember">记住密码</string>
+    <string name="exist">登录</string>
+    <string name="login">立即注册</string>
+    <string name="account02">请输入常用的手机号码</string>
+    <string name="Pwd">6-18位数字，字母或符号，不能为空</string>
+    <string name="login1">注册</string>
+    <string name="ck1">我已阅读并同意该APP《用户使用协议》</string>
+    <string name="more_shangjia">我是商家</string>
 </resources>

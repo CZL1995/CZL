@@ -11,7 +11,7 @@ import org.xutils.view.annotation.ContentView;
  * @author CZL
  * @time 2016-03-20 15:45
  */
-@ContentView(R.layout.myhome)
+@ContentView(R.layout.more)
 public class Myhome extends BaseFragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
