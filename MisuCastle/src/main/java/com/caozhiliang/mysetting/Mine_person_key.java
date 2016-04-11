@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -67,10 +68,23 @@ public class Mine_person_key extends Activity{
 				Intent intent=new Intent();
 				intent.setClass(Mine_person_key.this, Mine_person.class);
 				startActivity(intent);
+				Mine_person_key.this.finish();
 			}
 		});
 	}
 
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+		if (keyCode == KeyEvent.KEYCODE_BACK
+				&& event.getRepeatCount() == 0) {
+			Intent intent=new Intent();
+			intent.setClass(Mine_person_key.this, Mine_person.class);
+			startActivity(intent);
+			Mine_person_key.this.finish();
+			return true;
+		}
+		return super.onKeyDown(keyCode, event);
+	}
 
 
 

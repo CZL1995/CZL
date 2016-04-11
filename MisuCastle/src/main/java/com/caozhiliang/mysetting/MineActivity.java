@@ -18,7 +18,6 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.caozhiliang.httpdata.FinalData;
 import com.caozhiliang.httpdata.UserBean;
@@ -50,9 +49,7 @@ public class MineActivity extends Fragment {
     item it4 = new item("新版本检测");
     item it5 = new item("我的蛋糕");
     item it6 = new item("我是商家");
-    //PersonServier2 ps=new PersonServier2(MineActivity.this);
-    UserBean p;
-    //*****1 初始化选项卡中的内容
+//    UserBean p;
 
 
     Handler han = new Handler() {
@@ -69,14 +66,11 @@ public class MineActivity extends Fragment {
         mineview = inflater.inflate(R.layout.more, null);
         //*****2
         deng = (ImageView) mineview.findViewById(R.id.imageButton_denglu);
-        //deng.setImageResource(R.drawable.a);
         txt = (TextView) mineview.findViewById(R.id.dianji);
-        //        x.Ext.init(getContext());
         SharedPreferences sp = getContext().getSharedPreferences("haha", Context.MODE_PRIVATE);
         a = sp.getString("name", "");
         imagepath = sp.getString("image", "");
-        String phone = sp.getString("phone", "");
-        Toast.makeText(getContext(), imagepath + a + phone, Toast.LENGTH_LONG).show();
+//        String phone = sp.getString("phone", "");
         if (a.equals("")) {
             txt.setText("点击登录");
         } else {
@@ -98,17 +92,16 @@ public class MineActivity extends Fragment {
         moreList1.setAdapter(moreAda1);
         moreAda3 = new MoreAdapter(getContext(), date3, R.layout.more_list_item);
         moreList3.setAdapter(moreAda3);
-        //*****2将内容添加进选项卡
 
-        //*****3
         deng.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 if (txt.getText().toString().equals("点击登录")) {
-                    Intent intent = new Intent(getContext(), Denglu.class);
+                    Intent intent = new Intent(getActivity(), Denglu.class);
                     MineActivity.this.startActivity(intent);
+                    getActivity().finish();
                 }
             }
         });
@@ -127,8 +120,9 @@ public class MineActivity extends Fragment {
                     if (position == 1) {
 
                         {
-                            Intent intent = new Intent(getContext(), Mine_person_phone.class);
+                            Intent intent = new Intent(getContext(), Mine_person.class);
                             MineActivity.this.startActivity(intent);
+                            getActivity().finish();
                         }
 
                     }
@@ -195,36 +189,6 @@ public class MineActivity extends Fragment {
         t.start();
     }
 
-
-    //	public void chuan()
-    //	{
-    //		try{
-    //		a=URLEncoder.encode(a, "UTF-8");
-    //		a=URLEncoder.encode(a, "UTF-8");
-    //		}
-    //		catch(Exception e){}
-    //		RequestParams params = new RequestParams
-    // (path+"/DengluServlet?phone="+a+"&password="+password);
-    //		x.http().get(params, new Callback.CommonCallback<String>() {
-    //		    @Override
-    //		    public void onSuccess(String result) {
-    //
-    //		       // Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
-    //		        Gson gs=new Gson();
-    //		        use = gs.fromJson(result, UserBean.class);
-    //		        imagepath=use.getImage();
-    //		    }
-    //		    @Override
-    //		    public void onError(Throwable ex, boolean isOnCallback) {
-    //		    }
-    //		    @Override
-    //		    public void onCancelled(Callback.CancelledException cex) {
-    //		    }
-    //		    @Override
-    //		    public void onFinished() {
-    //		    }
-    //		});
-    //	}
 
     public void setimage() {
     }

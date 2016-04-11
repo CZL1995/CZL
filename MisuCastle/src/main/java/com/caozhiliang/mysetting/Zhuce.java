@@ -116,6 +116,7 @@ public class Zhuce extends Activity {
 				Intent in=new Intent();
 				in.setClass(Zhuce.this,Denglu.class);
 				startActivity(in);
+				Zhuce.this.finish();
 			}
 		});
 	}
@@ -131,10 +132,8 @@ public class Zhuce extends Activity {
 		x.http().get(params, new Callback.CommonCallback<String>() {
 			@Override
 			public void onSuccess(String result) {
-
-				Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
 				if(result.equals("注册成功")){
-					//Toast.makeText(getApplicationContext(), "注册成功,3秒后自动跳转界面", Toast.LENGTH_LONG).show();
+					Toast.makeText(getApplication(), "注册成功,2秒后自动跳转界面", Toast.LENGTH_LONG).show();
 					new Timer().schedule(new TimerTask() {
 						@Override
 						public void run() {
@@ -142,7 +141,7 @@ public class Zhuce extends Activity {
 							Zhuce.this.startActivity(intent);
 							Zhuce.this.finish();
 						}
-					}, 3000);
+					}, 2000);
 				}
 
 
@@ -157,55 +156,5 @@ public class Zhuce extends Activity {
 			public void onFinished() {
 			}
 		});
-
 	}
-	
-	
-	
-	/*public boolean addUser(String name,String password) {
-		String str="insert into tb_user values(?,?)";
-		LoginActivity mActivity=new LoginActivity();
-		db=SQLiteDatabase.openOrCreateDatabase(this.getFilesDir().toString()
-				+"/test.dbs", null);
-		mActivity.db=db;
-		try {
-			db.execSQL(str,new String[]{name,password});
-			return true;
-		} catch (Exception e) {
-			mActivity.createDb();
-		}
-		return false;
-		
-	}*/
-
 }
-
-
-
-
-/*if(!(name.equals("")&&password.equals(""))){
-if(addUser(name,password)){
-	DialogInterface.OnClickListener ss=new DialogInterface.OnClickListener() {
-		
-		@Override
-		public void onClick(DialogInterface dialog, int which) {
-			// 跳转到登录
-			Intent in=new Intent();
-			in.setClass(Zhuce.this,Denglu.class);
-			startActivity(in);
-			//销毁当前的activity
-			Zhuce.this.onDestroy();
-		}
-	};
-	new AlertDialog.Builder(Zhuce.this).setTitle("注册成功")
-	.setMessage("注册成功").setPositiveButton("确定",ss)
-	.show();
-}else {
-	new AlertDialog.Builder(Zhuce.this).setTitle("注册失败")
-	.setMessage("注册失败").setPositiveButton("确定",null);
-}
-}else {
-new AlertDialog.Builder(Zhuce.this).setTitle("账号密码不能为空")
-.setMessage("账号密码不能为空").setPositiveButton("确定",null);
-}*/
-

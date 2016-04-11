@@ -16,7 +16,6 @@
                     android:id="@+id/person_addres_back"
                     android:layout_width="50dp"
                     android:layout_height="fill_parent"
-                    android:layout_gravity="center" 
                     android:background="@mipmap/back"/>
 
        <TextView
@@ -32,23 +31,24 @@
 
    </RelativeLayout>
 
-  <TextView
-      android:id="@+id/Mine_person_addres"
-      android:layout_width="fill_parent"
+
+
+
+
+  <ListView
+      android:id="@+id/lv_address"
+      android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_alignParentLeft="true"
       android:layout_below="@+id/title2"
-      android:layout_marginTop="36dp"
-      android:paddingTop="10dp"
-      android:text="TextView"
-      android:textSize="20dp" />
+      android:layout_above="@+id/person_addres_add">
+
+  </ListView>
 
   <Button
       android:id="@+id/person_addres_add"
       android:layout_width="fill_parent"
       android:layout_height="wrap_content"
-      android:layout_centerHorizontal="true"
-      android:layout_centerVertical="true"
+      android:layout_alignParentBottom="true"
       android:text="新增地址"
       android:textSize="20dp" />
 

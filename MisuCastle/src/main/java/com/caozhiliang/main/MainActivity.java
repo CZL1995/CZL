@@ -32,12 +32,21 @@ public class MainActivity extends BaseActivity {
     private RadioButton rb_search;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        int id = getIntent().getIntExtra("id", 0);
+        if (id == 1) {
 
-        init();
+            init();
+            rb_my_home.performClick();
+
+        } else {
+
+            init();
+            rb_home.performClick();
+        }
+
 
     }
 
@@ -97,7 +106,7 @@ public class MainActivity extends BaseActivity {
 
             }
         });
-        rb_home.performClick();
+
 
     }
 

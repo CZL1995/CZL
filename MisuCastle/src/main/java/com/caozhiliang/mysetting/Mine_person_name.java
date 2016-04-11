@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -54,6 +55,7 @@ public class Mine_person_name extends Activity {
 			}
 		});
 
+
 		//返回按钮
 		fanhui.setOnClickListener(new OnClickListener() {
 
@@ -62,11 +64,23 @@ public class Mine_person_name extends Activity {
 				Intent intent=new Intent();
 				intent.setClass(Mine_person_name.this, Mine_person.class);
 				startActivity(intent);
+				Mine_person_name.this .finish();
 			}
 		});
 
 	}
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
 
+		if (keyCode == KeyEvent.KEYCODE_BACK
+				&& event.getRepeatCount() == 0) {
+			Intent intent=new Intent();
+			intent.setClass(Mine_person_name.this, Mine_person.class);
+			startActivity(intent);
+			Mine_person_name.this.finish();
+			return true;
+		}
+		return super.onKeyDown(keyCode, event);
+	}
 	public void get(View v)
 	{
 		namegai=name.getText().toString();
