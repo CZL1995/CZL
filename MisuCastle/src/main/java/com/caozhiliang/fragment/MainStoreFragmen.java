@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.RatingBar;
@@ -76,7 +77,12 @@ public class MainStoreFragmen extends BaseFragment {
                 }
             }
         });
-
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                System.out.println(position+"  "+id);
+            }
+        });
         mBundle = getArguments();
         mBundle.getString("arg");
         getServerData();
@@ -147,11 +153,6 @@ public class MainStoreFragmen extends BaseFragment {
     }
 
     public void getData(String result, boolean isMore) {
-
-
-  /*      System.out.println(list.get(1).toString());
-        System.out.println(list.toString());
-        System.out.println(list.size());*/
 
 
         if (!isMore) {
@@ -231,7 +232,7 @@ public class MainStoreFragmen extends BaseFragment {
             }
             holder.tv_name.setText(list.get(position).getName());
             holder.tv_rank.setText(list.get(position).getXingpj());
-            holder.tv_brief.setText("¥"+list.get(position).getRenjun()+"/人");
+            holder.tv_brief.setText("¥" + list.get(position).getRenjun() + "/人");
             holder.tv_distance.setText("<" + list.get(position).getJuli() + "km");
             holder.tv_location.setText(list.get(position).getDiqu());
             holder.tv_dianzan.setText(list.get(position).getXfrenshu());
