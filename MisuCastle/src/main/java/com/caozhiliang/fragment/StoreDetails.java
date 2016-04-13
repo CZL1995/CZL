@@ -1,9 +1,12 @@
 package com.caozhiliang.fragment;
 
+import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -16,6 +19,7 @@ import com.caozhiliang.base.BaseActivity;
 import com.caozhiliang.httpdata.ImageData;
 import com.caozhiliang.httpdata.StoreBean;
 import com.caozhiliang.httpdata.TradeBean;
+import com.caozhiliang.main.MainActivity;
 import com.caozhiliang.main.R;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -48,35 +52,92 @@ public class StoreDetails extends BaseActivity {
     private TextView tv2;
     private TextView tv3;
     private TextView tv4;
+    private TextView tv_dianzan;
+    private TextView location;
     private RatingBar store_ratingbar;
+    private ImageView iv_dianzan;
     private ImageView imageView;
+    private ImageView toleft;
+    private ImageView iv_phone;
     int id;
+    int length;
+    int po;
     ImageOptions imageOptions1;
     listadapte mlistadapte;
+    private Handler handler = new Handler() {
+        public void handleMessage(android.os.Message msg) {
+
+            //让viewPager 滑动到下一页
+            iv_homepage_viewpager.setCurrentItem(iv_homepage_viewpager.getCurrentItem() + 1);
+            handler.sendEmptyMessageDelayed(0, 2000);
+
+        }
+
+        ;
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.store_details);
-        getStorePictureData();
 
         initview();
         id = getIntent().getIntExtra("id", 0);
+        po=getIntent().getIntExtra("po",0);
         System.out.println(id);
-
+        getStorePictureData();
         getStoreData();
         getTradeData();
+        initlistener();
     }
+
+    private void initlistener() {
+        toleft.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(getApplicationContext(), MainActivity.class);
+                intent.putExtra("id", 2);
+                intent.putExtra("key", "s");
+                intent.putExtra("pos", po);
+                startActivity(intent);
+                StoreDetails.this.finish();
+            }
+        });
+
+
+    }
+
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+        if (keyCode == KeyEvent.KEYCODE_BACK
+                && event.getRepeatCount() == 0) {
+            Intent intent = new Intent();
+            intent.setClass(StoreDetails.this, MainActivity.class);
+            intent.putExtra("id", 2);
+            intent.putExtra("id", "s");
+            startActivity(intent);
+            StoreDetails.this.finish();
+
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
 
 
     private void initview() {
         lv_store_details = (ListView) findViewById(R.id.lv_store_details);
         headview = View.inflate(getApplicationContext(), R.layout.store_details_heardview, null);
         iv_homepage_viewpager = (ViewPager) headview.findViewById(R.id.iv_homepage_viewpager);
-        iv_homepage_viewpager.setAdapter(new toViewpager());
 
         tv_name = (TextView) headview.findViewById(R.id.tv_name);
+        location = (TextView) headview.findViewById(R.id.location);
         tv_rank = (TextView) headview.findViewById(R.id.tv_rank);
+        tv_dianzan = (TextView) headview.findViewById(R.id.tv_dianzan);
+        iv_phone = (ImageView) headview.findViewById(R.id.iv_phone);
+        toleft = (ImageView) headview.findViewById(R.id.toleft);
+        iv_dianzan = (ImageView) headview.findViewById(R.id.iv_dianzan);
         store_ratingbar = (RatingBar) headview.findViewById(R.id.ratingbar_Small);
         lv_store_details.addHeaderView(headview);
         footview = View.inflate(getApplicationContext(), R.layout.store_details_footview, null);
@@ -87,6 +148,7 @@ public class StoreDetails extends BaseActivity {
 
 
     }
+
 
     private void getTradeData() {
         RequestParams tradeParams = new RequestParams(URL + "/TradeServlet?Storenumber=" + id);
@@ -152,6 +214,7 @@ public class StoreDetails extends BaseActivity {
         });
 
     }
+
     private void getStorePictureData() {
         RequestParams storeParams = new RequestParams(URL + "/ImageStoreServlet?Storenumber=" + id);
 
@@ -162,7 +225,14 @@ public class StoreDetails extends BaseActivity {
                 Gson gs = new Gson();
                 imagedata = gs.fromJson(result, new TypeToken<List<ImageData>>() {
                 }.getType());
+                length = imagedata.size();
                 System.out.println(imagedata);
+                System.out.println(length);
+                iv_homepage_viewpager.setAdapter(new toViewpager());
+                if (length >= 3) {
+                    handler.sendEmptyMessageDelayed(0, 2000);
+                }
+
                 System.out.println(imagedata.size());
             }
 
@@ -188,7 +258,10 @@ public class StoreDetails extends BaseActivity {
         Gson gs = new Gson();
         storedata = gs.fromJson(result, StoreBean.class);
         System.out.println(storedata);
-
+        location.setText(storedata.getAddress());
+        tv_name.setText(storedata.getName());
+        tv_rank.setText(storedata.getXingpj());
+        tv_dianzan.setText(storedata.getXfrenshu());
     }
 
     class listadapte extends BaseAdapter {
@@ -250,18 +323,18 @@ public class StoreDetails extends BaseActivity {
         public ImageView iv_image;
         public ImageView iv_detetails;
     }
+
     class toViewpager extends PagerAdapter {
 
 
         @Override
         public int getCount() {
-            return imagedata.size();
+            return Integer.MAX_VALUE;
         }
 
         @Override
         public void destroyItem(ViewGroup container, int position, Object object) {
             container.removeView((View) object);
-
         }
 
         @Override
@@ -274,13 +347,11 @@ public class StoreDetails extends BaseActivity {
             imageView = new ImageView(getApplicationContext());
             imageView.setScaleType(ImageView.ScaleType.FIT_XY);
             imageView.setImageResource(R.mipmap.loge);
-            x.image().bind(imageView, imagedata.get(position).getImageaddress(),
-                    imageOptions1);
+            x.image().bind(imageView, imagedata.get(position % length).getImageaddress());
             container.addView(imageView);
             return imageView;
         }
     }
-
 
 
 }

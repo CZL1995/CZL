@@ -158,39 +158,8 @@ public class HomePage extends BaseFragment {
         tv_1 = (TextView) heardview.findViewById(R.id.tv_1);
         tv_2 = (TextView) heardview.findViewById(R.id.tv_2);
         tv_3 = (TextView) heardview.findViewById(R.id.tv_3);
-        iv_homepage_viewpager.setAdapter(new toViewpager());
-
         initDots();
         handler.sendEmptyMessageDelayed(0, 2000);
-        listview.setOnRefreshListener(new RefreshListView.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                mMoreUrl = true;
-                i = 1;
-                getServiceData();
-                iv_homepage_viewpager.setAdapter(new toViewpager());
-
-                pictureview();
-            }
-
-            @Override
-            public void onLoadMore() {
-                System.out.println(mMoreUrl);
-                i++;
-                if (mMoreUrl) {
-                    url = URL + "/ShuaxinServlet?pan=" + i;
-                    getMoreServiceData();
-                    System.out.println(mMoreUrl);
-
-                } else {
-                    Toast.makeText(getContext(), "最后一页了", Toast.LENGTH_SHORT).show();
-                    listview.onRefreshComplete(false);
-
-                }
-            }
-        });
-
-
     }
 
 
@@ -205,6 +174,36 @@ public class HomePage extends BaseFragment {
                 getData(result, false);
                 System.out.println("asdf");
                 listview.onRefreshComplete(true);
+                iv_homepage_viewpager.setAdapter(new toViewpager());
+
+                listview.setOnRefreshListener(new RefreshListView.OnRefreshListener() {
+                    @Override
+                    public void onRefresh() {
+                        mMoreUrl = true;
+                        i = 1;
+                        getServiceData();
+                        iv_homepage_viewpager.setAdapter(new toViewpager());
+
+                        pictureview();
+                    }
+
+                    @Override
+                    public void onLoadMore() {
+                        System.out.println(mMoreUrl);
+                        i++;
+                        if (mMoreUrl) {
+                            url = URL + "/ShuaxinServlet?pan=" + i;
+                            getMoreServiceData();
+                            System.out.println(mMoreUrl);
+
+                        } else {
+                            Toast.makeText(getContext(), "最后一页了", Toast.LENGTH_SHORT).show();
+                            listview.onRefreshComplete(false);
+
+                        }
+                    }
+                });
+
                 pictureview();//多次使用，让其一直动
 
             }

@@ -44,6 +44,7 @@ public class MainStoreFragmen extends BaseFragment {
     private String url;
 
     Bundle mBundle;
+    int postion;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle
@@ -78,6 +79,9 @@ public class MainStoreFragmen extends BaseFragment {
                 }
             }
         });
+        mBundle = getArguments();
+        mBundle.getString("arg");
+        postion=mBundle.getInt("position",0);
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position,
@@ -89,13 +93,14 @@ public class MainStoreFragmen extends BaseFragment {
                 Intent intent = new Intent();
                 intent.setClass(getContext(), StoreDetails.class);
                 intent.putExtra("id", list.get(position - 1).getStoreNumber());
+                intent.putExtra("po", postion);
                 startActivity(intent);
-
-
+                getActivity().finish();
             }
         });
-        mBundle = getArguments();
-        mBundle.getString("arg");
+
+
+
         getServerData();
 
         return view;

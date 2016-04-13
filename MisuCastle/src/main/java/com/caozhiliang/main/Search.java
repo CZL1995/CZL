@@ -21,27 +21,46 @@ public class Search extends BaseFragment {
     private RadioGroup rg_search;
     private RadioButton bt1;
     private RadioButton bt2;
-
+    int st;
+    String string;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle
             savedInstanceState) {
-        view=inflater.inflate(R.layout.search,null);
+        view = inflater.inflate(R.layout.search, null);
 
         initview();
-        init();
+        //        init();
+       string = getArguments().getString("keyq","s");
+        st= getArguments().getInt("keys",0);
+        switch (string) {
+            case "s":
+                init();
+                bt1.performClick();
+                break;
+            case "t":
+                init();
+                bt2.performClick();
+                break;
+
+            default:
+                init();
+                bt1.performClick();
+
+                break;
+        }
+
+
         return view;
     }
-    private void initview(){
 
-        view=View.inflate(getContext(),R.layout.search,null);
+    private void initview() {
+
+        view = View.inflate(getContext(), R.layout.search, null);
         rg_search = (RadioGroup) view.findViewById(R.id.rg_search);
         bt1 = (RadioButton) view.findViewById(R.id.bt1);
         bt2 = (RadioButton) view.findViewById(R.id.bt2);
 
     }
-
-
-
 
 
     private void init() {
@@ -57,6 +76,9 @@ public class Search extends BaseFragment {
                         FragmentTransaction fragmentTS = fragmentmanger.beginTransaction();
 
                         StoreSearch store_search = new StoreSearch();
+                        Bundle bundle = new Bundle();
+                        bundle.putInt("keyss", st);
+                        store_search.setArguments(bundle);
                         fragmentTS.replace(R.id.fl_search, store_search);
                         fragmentTS.commit();
                         break;
@@ -66,12 +88,13 @@ public class Search extends BaseFragment {
                         //开始初始化Fragment
                         FragmentTransaction fragmentTlocation = fragmentlocation
                                 .beginTransaction();
-
                         CommoditySearch commodity_search = new CommoditySearch();
+                        Bundle bundle1 = new Bundle();
+                        bundle1.putInt("keyss", st);
+                        commodity_search.setArguments(bundle1);
                         fragmentTlocation.replace(R.id.fl_search, commodity_search);
                         fragmentTlocation.commit();
                         break;
-
 
 
                 }
@@ -79,11 +102,8 @@ public class Search extends BaseFragment {
 
             }
         });
-        bt1.performClick();
 
     }
-
-
 
 
 }

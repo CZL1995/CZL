@@ -30,7 +30,7 @@ public class StoreSearch extends BaseFragment {
     private List<TradeBean> list;
     private RefreshListView listview;
     private View mview;
-    private String pos;
+    private int pos;
 
     private static final String[] CONTENT = new String[]{"评价", "人气", "价格", "距离"};
 
@@ -48,6 +48,7 @@ public class StoreSearch extends BaseFragment {
         ViewGroup rootView = (ViewGroup) localLayoutInflater.inflate(
                 R.layout.commodity_search, null);
         mViewPager = (ViewPager) rootView.findViewById(R.id.pager);
+        pos =getArguments().getInt("keyss",0);
         mViewPager.setAdapter(new CommodityAdapter(getChildFragmentManager()));
         mIndicator = (TabPageIndicator) rootView.findViewById(R.id.indicator);
         mIndicator.setViewPager(mViewPager);
@@ -69,6 +70,7 @@ public class StoreSearch extends BaseFragment {
 
             }
         });
+
         return rootView;
     }
 
@@ -91,7 +93,7 @@ public class StoreSearch extends BaseFragment {
 
         @Override
         public Fragment getItem(int position) {
-
+            position=pos;
             Fragment fragment = null;
             Bundle bundle = null;
             switch (position) {
@@ -99,24 +101,30 @@ public class StoreSearch extends BaseFragment {
                     fragment = new MainStoreFragmen();
                     bundle = new Bundle();
                     bundle.putString("arg", "pinjia");
+                    bundle.putInt("position", 0);
                     fragment.setArguments(bundle);
                     break;
                 case 1:
                     fragment = new MainStoreFragmen();
                     bundle = new Bundle();
                     bundle.putString("arg", "renqi");
+                    bundle.putInt("position", 1);
+
                     fragment.setArguments(bundle);
                     break;
                 case 2:
                     fragment = new MainStoreFragmen();
                     bundle = new Bundle();
                     bundle.putString("arg", "jiage");
+                    bundle.putInt("position", 2);
+
                     fragment.setArguments(bundle);
                     break;
                 case 3:
                     fragment = new MainStoreFragmen();
                     bundle = new Bundle();
                     bundle.putString("arg", "juli");
+                    bundle.putInt("position", 3);
                     fragment.setArguments(bundle);
                     break;
             }
