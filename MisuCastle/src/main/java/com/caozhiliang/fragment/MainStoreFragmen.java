@@ -1,5 +1,6 @@
 package com.caozhiliang.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -58,13 +59,13 @@ public class MainStoreFragmen extends BaseFragment {
                 mMoreUrl = true;
                 i = 1;
                 getServerData();
-
+                i = 0;
             }
 
             @Override
             public void onLoadMore() {
                 i++;
-                System.out.println(i);
+                //                System.out.println(i);
                 if (mMoreUrl) {
                     url = URL + "/TabServlet?first=Store&&second=" + mBundle.getString("arg") +
                             "&&third=" + i;
@@ -79,8 +80,18 @@ public class MainStoreFragmen extends BaseFragment {
         });
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                System.out.println(position+"  "+id);
+            public void onItemClick(AdapterView<?> parent, View view, int position,
+                                    long id) {
+
+
+                System.out.println(position - 1);
+                System.out.println(list.get(position - 1).getStoreNumber());
+                Intent intent = new Intent();
+                intent.setClass(getContext(), StoreDetails.class);
+                intent.putExtra("id", list.get(position - 1).getStoreNumber());
+                startActivity(intent);
+
+
             }
         });
         mBundle = getArguments();

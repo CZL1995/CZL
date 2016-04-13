@@ -2001,7 +2001,7 @@ containing a value of this type.
         public static final int bt2=0x7f0c00e2;
         public static final int btn1=0x7f0c0071;
         public static final int btn12=0x7f0c00aa;
-        public static final int btn_zhuce=0x7f0c00fe;
+        public static final int btn_zhuce=0x7f0c0104;
         public static final int btnname=0x7f0c00b5;
         public static final int button1=0x7f0c0082;
         public static final int buttonPanel=0x7f0c0031;
@@ -2060,6 +2060,7 @@ containing a value of this type.
         public static final int info=0x7f0c00d2;
         public static final int iv=0x7f0c0076;
         public static final int iv_arr=0x7f0c00da;
+        public static final int iv_detetails=0x7f0c00f9;
         public static final int iv_dianzan=0x7f0c00f0;
         public static final int iv_homepage_viewpager=0x7f0c0077;
         public static final int iv_image=0x7f0c00e8;
@@ -2077,6 +2078,7 @@ containing a value of this type.
         public static final int lng_city_lay=0x7f0c0063;
         public static final int login_now=0x7f0c0073;
         public static final int lv_address=0x7f0c00ac;
+        public static final int lv_store_details=0x7f0c00f2;
         public static final int media_actions=0x7f0c00ca;
         public static final int middle=0x7f0c001a;
         public static final int mine_message_but=0x7f0c008b;
@@ -2121,11 +2123,12 @@ containing a value of this type.
         public static final int person_ziliao_xiao=0x7f0c00d6;
         public static final int progress_circular=0x7f0c0005;
         public static final int progress_horizontal=0x7f0c0006;
-        public static final int pwd1=0x7f0c00fb;
-        public static final int pwd2=0x7f0c00fd;
+        public static final int pwd1=0x7f0c0101;
+        public static final int pwd2=0x7f0c0103;
         public static final int pwdEdittext=0x7f0c0070;
         public static final int pwdRel=0x7f0c006f;
         public static final int radio=0x7f0c0041;
+        public static final int ratingbar_Small=0x7f0c00f6;
         public static final int rb_home=0x7f0c0059;
         public static final int rb_location=0x7f0c005a;
         public static final int rb_my_home=0x7f0c005c;
@@ -2158,12 +2161,12 @@ containing a value of this type.
         public static final int showCustom=0x7f0c000f;
         public static final int showHome=0x7f0c0010;
         public static final int showTitle=0x7f0c0011;
-        public static final int signRel=0x7f0c00f6;
-        public static final int signRel1=0x7f0c00f7;
-        public static final int sign_acc=0x7f0c00f8;
-        public static final int sign_pwd1=0x7f0c00fa;
-        public static final int sign_pwd2=0x7f0c00fc;
-        public static final int sign_text=0x7f0c00f9;
+        public static final int signRel=0x7f0c00fc;
+        public static final int signRel1=0x7f0c00fd;
+        public static final int sign_acc=0x7f0c00fe;
+        public static final int sign_pwd1=0x7f0c0100;
+        public static final int sign_pwd2=0x7f0c0102;
+        public static final int sign_text=0x7f0c00ff;
         public static final int sjtext=0x7f0c00a0;
         public static final int sound_help=0x7f0c0072;
         public static final int spacer=0x7f0c0032;
@@ -2178,7 +2181,7 @@ containing a value of this type.
         public static final int text2=0x7f0c00cf;
         public static final int textSpacerNoButtons=0x7f0c003a;
         public static final int textView1=0x7f0c008d;
-        public static final int textView2=0x7f0c00f5;
+        public static final int textView2=0x7f0c00fb;
         public static final int time=0x7f0c00cd;
         public static final int title=0x7f0c0030;
         public static final int title123=0x7f0c008e;
@@ -2187,10 +2190,13 @@ containing a value of this type.
         public static final int tjRel=0x7f0c009a;
         public static final int top=0x7f0c0026;
         public static final int topPanel=0x7f0c0034;
-        public static final int trade_listview=0x7f0c00f4;
+        public static final int trade_listview=0x7f0c00fa;
         public static final int triangle=0x7f0c0023;
         public static final int tuichu_button=0x7f0c0094;
         public static final int tv1=0x7f0c0099;
+        public static final int tv2=0x7f0c00f3;
+        public static final int tv3=0x7f0c00f4;
+        public static final int tv4=0x7f0c00f5;
         public static final int tv_1=0x7f0c007b;
         public static final int tv_2=0x7f0c007d;
         public static final int tv_3=0x7f0c007f;
@@ -2204,8 +2210,8 @@ containing a value of this type.
         public static final int tv_name=0x7f0c00e9;
         public static final int tv_order=0x7f0c00c5;
         public static final int tv_per=0x7f0c00ee;
-        public static final int tv_prices1=0x7f0c00f2;
-        public static final int tv_prices2=0x7f0c00f3;
+        public static final int tv_prices1=0x7f0c00f7;
+        public static final int tv_prices2=0x7f0c00f8;
         public static final int tv_progress=0x7f0c00e7;
         public static final int tv_pull_list_header_title=0x7f0c00df;
         public static final int tv_rank=0x7f0c00ec;
@@ -2310,11 +2316,15 @@ containing a value of this type.
         public static final int select_dialog_singlechoice_material=0x7f040045;
         public static final int splash_activity=0x7f040046;
         public static final int store=0x7f040047;
-        public static final int store_search=0x7f040048;
-        public static final int support_simple_spinner_dropdown_item=0x7f040049;
-        public static final int trade=0x7f04004a;
-        public static final int tradelist=0x7f04004b;
-        public static final int zhuce=0x7f04004c;
+        public static final int store_details=0x7f040048;
+        public static final int store_details_footview=0x7f040049;
+        public static final int store_details_heardview=0x7f04004a;
+        public static final int store_search=0x7f04004b;
+        public static final int support_simple_spinner_dropdown_item=0x7f04004c;
+        public static final int trade=0x7f04004d;
+        public static final int trade_list_details=0x7f04004e;
+        public static final int tradelist=0x7f04004f;
+        public static final int zhuce=0x7f040050;
     }
     public static final class mipmap {
         public static final int arrow_b=0x7f030000;

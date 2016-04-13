@@ -32,6 +32,7 @@ import com.caozhiliang.main.R;
 import com.caozhiliang.tools.StreamTool;
 import com.caozhiliang.view.SortList;
 
+import org.xutils.image.ImageOptions;
 import org.xutils.x;
 
 import java.io.InputStream;
@@ -43,7 +44,7 @@ public class Mine_person extends Activity {
     private static final int List1_ID = 1; // 最顶端的 图片显示
     private static final int List2_ID = 2;  // 中间分类
     private static final int List3_ID = 3;  // 下端显示
-    String a, image, password, imagepath;
+    String a, password, imagepath;
     String path = FinalData.FUWU_PATH;
     public UserBean use;
     SortList List1, List2, List3;
@@ -53,11 +54,13 @@ public class Mine_person extends Activity {
     HoldViewSwitch switchHold;
     AlertDialog.Builder Dialog;
     Touxiang tou1;
+    private ImageView image;
     SharedPreferences sp;
     ImageButton fanhui;
+    ImageOptions imageOptions;
+
     Button tuichu;
     Bitmap btmap = null;
-    ImageView imag;
     private int List1Data[][] = new int[][]{
             {R.mipmap.touxiang, R.string.person_ziliao1_imagai}};
     private int List2Data[][] = new int[][]{
@@ -71,14 +74,14 @@ public class Mine_person extends Activity {
     private String ziliao[] = new String[5];
 
     Handler han = new Handler() {
-        @SuppressLint("HandlerLeak")
-        public void handleMessage(android.os.Message msg) {
-            imag = (ImageView) List1.getChildAt(0).findViewById(R.id.imageViewtou1);
-            imag.setImageBitmap((Bitmap) msg.obj);
-        }
+            @SuppressLint("HandlerLeak")
+            public void handleMessage(android.os.Message msg) {
+                image = (ImageView) List1.getChildAt(0).findViewById(R.id.imageViewtou1);
+                image.setImageBitmap((Bitmap) msg.obj);
+            }
 
-        ;
-    };
+            ;
+        };
 
 
     @Override
@@ -88,6 +91,7 @@ public class Mine_person extends Activity {
         setContentView(R.layout.mine_person);
         fanhui = (ImageButton) findViewById(R.id.person_back);
         tuichu = (Button) findViewById(R.id.tuichu_button);
+
         SharedPreferences sp = getApplication().getSharedPreferences("haha", MODE_PRIVATE);
         //chuan();
         tuichu.setOnClickListener(new OnClickListener() {
@@ -108,7 +112,11 @@ public class Mine_person extends Activity {
         ziliao[3] = sp.getString("address", "");
         ziliao[4] = sp.getString("image", "");
         imagepath = ziliao[4];
+        System.out.println(imagepath);
         getimage();
+
+
+
     }
 
     public void dilg() {
@@ -136,6 +144,16 @@ public class Mine_person extends Activity {
     }
 
     public void getimage() {
+//        imageOptions = new ImageOptions.Builder()
+//                .setImageScaleType(ImageView.ScaleType.FIT_XY)
+//                .setRadius(DensityUtil.dip2px(5))
+//                .setLoadingDrawableId(R.mipmap.loge)
+//                .setPlaceholderScaleType(ImageView.ScaleType.FIT_XY)
+//                .setFailureDrawableId(R.mipmap.loge)
+//                .build();
+//        x.image().bind(image, imagepath, imageOptions);
+
+
         Thread t = new Thread() {
             public void run() {
                 try {
@@ -176,6 +194,8 @@ public class Mine_person extends Activity {
         List1.setAdapter(personAdapter1);
         List2.setAdapter(personAdapter2);
         List3.setAdapter(personAdapter3);
+
+
         List1.setOnItemClickListener(new OnItemClickListener() {
 
             @Override

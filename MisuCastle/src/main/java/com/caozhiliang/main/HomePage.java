@@ -439,7 +439,6 @@ public class HomePage extends BaseFragment {
 
             }
 
-            //            holder.tvDate.setText(mlistviews.get(position).getWenzi());
             x.image().bind(holder.ivPic, mlistviews.get(position).getImageurl(), imageOptions1);
             return convertView;
         }
