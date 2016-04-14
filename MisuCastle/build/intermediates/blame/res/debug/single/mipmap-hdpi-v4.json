@@ -6,13 +6,5 @@
     {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\ic_launcher.png",
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "F:\\AndroidStudio\\AndroidStudio\\MyApplication\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\ic_launcher.png",
-        "source": "F:\\AndroidStudio\\AndroidStudio\\MyApplication\\MisuCastle\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "F:\\AndroidStudio\\AndroidStudio\\MyApplication\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\bottom_tab_bg.png",
-        "source": "F:\\AndroidStudio\\AndroidStudio\\MyApplication\\MisuCastle\\src\\main\\res\\mipmap-hdpi\\bottom_tab_bg.png"
     }
 ]

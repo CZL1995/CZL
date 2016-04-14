@@ -80,27 +80,16 @@ public class MainStoreFragmen extends BaseFragment {
         });
         mBundle = getArguments();
         mBundle.getString("arg");
-        mBundle.getInt("position");
-        System.out.println(mBundle.getInt("position"));
-//        postion1=mBundle.getInt("position",0);
-//        System.out.println("第"+postion1+"个页面传过来的");
-
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position,
                                     long id) {
-                System.out.println(position - 1);
-                System.out.println(list.get(position - 1).getStoreNumber());
                 Intent intent = new Intent();
                 intent.setClass(getContext(), StoreDetails.class);
                 intent.putExtra("id", list.get(position - 1).getStoreNumber());
-//                intent.putExtra("po", mBundle.getInt("position"));
-//                intent.putExtra("po", postion1);
                 startActivity(intent);
-//                getActivity().finish();
             }
         });
-
 
 
         getServerData();

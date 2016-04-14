@@ -102,7 +102,6 @@ public class MainActivity extends BaseActivity {
 
                         Search search = new Search();
                         Bundle bundle = new Bundle();
-                        bundle.putInt("keyq", keyss);
                         search.setArguments(bundle);
                         fragmentTsearch.replace(R.id.fl, search);
                         fragmentTsearch.commit();

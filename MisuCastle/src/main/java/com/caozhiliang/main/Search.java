@@ -30,8 +30,6 @@ public class Search extends BaseFragment {
         view = inflater.inflate(R.layout.search, null);
 
         initview();
-        mBundle1 = getArguments();
-        mBundle1.getInt("keyq");
         init();
 
 
@@ -62,7 +60,6 @@ public class Search extends BaseFragment {
 
                         StoreSearch store_search = new StoreSearch();
                         Bundle bundle1 = new Bundle();
-                        bundle1.putInt("keyss", mBundle1.getInt("keyq"));
                         store_search.setArguments(bundle1);
                         fragmentTS.replace(R.id.fl_search, store_search);
                         fragmentTS.commit();

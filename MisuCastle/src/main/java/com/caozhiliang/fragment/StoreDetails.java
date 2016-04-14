@@ -1,5 +1,6 @@
 package com.caozhiliang.fragment;
 
+import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.os.Handler;
@@ -8,6 +9,7 @@ import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -82,8 +84,6 @@ public class StoreDetails extends BaseActivity {
 
         initview();
         id = getIntent().getIntExtra("id", 0);
-        po=getIntent().getIntExtra("po", 0);
-        System.out.println(po);
         getStorePictureData();
         getStoreData();
         getTradeData();
@@ -94,12 +94,19 @@ public class StoreDetails extends BaseActivity {
         toleft.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent();
-//                intent.setClass(getApplicationContext(), MainActivity.class);
-//                intent.putExtra("id", 2);
-//                intent.putExtra("pos", po);
-//                startActivity(intent);
                 StoreDetails.this.finish();
+            }
+        });
+
+
+        lv_store_details.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent=new Intent();
+                intent.setClass(getApplicationContext(),TradeDetails.class);
+                intent.putExtra("trade", tradedata.get(position - 1).getNumber());
+                System.out.println(tradedata.get(position - 1).getNumber());
+                startActivity(intent);
             }
         });
 
@@ -128,7 +135,6 @@ public class StoreDetails extends BaseActivity {
         lv_store_details = (ListView) findViewById(R.id.lv_store_details);
         headview = View.inflate(getApplicationContext(), R.layout.store_details_heardview, null);
         iv_homepage_viewpager = (ViewPager) headview.findViewById(R.id.iv_homepage_viewpager);
-
         tv_name = (TextView) headview.findViewById(R.id.tv_name);
         location = (TextView) headview.findViewById(R.id.location);
         tv_rank = (TextView) headview.findViewById(R.id.tv_rank);

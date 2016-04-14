@@ -4,8 +4,11 @@ public class TradeBean {
 	int number;
 	int StoreNumber;
 	String Storename;
-	String jianjie;
-	String price1;
+	String Storenamezheng;
+
+	public String getStorenamezheng() {
+		return Storenamezheng;
+	}
 
 	@Override
 	public String toString() {
@@ -13,19 +16,27 @@ public class TradeBean {
 				"number=" + number +
 				", StoreNumber=" + StoreNumber +
 				", Storename='" + Storename + '\'' +
+				", Storenamezheng='" + Storenamezheng + '\'' +
 				", jianjie='" + jianjie + '\'' +
-				", price1=" + price1 +
-				", price2=" + price2 +
+				", price1='" + price1 + '\'' +
+				", price2='" + price2 + '\'' +
 				", address='" + address + '\'' +
 				", phone='" + phone + '\'' +
 				", images='" + images + '\'' +
 				", xiangq='" + xiangq + '\'' +
 				", pingl='" + pingl + '\'' +
-				", juli=" + juli +
-				", xingpj=" + xingpj +
-				", xfrenshu=" + xfrenshu +
+				", juli='" + juli + '\'' +
+				", xingpj='" + xingpj + '\'' +
+				", xfrenshu='" + xfrenshu + '\'' +
 				'}';
 	}
+
+	public void setStorenamezheng(String storenamezheng) {
+		Storenamezheng = storenamezheng;
+	}
+
+	String jianjie;
+	String price1;
 
 	String price2;
 	String address;

@@ -53,7 +53,7 @@
             <!--<gradient android:angle="270"-->
             <!--android:endColor="#ffeedd"-->
             <!--android:startColor="#ffeedd"/>-->
-            <solid android:color="#ffa042" />
+            <solid android:color="#80858175" />
             <stroke android:width="1sp"
                 android:color="#101010"/>
 
