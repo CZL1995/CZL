@@ -1,6 +1,5 @@
 package com.caozhiliang.fragment;
 
-import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.os.Handler;
@@ -19,7 +18,6 @@ import com.caozhiliang.base.BaseActivity;
 import com.caozhiliang.httpdata.ImageData;
 import com.caozhiliang.httpdata.StoreBean;
 import com.caozhiliang.httpdata.TradeBean;
-import com.caozhiliang.main.MainActivity;
 import com.caozhiliang.main.R;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -62,6 +60,7 @@ public class StoreDetails extends BaseActivity {
     int id;
     int length;
     int po;
+    Bundle mBundle;
     ImageOptions imageOptions1;
     listadapte mlistadapte;
     private Handler handler = new Handler() {
@@ -83,8 +82,8 @@ public class StoreDetails extends BaseActivity {
 
         initview();
         id = getIntent().getIntExtra("id", 0);
-        po=getIntent().getIntExtra("po",0);
-        System.out.println(id);
+        po=getIntent().getIntExtra("po", 0);
+        System.out.println(po);
         getStorePictureData();
         getStoreData();
         getTradeData();
@@ -95,12 +94,11 @@ public class StoreDetails extends BaseActivity {
         toleft.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(getApplicationContext(), MainActivity.class);
-                intent.putExtra("id", 2);
-                intent.putExtra("key", "s");
-                intent.putExtra("pos", po);
-                startActivity(intent);
+//                Intent intent = new Intent();
+//                intent.setClass(getApplicationContext(), MainActivity.class);
+//                intent.putExtra("id", 2);
+//                intent.putExtra("pos", po);
+//                startActivity(intent);
                 StoreDetails.this.finish();
             }
         });
@@ -112,11 +110,11 @@ public class StoreDetails extends BaseActivity {
 
         if (keyCode == KeyEvent.KEYCODE_BACK
                 && event.getRepeatCount() == 0) {
-            Intent intent = new Intent();
-            intent.setClass(StoreDetails.this, MainActivity.class);
-            intent.putExtra("id", 2);
-            intent.putExtra("id", "s");
-            startActivity(intent);
+//            Intent intent = new Intent();
+//            intent.setClass(getApplicationContext(), MainActivity.class);
+//            intent.putExtra("id", 2);
+//            intent.putExtra("id", "s");
+//            startActivity(intent);
             StoreDetails.this.finish();
 
             return true;
@@ -141,10 +139,10 @@ public class StoreDetails extends BaseActivity {
         store_ratingbar = (RatingBar) headview.findViewById(R.id.ratingbar_Small);
         lv_store_details.addHeaderView(headview);
         footview = View.inflate(getApplicationContext(), R.layout.store_details_footview, null);
-        lv_store_details.addFooterView(footview);
         tv2 = (TextView) footview.findViewById(R.id.tv2);
         tv3 = (TextView) footview.findViewById(R.id.tv3);
         tv4 = (TextView) footview.findViewById(R.id.tv4);
+        lv_store_details.addFooterView(footview);
 
 
     }
@@ -262,6 +260,10 @@ public class StoreDetails extends BaseActivity {
         tv_name.setText(storedata.getName());
         tv_rank.setText(storedata.getXingpj());
         tv_dianzan.setText(storedata.getXfrenshu());
+        tv2.setText("营业时间："+storedata.getTime());
+        tv3.setText("门店服务："+storedata.getFuwu());
+        tv4.setText("门店介绍："+storedata.getXiangq());
+
     }
 
     class listadapte extends BaseAdapter {
@@ -298,6 +300,7 @@ public class StoreDetails extends BaseActivity {
                 holder.iv_image = (ImageView) convertView.findViewById(R.id.iv_image);
                 holder.iv_detetails = (ImageView) convertView.findViewById(R.id.iv_detetails);
                 holder.tv_prices2 = (TextView) convertView.findViewById(R.id.tv_prices2);
+                holder.brief = (TextView) convertView.findViewById(R.id.brief);
                 holder.tv_prices2.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
                 holder.tv_prices1 = (TextView) convertView.findViewById(R.id.tv_prices1);
                 holder.tv_name = (TextView) convertView.findViewById(R.id.tv_name);
@@ -310,6 +313,8 @@ public class StoreDetails extends BaseActivity {
             holder.tv_prices2.setText(tradedata.get(position).getPrice2());
             holder.tv_prices1.setText(tradedata.get(position).getPrice1());
             holder.tv_name.setText(tradedata.get(position).getStorename());
+            holder.brief.setText(tradedata.get(position).getJianjie());
+
             x.image().bind(holder.iv_image, tradedata.get(position).getImages(), imageOptions1);
             return convertView;
         }
@@ -320,6 +325,7 @@ public class StoreDetails extends BaseActivity {
         public TextView tv_prices2;
         public TextView tv_prices1;
         public TextView tv_name;
+        public TextView brief;
         public ImageView iv_image;
         public ImageView iv_detetails;
     }

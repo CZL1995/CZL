@@ -30,43 +30,30 @@ public class MainActivity extends BaseActivity {
 
     @ViewInject(R.id.rb_search)
     private RadioButton rb_search;
-    String key;
-    int keys;
+    int keyss;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         int id = getIntent().getIntExtra("id", 0);
-        key = getIntent().getStringExtra("key");
-        keys=getIntent().getIntExtra("pos",0);
+
         switch (id) {
             case 1:
                 init();
                 rb_my_home.performClick();
                 break;
             case 2:
+                keyss = getIntent().getIntExtra("pos", 0);
+                System.out.println(keyss);
                 init();
                 rb_search.performClick();
-                break;
 
+                break;
             default:
                 init();
                 rb_home.performClick();
                 break;
         }
-
-        //        if (id == 1) {
-        //
-        //            init();
-        //            rb_my_home.performClick();
-        //
-        //        } else {
-        //
-        //            init();
-        //            rb_home.performClick();
-        //        }
-
-
     }
 
 
@@ -115,8 +102,7 @@ public class MainActivity extends BaseActivity {
 
                         Search search = new Search();
                         Bundle bundle = new Bundle();
-                        bundle.putString("keyq", key);
-                        bundle.putInt("keys", keys);
+                        bundle.putInt("keyq", keyss);
                         search.setArguments(bundle);
                         fragmentTsearch.replace(R.id.fl, search);
                         fragmentTsearch.commit();

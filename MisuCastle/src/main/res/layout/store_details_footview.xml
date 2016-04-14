@@ -4,6 +4,16 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="#e2dcdc"
+        android:orientation="horizontal"
+        >
+    </LinearLayout>
+
     <TextView
         android:id="@+id/tv1"
         android:layout_width="wrap_content"
@@ -20,23 +30,24 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="10dp"
-        android:text="营业时间:"/>
+        android:textColor="#000000"
+        />
 
     <TextView
         android:id="@+id/tv3"
         android:layout_width="wrap_content"
-
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="10dp"
-        android:text="门店服务:"/>
+        android:textColor="#000000"
+        />
 
     <TextView
         android:id="@+id/tv4"
         android:layout_width="wrap_content"
-
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="10dp"
-        android:text="门店介绍:"/>
+        android:textColor="#000000"
+        />
 </LinearLayout>

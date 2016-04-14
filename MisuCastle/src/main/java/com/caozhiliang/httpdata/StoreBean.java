@@ -54,6 +54,14 @@ public class StoreBean {
         super();
     }
 
+    public String getFuwu() {
+        return fuwu;
+    }
+
+    public void setFuwu(String fuwu) {
+        this.fuwu = fuwu;
+    }
+
     public StoreBean(int storeNumber, String name, String address, String phone,
                      String xiangq, String comment, String renjun, String images, String xfrenshu,
                      String pjrenshu, String juli, String xingpj, String diqu) {

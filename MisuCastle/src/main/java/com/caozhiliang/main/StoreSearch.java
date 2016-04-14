@@ -30,7 +30,7 @@ public class StoreSearch extends BaseFragment {
     private List<TradeBean> list;
     private RefreshListView listview;
     private View mview;
-    private int pos;
+    private int poss;
 
     private static final String[] CONTENT = new String[]{"评价", "人气", "价格", "距离"};
 
@@ -48,11 +48,31 @@ public class StoreSearch extends BaseFragment {
         ViewGroup rootView = (ViewGroup) localLayoutInflater.inflate(
                 R.layout.commodity_search, null);
         mViewPager = (ViewPager) rootView.findViewById(R.id.pager);
-        pos =getArguments().getInt("keyss",0);
+        int pos = getArguments().getInt("keyss", 0);
+        switch (pos) {
+            case 0:
+                poss = 0;
+                break;
+            case 1:
+                poss = 1;
+                break;
+            case 2:
+                poss = 2;
+                break;
+            case 3:
+                poss = 3;
+                break;
+
+            default:
+                poss=0;
+                break;
+        }
+
+        //        System.out.println(pos);
         mViewPager.setAdapter(new CommodityAdapter(getChildFragmentManager()));
         mIndicator = (TabPageIndicator) rootView.findViewById(R.id.indicator);
         mIndicator.setViewPager(mViewPager);
-
+        mIndicator.setCurrentItem(poss);
         mIndicator.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int
@@ -63,6 +83,7 @@ public class StoreSearch extends BaseFragment {
             @Override
             public void onPageSelected(int position) {
 
+
             }
 
             @Override
@@ -70,7 +91,6 @@ public class StoreSearch extends BaseFragment {
 
             }
         });
-
         return rootView;
     }
 
@@ -83,7 +103,7 @@ public class StoreSearch extends BaseFragment {
 
         @Override
         public CharSequence getPageTitle(int position) {
-            return CONTENT[position % CONTENT.length];
+            return CONTENT[position];
         }
 
         @Override
@@ -93,7 +113,6 @@ public class StoreSearch extends BaseFragment {
 
         @Override
         public Fragment getItem(int position) {
-            position=pos;
             Fragment fragment = null;
             Bundle bundle = null;
             switch (position) {
