@@ -21,7 +21,6 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -56,7 +55,7 @@ public class Mine_person extends Activity {
     Touxiang tou1;
     private ImageView image;
     SharedPreferences sp;
-    ImageButton fanhui;
+    private TextView ziliao1;
     ImageOptions imageOptions;
 
     Button tuichu;
@@ -89,7 +88,7 @@ public class Mine_person extends Activity {
         x.Ext.init(getApplication());
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mine_person);
-        fanhui = (ImageButton) findViewById(R.id.person_back);
+        ziliao1 = (TextView) findViewById(R.id.ziliao);
         tuichu = (Button) findViewById(R.id.tuichu_button);
 
         SharedPreferences sp = getApplication().getSharedPreferences("haha", MODE_PRIVATE);
@@ -144,15 +143,6 @@ public class Mine_person extends Activity {
     }
 
     public void getimage() {
-//        imageOptions = new ImageOptions.Builder()
-//                .setImageScaleType(ImageView.ScaleType.FIT_XY)
-//                .setRadius(DensityUtil.dip2px(5))
-//                .setLoadingDrawableId(R.mipmap.loge)
-//                .setPlaceholderScaleType(ImageView.ScaleType.FIT_XY)
-//                .setFailureDrawableId(R.mipmap.loge)
-//                .build();
-//        x.image().bind(image, imagepath, imageOptions);
-
 
         Thread t = new Thread() {
             public void run() {
@@ -165,7 +155,16 @@ public class Mine_person extends Activity {
                         InputStream in = con.getInputStream();
                         StreamTool st = new StreamTool();
                         byte[] data = st.read(in);
-                        Bitmap bit = BitmapFactory.decodeByteArray(data, 0, data.length);
+                        BitmapFactory.Options options = new BitmapFactory.Options();
+                        options.inJustDecodeBounds = true;
+                        Bitmap bit = BitmapFactory.decodeByteArray(data, 0, data.length,options);
+                        options.inJustDecodeBounds = false; //缩放比。由于是固定比例缩放，只用高或者宽其中一个数据进行计算即可
+                        int be = (int)(options.outHeight / (float)320);
+                        if (be <= 0)
+                            be = 1;
+                        options.inSampleSize = be; //重新读入图片，注意此时已经把 options.inJustDecodeBounds 设回 false 了
+                        bit = BitmapFactory.decodeByteArray(data, 0, data.length,options);
+
                         Message mg = new Message();
                         mg.obj = bit;
                         han.sendMessage(mg);
@@ -242,7 +241,7 @@ public class Mine_person extends Activity {
                 Mine_person.this.finish();
             }
         });
-        fanhui.setOnClickListener(new OnClickListener() {
+        ziliao1.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View v) {

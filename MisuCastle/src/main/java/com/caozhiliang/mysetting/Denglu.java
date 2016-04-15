@@ -5,11 +5,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,7 +33,7 @@ public class Denglu extends Activity {
     public EditText edkey;
     public Button btlogin;
     public TextView tvregister;
-    public ImageButton fanhui;
+    public TextView dengl;
     public UserBean use;
     String path = FinalData.FUWU_PATH;
 
@@ -44,7 +44,7 @@ public class Denglu extends Activity {
         edphone = (EditText) findViewById(R.id.accountEdittext);
         edkey = (EditText) findViewById(R.id.pwdEdittext);
         btlogin = (Button) findViewById(R.id.btn1);
-        fanhui = (ImageButton) findViewById(R.id.denglu_back);
+        dengl = (TextView) findViewById(R.id.dengl);
         tvregister = (TextView) findViewById(R.id.login_now);
         x.Ext.init(getApplication());
         //跳转到注册界面
@@ -67,22 +67,33 @@ public class Denglu extends Activity {
             }
         });
 
-        fanhui.setOnClickListener(new OnClickListener() {
+        dengl.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View v) {
-
                 Intent intent = new Intent(Denglu.this, MainActivity.class);
-
                 intent.putExtra("id", 1);
                 Denglu.this.startActivity(intent);
-
                 Denglu.this.finish();
 
             }
         });
 
     }
+
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+        if (keyCode == KeyEvent.KEYCODE_BACK
+                && event.getRepeatCount() == 0) {
+            Intent intent = new Intent(Denglu.this, MainActivity.class);
+            intent.putExtra("id", 1);
+            Denglu.this.startActivity(intent);
+            Denglu.this.finish();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
 
     public void getview(View v) {
 
@@ -98,8 +109,6 @@ public class Denglu extends Activity {
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
-
-                // Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
                 Gson gs = new Gson();
                 use = gs.fromJson(result, UserBean.class);
                 if (use.getName().equals("0")) {
@@ -126,7 +135,6 @@ public class Denglu extends Activity {
 
                             intent.putExtra("id", 1);
                             Denglu.this.startActivity(intent);
-
                             Denglu.this.finish();
                         }
                     }, 2000);

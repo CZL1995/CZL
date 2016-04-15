@@ -4,6 +4,10 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
+
+
+
+
     <RelativeLayout
         android:id="@+id/ll_trade"
         android:layout_width="match_parent"
@@ -49,6 +53,8 @@
         android:layout_below="@+id/iv_homepage_viewpager"
         android:layout_marginTop="10dp"
         android:background="#e2dcdc"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:orientation="horizontal"
         >
     </LinearLayout>
@@ -62,8 +68,8 @@
             android:id="@+id/trade_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
             android:textColor="#000000"
             android:textSize="18dp"/>
 
@@ -73,15 +79,15 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="40dp"
-            android:textSize="20dp"
-            android:textColor="#ffa042"/>
+            android:textColor="#ffa042"
+            android:textSize="20dp"/>
 
         <TextView
             android:id="@+id/trade_prices2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="45dp"
             android:layout_toRightOf="@+id/trade_prices1"/>
 
         <Button
@@ -101,6 +107,8 @@
         android:id="@+id/ll1"
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_below="@+id/rl_buy"
         android:layout_marginTop="10dp"
         android:background="#e2dcdc"
@@ -122,38 +130,28 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:text="店铺信息"
-            android:textColor="#000000"/>
-
-        <LinearLayout
-            android:id="@+id/llname"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_below="@+id/name"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="2dp"
-            android:background="#e2dcdc"
-            android:orientation="horizontal"
-            >
-        </LinearLayout>
+            android:textColor="#000000"
+            android:textSize="18sp"/>
 
         <TextView
             android:id="@+id/trade_store_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/llname"
+            android:layout_below="@+id/name"
+            android:textColor="#383737"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
             android:text="asdafa"
-
-            android:textColor="#000000"/>
+            />
 
         <TextView
             android:id="@+id/trade_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/trade_store_name"
-
             android:layout_marginLeft="10dp"
+
+            android:layout_marginTop="5dp"
             android:text="12323"
             />
 
@@ -162,8 +160,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:background="@mipmap/phone"/>
+            android:layout_centerInParent="true"
+            android:layout_marginTop="35dp"
+            android:background="@mipmap/toright"/>
+
+        <LinearLayout
+            android:id="@+id/llname12"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/trade_location"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:background="#e2dcdc"
+            android:orientation="horizontal"
+            >
+        </LinearLayout>
+
+
     </RelativeLayout>
 
 
@@ -175,22 +189,30 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="商品信息"/>
+            android:layout_marginLeft="10dp"
+            android:text="商品信息"
+            android:textColor="#000000"
+            android:textSize="18sp"/>
+        <TextView
+            android:id="@+id/tv_trade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:text="asd"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
             android:background="#e2dcdc"
             android:orientation="horizontal"
             >
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/tv_trade"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="asd"/>
+
     </LinearLayout>
 
     <LinearLayout
@@ -201,35 +223,65 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="评论"/>
-
+            android:layout_marginLeft="10dp"
+            android:text="评论"
+            android:textColor="#000000"
+            android:textSize="18sp"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
             android:background="#e2dcdc"
             android:orientation="horizontal"
             >
         </LinearLayout>
 
         <RelativeLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="5dp"
+                android:src="@mipmap/loge"/>
 
         </RelativeLayout>
 
-
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableRight="@mipmap/toright"
-            android:gravity="center_vertical"
-            android:text="查看全部评价"
-            />
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:background="#e2dcdc"
+            android:orientation="horizontal"
+            >
+        </LinearLayout>
 
 
     </LinearLayout>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableRight="@mipmap/toright"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="10dp"
+        android:textColor="#000000"
+        android:text="查看全部评价"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="#e2dcdc"
+        android:orientation="horizontal"
+        >
+    </LinearLayout>
 
 </LinearLayout>

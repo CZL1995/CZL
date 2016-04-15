@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -15,29 +14,29 @@ import com.caozhiliang.main.R;
 
 
 public class Mine_person_addres extends Activity {
-    private Button bc;
-    private ImageButton fanhui;
+    private Button person_addres_add;
+    private TextView addres;
     private ListView lv_address;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mine_person_addres);
-        bc = (Button) findViewById(R.id.person_addres_add);
-        fanhui = (ImageButton) findViewById(R.id.person_addres_back);
+        person_addres_add = (Button) findViewById(R.id.person_addres_add);
+        addres = (TextView) findViewById(R.id.addres);
         lv_address = (ListView) findViewById(R.id.lv_address);
-        bc.setOnClickListener(new OnClickListener() {
-
+        person_addres_add.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(Mine_person_addres.this, Mine_person_addres_tianjia.class);
                 startActivity(intent);
+                Mine_person_addres.this.finish();
             }
         });
 
 
-        fanhui.setOnClickListener(new OnClickListener() {
+        addres.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View v) {

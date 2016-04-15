@@ -42,13 +42,6 @@ public class MainActivity extends BaseActivity {
                 init();
                 rb_my_home.performClick();
                 break;
-            case 2:
-                keyss = getIntent().getIntExtra("pos", 0);
-                System.out.println(keyss);
-                init();
-                rb_search.performClick();
-
-                break;
             default:
                 init();
                 rb_home.performClick();

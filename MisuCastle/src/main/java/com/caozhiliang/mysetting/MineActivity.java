@@ -49,7 +49,7 @@ public class MineActivity extends Fragment {
     item it4 = new item("新版本检测");
     item it5 = new item("我的蛋糕");
     item it6 = new item("我是商家");
-//    UserBean p;
+    //    UserBean p;
 
 
     Handler han = new Handler() {
@@ -70,7 +70,7 @@ public class MineActivity extends Fragment {
         SharedPreferences sp = getContext().getSharedPreferences("haha", Context.MODE_PRIVATE);
         a = sp.getString("name", "");
         imagepath = sp.getString("image", "");
-//        String phone = sp.getString("phone", "");
+        //        String phone = sp.getString("phone", "");
         if (a.equals("")) {
             txt.setText("点击登录");
         } else {
@@ -103,6 +103,7 @@ public class MineActivity extends Fragment {
                     MineActivity.this.startActivity(intent);
                     getActivity().finish();
                 }
+
             }
         });
 
@@ -136,8 +137,9 @@ public class MineActivity extends Fragment {
                     }
 
                 } else {
-                    Intent intent = new Intent(getContext(), Zhuce.class);
+                    Intent intent = new Intent(getContext(), Denglu.class);
                     MineActivity.this.startActivity(intent);
+                    getActivity().finish();
                 }
             }
         });
@@ -175,7 +177,16 @@ public class MineActivity extends Fragment {
                         InputStream in = con.getInputStream();
                         StreamTool st = new StreamTool();
                         byte[] data = st.read(in);
-                        Bitmap bit = BitmapFactory.decodeByteArray(data, 0, data.length);
+                        BitmapFactory.Options options = new BitmapFactory.Options();
+                        options.inJustDecodeBounds = true;
+                        Bitmap bit = BitmapFactory.decodeByteArray(data, 0, data.length, options);
+                        options.inJustDecodeBounds = false; //缩放比。由于是固定比例缩放，只用高或者宽其中一个数据进行计算即可
+                        int be = (int) (options.outHeight / (float) 320);
+                        if (be <= 0)
+                            be = 1;
+                        options.inSampleSize = be; //重新读入图片，注意此时已经把 options.inJustDecodeBounds 设回
+                        // false 了
+                        bit = BitmapFactory.decodeByteArray(data, 0, data.length, options);
                         Message mg = new Message();
                         mg.obj = bit;
                         han.sendMessage(mg);

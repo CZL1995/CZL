@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.caozhiliang.httpdata.FinalData;
@@ -25,7 +25,7 @@ import java.util.TimerTask;
 
 public class Mine_person_key extends Activity{
 	private Button bc;
-	private ImageButton fanhui;
+	private TextView newphone;
 	private EditText passworda,passwordb;
 	String passworgai;
 	private String a1;
@@ -40,7 +40,7 @@ public class Mine_person_key extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.mine_person_key);
 		bc=(Button) findViewById(R.id.passgai_button);
-		fanhui=(ImageButton) findViewById(R.id.person_key_back);
+		newphone= (TextView) findViewById(R.id.newphone);
 		passworda=(EditText) findViewById(R.id.password1);
 		passwordb=(EditText) findViewById(R.id.password2);
 		SharedPreferences sp=getApplication().getSharedPreferences("haha", MODE_PRIVATE);
@@ -61,7 +61,7 @@ public class Mine_person_key extends Activity{
 
 
 		//返回按钮
-		fanhui.setOnClickListener(new OnClickListener() {
+		newphone.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {

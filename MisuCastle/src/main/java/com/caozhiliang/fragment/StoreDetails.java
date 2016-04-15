@@ -1,9 +1,13 @@
 package com.caozhiliang.fragment;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Paint;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
@@ -52,10 +56,12 @@ public class StoreDetails extends BaseActivity {
     private TextView tv2;
     private TextView tv3;
     private TextView tv4;
+    private TextView phonenumber;
     private TextView tv_dianzan;
     private TextView location;
     private RatingBar store_ratingbar;
     private ImageView iv_dianzan;
+    private ImageView iv_back;
     private ImageView imageView;
     private ImageView toleft;
     private ImageView iv_phone;
@@ -91,7 +97,7 @@ public class StoreDetails extends BaseActivity {
     }
 
     private void initlistener() {
-        toleft.setOnClickListener(new View.OnClickListener() {
+        iv_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 StoreDetails.this.finish();
@@ -102,14 +108,35 @@ public class StoreDetails extends BaseActivity {
         lv_store_details.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent=new Intent();
-                intent.setClass(getApplicationContext(),TradeDetails.class);
-                intent.putExtra("trade", tradedata.get(position - 1).getNumber());
-                System.out.println(tradedata.get(position - 1).getNumber());
-                startActivity(intent);
+
+                if (position<(tradedata.size()+1)) {
+                    Intent intent = new Intent();
+                    intent.setClass(getApplicationContext(), TradeDetails.class);
+                    intent.putExtra("trade", tradedata.get(position - 1).getNumber());
+                    System.out.println(tradedata.get(position - 1).getNumber());
+                    startActivity(intent);
+                }
+
             }
         });
+        iv_phone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                Uri data = Uri.parse("tel:" + storedata.getPhone());
+                intent.setData(data);
 
+                if (ActivityCompat.checkSelfPermission(StoreDetails.this, Manifest.permission
+                        .CALL_PHONE) !=
+                        PackageManager.PERMISSION_GRANTED) {
+
+                    return;
+                }
+                startActivity(intent);
+
+
+            }
+        });
 
     }
 
@@ -117,11 +144,6 @@ public class StoreDetails extends BaseActivity {
 
         if (keyCode == KeyEvent.KEYCODE_BACK
                 && event.getRepeatCount() == 0) {
-//            Intent intent = new Intent();
-//            intent.setClass(getApplicationContext(), MainActivity.class);
-//            intent.putExtra("id", 2);
-//            intent.putExtra("id", "s");
-//            startActivity(intent);
             StoreDetails.this.finish();
 
             return true;
@@ -130,12 +152,13 @@ public class StoreDetails extends BaseActivity {
     }
 
 
-
     private void initview() {
+        iv_back = (ImageView) findViewById(R.id.iv_back);
         lv_store_details = (ListView) findViewById(R.id.lv_store_details);
         headview = View.inflate(getApplicationContext(), R.layout.store_details_heardview, null);
         iv_homepage_viewpager = (ViewPager) headview.findViewById(R.id.iv_homepage_viewpager);
         tv_name = (TextView) headview.findViewById(R.id.tv_name);
+        phonenumber = (TextView)headview.findViewById(R.id.phonenumber);
         location = (TextView) headview.findViewById(R.id.location);
         tv_rank = (TextView) headview.findViewById(R.id.tv_rank);
         tv_dianzan = (TextView) headview.findViewById(R.id.tv_dianzan);
@@ -145,6 +168,7 @@ public class StoreDetails extends BaseActivity {
         store_ratingbar = (RatingBar) headview.findViewById(R.id.ratingbar_Small);
         lv_store_details.addHeaderView(headview);
         footview = View.inflate(getApplicationContext(), R.layout.store_details_footview, null);
+        //        footview.setEnabled(false);
         tv2 = (TextView) footview.findViewById(R.id.tv2);
         tv3 = (TextView) footview.findViewById(R.id.tv3);
         tv4 = (TextView) footview.findViewById(R.id.tv4);
@@ -266,9 +290,10 @@ public class StoreDetails extends BaseActivity {
         tv_name.setText(storedata.getName());
         tv_rank.setText(storedata.getXingpj());
         tv_dianzan.setText(storedata.getXfrenshu());
-        tv2.setText("营业时间："+storedata.getTime());
-        tv3.setText("门店服务："+storedata.getFuwu());
-        tv4.setText("门店介绍："+storedata.getXiangq());
+        phonenumber.setText("联系电话："+storedata.getPhone());
+        tv2.setText("营业时间：" + storedata.getTime());
+        tv3.setText("门店服务：" + storedata.getFuwu());
+        tv4.setText("门店介绍：" + storedata.getXiangq());
 
     }
 

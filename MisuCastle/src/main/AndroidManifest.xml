@@ -4,6 +4,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
 
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
     <!-- 这个权限用于进行网络定位 -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
@@ -58,7 +60,9 @@
         <activity android:name="com.caozhiliang.mysetting.Zhuce"/>
         <activity android:name="com.caozhiliang.mysetting.Denglu"/>
         <activity android:name="com.caozhiliang.fragment.StoreDetails"/>
+        <activity android:name="com.caozhiliang.fragment.StoreDetailsTrade"/>
         <activity android:name="com.caozhiliang.fragment.TradeDetails"/>
+        <activity android:name="com.caozhiliang.fragment.TradeDetailStore"/>
         <activity android:name="com.caozhiliang.location.ActivitySelectCity">
 
         </activity>

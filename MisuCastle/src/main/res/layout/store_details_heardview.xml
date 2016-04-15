@@ -17,6 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:src="@mipmap/toleftblack"/>
+
     <TextView
         android:id="@+id/tv_name"
         android:layout_width="wrap_content"
@@ -56,25 +57,25 @@
         android:gravity="center"
         android:text="3.5"
         android:textColor="#000000"/>
+
     <ImageView
         android:id="@+id/iv_dianzan"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_alignParentRight="true"
+        android:layout_below="@+id/iv_homepage_viewpager"
         android:layout_margin="10dp"
         android:layout_marginTop="15dp"
-        android:layout_below="@+id/iv_homepage_viewpager"
         android:src="@mipmap/dianzana"/>
 
     <TextView
         android:id="@+id/tv_dianzan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
         android:layout_below="@+id/iv_homepage_viewpager"
+        android:layout_marginTop="15dp"
         android:layout_toLeftOf="@+id/iv_dianzan"
         />
-
 
 
     <LinearLayout
@@ -87,6 +88,7 @@
         android:orientation="horizontal"
         >
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/ll1"
         android:layout_width="match_parent"
@@ -111,14 +113,24 @@
             android:layout_toLeftOf="@+id/iv_phone"
             android:drawableLeft="@mipmap/location"
             android:gravity="center_vertical"
-            android:textColor="#000000"
-            android:text="12323"/>
+            android:text="12323"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:id="@+id/phonenumber"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/location"
+            android:text="电话"/>
+
 
         <ImageView
             android:id="@+id/iv_phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
             android:background="@mipmap/phone"/>
     </RelativeLayout>
 </RelativeLayout>

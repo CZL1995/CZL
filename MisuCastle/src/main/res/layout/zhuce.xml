@@ -1,195 +1,190 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#FFEEDD"
-    android:orientation="vertical" >
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#FFEEDD"
+              android:orientation="vertical">
 
-  <LinearLayout
-      android:layout_width="fill_parent"
-      android:layout_height="wrap_content"
-      android:gravity="center_vertical"
-      android:background="#FFA042"
-      android:orientation="horizontal" >
-
-      <ImageButton
-          android:id="@+id/fanhui"
-          android:layout_width="48dp"
-          android:layout_height="48dp"
-          android:background="@mipmap/fh" />
-
-     <TextView
-         android:id="@+id/textView2"
-         android:layout_width="match_parent"
-         android:layout_height="38dp"
-         android:gravity="center"
-         android:text="AppName"
-         android:textColorLink="#ffffff"
-         android:textSize="20sp" />
-
-   </LinearLayout>
-   
-   <LinearLayout
-       android:id="@+id/signRel"
-       android:orientation="vertical"
-       android:layout_width="fill_parent"
-       android:layout_height="fill_parent"
-        >
-
-     <LinearLayout
-         android:id="@+id/signRel1"
-         android:layout_width="fill_parent"
-         android:layout_height="0dp"
-         android:layout_gravity="center"
-         android:layout_weight="2"
-         android:orientation="vertical" >
-
-  <Button
-      android:id="@+id/button1"
-      android:layout_width="75dp"
-      android:layout_height="75dp"
-      android:layout_alignParentTop="true"
-      android:layout_centerHorizontal="true"
-      android:layout_gravity="center"
-      android:layout_marginTop="16dp"
-      android:background="@mipmap/tx" />
-
-  </LinearLayout>
-
-     <RelativeLayout
-         android:id="@+id/sign_acc"
-         android:layout_width="fill_parent"
-         android:layout_height="0dp"
-         android:layout_weight="1"
-         android:clickable="true"
-         android:gravity="center_vertical"
-         android:padding="5dp" >
-
-      <ImageView 
-         android:layout_width="30dp"  
-         android:layout_height="30dp"
-         android:layout_marginLeft="10dp"
-         android:src="@mipmap/yh"/>
-
-        <EditText
-            android:id="@+id/sign_text"
-            android:layout_width="fill_parent"
-            android:layout_height="40dp"
-            android:layout_alignParentTop="true"
-            android:background="@null"
-            android:ems="10"
-            android:layout_marginLeft="45dp"
-            android:textColorHint="#bebebe"
-            android:hint="@string/account02"
-            android:textSize="15sp" />   
-    </RelativeLayout>
-    
-   <RelativeLayout
-       android:id="@+id/sign_pwd1"
-       android:layout_width="fill_parent"
-       android:layout_height="0dp"
-       android:layout_below="@id/sign_acc"
-       android:layout_weight="1"
-       android:gravity="center_vertical"
-       android:padding="5dp" >
-
-    <ImageView 
-         android:layout_width="30dp"  
-         android:layout_height="30dp"
-         android:layout_marginLeft="10dp"
-         android:src="@mipmap/suo"/>
-      <EditText  
-         android:id="@+id/pwd1"  
-         android:layout_width="fill_parent"  
-         android:layout_height="40dp"  
-          android:inputType="textPassword" 
-         android:layout_alignParentTop="true" 
-         android:background="@null"  
-         android:textColorHint="#bebebe"
-         android:layout_marginLeft="45dp"
-         android:hint="@string/Pwd"  
-         android:textSize="15sp" />      
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/sign_pwd2"
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_below="@id/sign_pwd1"
-        android:layout_weight="1"
-        android:clickable="true"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFA042"
         android:gravity="center_vertical"
-        android:padding="5dp" >
+        android:orientation="horizontal">
 
-   <ImageView
-       android:layout_width="30dp"
-       android:layout_height="30dp"
-       android:layout_marginLeft="10dp"
-       android:src="@mipmap/suo" />
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:drawableLeft="@mipmap/toleft"
+            android:layout_marginRight="32dp"
+            android:gravity="center"
+            android:text="AppName"
+            android:textColorLink="#ffffff"
+            android:textSize="20sp"/>
 
-      <EditText  
-         android:id="@+id/pwd2"  
-         android:layout_width="fill_parent"  
-         android:layout_height="40dp"  
-          android:inputType="textPassword" 
-         android:layout_alignParentTop="true" 
-         android:background="@null"  
-         android:textColorHint="#bebebe"
-         android:layout_marginLeft="45dp"
-         android:hint="请再次输入密码"  
-         android:textSize="15sp" />      
-    </RelativeLayout>
- 
-   <LinearLayout
-       android:layout_width="fill_parent"
-       android:layout_height="0dp"
-       android:layout_weight="3"
-       android:gravity="center_vertical"
-       android:orientation="vertical" >
-
-   <LinearLayout
-       android:layout_width="fill_parent"
-       android:layout_height="0dp"
-       android:layout_weight="2"
-       android:gravity="center_vertical"
-       android:orientation="vertical" >
-   
-   <Button
-       android:id="@+id/btn_zhuce"
-       android:layout_width="match_parent"
-       android:layout_height="40dp"
-       android:layout_marginLeft="10dp"
-       android:layout_marginRight="10dp"
-       android:onClick="true"
-       android:text="@string/login1" />
     </LinearLayout>
 
-<LinearLayout
-    android:layout_width="fill_parent"
-    android:layout_height="0dp"
-    android:layout_gravity="top"
-    android:layout_weight="2"
-    android:gravity="center_vertical"
-    android:orientation="vertical" >
-   
-   <RadioGroup
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_gravity="top" >
+    <LinearLayout
+        android:id="@+id/signRel"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        >
 
-    <CheckBox
-        android:id="@+id/checkbox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/ck1"
-        android:textColor="#5C3317"
-        android:textSize="15sp" />
+        <LinearLayout
+            android:id="@+id/signRel1"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:orientation="vertical">
 
-</RadioGroup>
-</LinearLayout>
-</LinearLayout> 
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:background="@mipmap/tx"/>
 
-  
-</LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/sign_acc"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:padding="5dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/yh"/>
+
+            <EditText
+                android:id="@+id/sign_text"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="45dp"
+                android:background="@null"
+                android:ems="10"
+                android:hint="@string/account02"
+                android:textColorHint="#bebebe"
+                android:textSize="15sp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/sign_pwd1"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_below="@id/sign_acc"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:padding="5dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/suo"/>
+
+            <EditText
+                android:id="@+id/pwd1"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="45dp"
+                android:background="@null"
+                android:hint="@string/Pwd"
+                android:inputType="textPassword"
+                android:textColorHint="#bebebe"
+                android:textSize="15sp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/sign_pwd2"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_below="@id/sign_pwd1"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:padding="5dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/suo"/>
+
+            <EditText
+                android:id="@+id/pwd2"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="45dp"
+                android:background="@null"
+                android:hint="请再次输入密码"
+                android:inputType="textPassword"
+                android:textColorHint="#bebebe"
+                android:textSize="15sp"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btn_zhuce"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:onClick="true"
+                    android:text="@string/login1"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="top"
+                android:layout_weight="2"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top">
+
+                    <CheckBox
+                        android:id="@+id/checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/ck1"
+                        android:textColor="#5C3317"
+                        android:textSize="15sp"/>
+
+                </RadioGroup>
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
 </LinearLayout>

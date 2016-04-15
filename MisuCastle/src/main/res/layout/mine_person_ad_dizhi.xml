@@ -1,229 +1,252 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#ffeedd" >
-<LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#ffeedd"
+              android:orientation="vertical">
+
+    <LinearLayout
         android:id="@+id/title"
         android:layout_width="fill_parent"
         android:layout_height="45dp"
         android:background="#FFA042"
         android:gravity="center_vertical"
-        android:orientation="horizontal" >
-
-    <RelativeLayout
-        android:id="@+id/dizhi"
-        android:layout_width="fill_parent"
-        android:layout_height="45dp"
-        android:background="#FFA042"
-        android:gravity="center_vertical"
-        android:orientation="horizontal" >
-
-        <ImageButton
-            android:id="@+id/person_addres_back"
-            android:layout_width="50dp"
-            android:layout_height="fill_parent"
-            android:layout_gravity="center"
-            android:background="@mipmap/back" />
-
-        <TextView 
-            android:id="@+id/newaa"
-            android:layout_width="fill_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="新增地址"
-            android:textColorLink="#ffffff"
-            android:textSize="20sp" />
-    </RelativeLayout>
-
-    <ImageButton
-         android:id="@+id/fanhui"
-         android:layout_width="40dp"
-         android:layout_height="match_parent"
-         android:src="@mipmap/fh" />
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/tv1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="left"
-            android:layout_marginLeft="40sp"
+            android:layout_marginRight="30dp"
+            android:drawableLeft="@mipmap/toleft"
             android:gravity="center"
             android:text="新增地址"
             android:textColorLink="#ffffff"
-            android:textSize="20sp" />
-   </LinearLayout> 
-   
-  <RelativeLayout 
-      android:id="@+id/tjRel"  
-      android:layout_width="fill_parent"  
-      android:layout_height="wrap_content">
-     <RelativeLayout 
-        android:id="@+id/name_acc"  
-        android:layout_width="fill_parent"  
-        android:layout_height="wrap_content" 
-        android:layout_marginTop="25dp"  
-        android:clickable="true"  
-        android:gravity="center_vertical">
+            android:textSize="20sp"/>
+    </LinearLayout>
 
-    <TextView  
-        android:id="@+id/shouhuo"  
-        android:layout_width="wrap_content"  
-        android:layout_height="wrap_content"  
-        android:padding="8dp"  
-        android:text="收货人"  
-        android:textColor="#000"  
-        android:textSize="17sp" />  
-  
-     <EditText  
-        android:id="@+id/shouhuotext"  
-        android:layout_width="fill_parent"  
-        android:layout_height="wrap_content"  
-        android:layout_centerVertical="true"  
-        android:layout_marginLeft="20dip"  
-        android:layout_toRightOf="@id/shouhuo"  
-        android:background="@null" 
-        android:textColorHint="#bebebe" 
-        android:hint="姓名"  
-        android:textSize="15sp" />   
-    </RelativeLayout>
-    
-  <RelativeLayout 
-        android:id="@+id/number_acc"  
-        android:layout_width="fill_parent"  
-        android:layout_height="wrap_content" 
-        android:layout_marginTop="5dp" 
-        android:layout_below="@id/name_acc" 
-        android:clickable="true"  
-        android:gravity="center_vertical">
+    <RelativeLayout
+        android:id="@+id/tjRel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
 
-    <TextView  
-        android:id="@+id/shouji"  
-        android:layout_width="wrap_content"  
-        android:layout_height="wrap_content"  
-        android:padding="8dp"  
-        android:text="手机号码"  
-        android:textColor="#000"  
-        android:textSize="17sp" />  
-  
-     <EditText  
-        android:id="@+id/sjtext"  
-        android:layout_width="fill_parent"  
-        android:layout_height="wrap_content"  
-        android:layout_centerVertical="true"  
-        android:layout_marginLeft="20dip"  
-        android:layout_toRightOf="@id/shouji"  
-        android:background="@null" 
-        android:textColorHint="#bebebe" 
-        android:hint="11位手机号"  
-        android:textSize="15sp" />   
-    </RelativeLayout>
-  
-    <RelativeLayout 
-        android:id="@+id/xinxi"  
-        android:layout_width="fill_parent"  
-        android:layout_height="wrap_content" 
-        android:layout_marginTop="5dp" 
-        android:layout_below="@id/number_acc" 
-        android:clickable="true"  
-        android:gravity="center_vertical">
+        <RelativeLayout
+            android:id="@+id/name_acc"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:gravity="center_vertical">
 
-    <TextView  
-        android:id="@+id/xx"  
-        android:layout_width="wrap_content"  
-        android:layout_height="wrap_content"  
-        android:padding="8dp"  
-        android:text="地区信息"  
-        android:textColor="#000"  
-        android:textSize="17sp" />  
-  
-     <EditText  
-        android:id="@+id/xxtext"  
-        android:layout_width="fill_parent"  
-        android:layout_height="wrap_content"  
-        android:layout_centerVertical="true"  
-        android:layout_marginLeft="20dip"  
-        android:layout_toRightOf="@id/xx"  
-        android:background="@null" 
-        android:textColorHint="#bebebe" 
-        android:hint="地区信息"  
-        android:textSize="15sp" />   
-    </RelativeLayout>
-    
-    <RelativeLayout 
-        android:id="@+id/xiangxi_acc"  
-        android:layout_width="fill_parent"  
-        android:layout_height="wrap_content" 
-        android:layout_marginTop="5dp" 
-        android:layout_below="@id/xinxi" 
-        android:clickable="true"  
-        android:gravity="center_vertical">
+            <TextView
+                android:id="@+id/shouhuo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="收货人"
+                android:textColor="#000"
+                android:textSize="17sp"/>
 
-    <TextView  
-        android:id="@+id/dizhi1"  
-        android:layout_width="wrap_content"  
-        android:layout_height="wrap_content"  
-        android:padding="8dp"  
-        android:text="详细地址"  
-        android:textColor="#000"  
-        android:textSize="17sp" />  
-  
-     <EditText  
-        android:id="@+id/dztext"  
-        android:layout_width="fill_parent"  
-        android:layout_height="wrap_content"  
-        android:layout_centerVertical="true"  
-        android:layout_marginLeft="20dip"  
-        android:layout_toRightOf="@id/dizhi1"  
-        android:background="@null" 
-        android:textColorHint="#bebebe" 
-        android:hint="街道门牌信息"  
-        android:textSize="15sp" />   
-    </RelativeLayout>
-    
-    <RelativeLayout 
-        android:id="@+id/code_acc"  
-        android:layout_width="fill_parent"  
-        android:layout_height="wrap_content" 
-        android:layout_marginTop="5dp" 
-        android:layout_below="@id/xiangxi_acc" 
-        android:clickable="true"  
-        android:gravity="center_vertical">
+            <EditText
+                android:id="@+id/shouhuotext"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dip"
+                android:layout_toRightOf="@id/shouhuo"
+                android:background="@null"
+                android:hint="姓名"
+                android:textColorHint="#bebebe"
+                android:textSize="15sp"/>
+        </RelativeLayout>
 
-    <TextView  
-        android:id="@+id/code"  
-        android:layout_width="wrap_content"  
-        android:layout_height="wrap_content"  
-        android:padding="8dp"  
-        android:text="邮政编码"  
-        android:textColor="#000"  
-        android:textSize="17sp" />  
-  
-     <EditText  
-        android:id="@+id/yztext"  
-        android:layout_width="fill_parent"  
-        android:layout_height="wrap_content"  
-        android:layout_centerVertical="true"  
-        android:layout_marginLeft="20dip"  
-        android:layout_toRightOf="@id/code"  
-        android:background="@null" 
-        android:textColorHint="#bebebe" 
-        android:hint="邮政编码"  
-        android:textSize="15sp" />   
+        <RelativeLayout
+            android:id="@+id/number_acc"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name_acc"
+            android:layout_marginTop="5dp"
+            >
+
+            <TextView
+                android:id="@+id/shouji"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="手机号码"
+                android:textColor="#000"
+                android:textSize="17sp"/>
+
+            <EditText
+                android:id="@+id/sjtext"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dip"
+                android:layout_toRightOf="@id/shouji"
+                android:background="@null"
+                android:hint="11位手机号"
+                android:textColorHint="#bebebe"
+                android:textSize="15sp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/shengf1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/number_acc"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/shengf2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="所在省份"
+                android:textColor="#000"
+                android:textSize="17sp"/>
+
+            <EditText
+                android:id="@+id/shengf"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dip"
+                android:layout_toRightOf="@id/shengf2"
+                android:background="@null"
+                android:hint="所在省份"
+                android:textColorHint="#bebebe"
+                android:textSize="15sp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/chengs1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/shengf1"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/chengs2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="所在城市"
+                android:textColor="#000"
+                android:textSize="17sp"/>
+
+            <EditText
+                android:id="@+id/chengs"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dip"
+                android:layout_toRightOf="@id/chengs2"
+                android:background="@null"
+                android:hint="所在城市"
+                android:textColorHint="#bebebe"
+                android:textSize="15sp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/xianc1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/chengs1"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/xianc2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="所在县城"
+                android:textColor="#000"
+                android:textSize="17sp"/>
+
+            <EditText
+                android:id="@+id/xianc"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dip"
+                android:layout_toRightOf="@id/xianc2"
+                android:background="@null"
+                android:hint="所在县城"
+                android:textColorHint="#bebebe"
+                android:textSize="15sp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/xiangxi_acc"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/xianc1"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/dizhi1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="详细地址"
+                android:textColor="#000"
+                android:textSize="17sp"/>
+
+            <EditText
+                android:id="@+id/dztext"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dip"
+                android:layout_toRightOf="@id/dizhi1"
+                android:background="@null"
+                android:hint="街道门牌信息"
+                android:textColorHint="#bebebe"
+                android:textSize="15sp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/code_acc"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/xiangxi_acc"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="邮政编码"
+                android:textColor="#000"
+                android:textSize="17sp"/>
+
+            <EditText
+                android:id="@+id/yztext"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dip"
+                android:layout_toRightOf="@id/code"
+                android:background="@null"
+                android:hint="邮政编码"
+                android:textColorHint="#bebebe"
+                android:textSize="15sp"/>
+        </RelativeLayout>
     </RelativeLayout>
- </RelativeLayout>
- 
+
     <Button
-      android:id="@+id/btn12"
-      android:layout_width="fill_parent"
-      android:layout_height="40dp"
-      android:layout_marginLeft="15dp"
-      android:layout_marginRight="15dp"
-      android:layout_marginTop="20dp"
-      android:background="@drawable/round"
-      android:onClick="true"
-      android:text="保存"
-      android:textColor="#330000" />
+        android:id="@+id/btn12"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="20dp"
+        android:text="保存"
+        android:textColor="#330000"/>
 </LinearLayout>

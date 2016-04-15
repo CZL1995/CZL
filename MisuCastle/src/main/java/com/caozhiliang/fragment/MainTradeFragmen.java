@@ -1,10 +1,12 @@
 package com.caozhiliang.fragment;
 
+import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.RatingBar;
@@ -80,6 +82,18 @@ public class MainTradeFragmen extends BaseFragment {
 
         mBundle = getArguments();
         mBundle.getString("arg");
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent();
+                intent.setClass(getContext(), TradeDetailStore.class);
+                intent.putExtra("id", list.get(position - 1).getNumber());
+                startActivity(intent);
+            }
+        });
+
+
+
         getServerData();
 
         return view;
