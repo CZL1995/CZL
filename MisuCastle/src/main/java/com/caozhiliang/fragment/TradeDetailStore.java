@@ -9,6 +9,7 @@ import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -44,11 +45,10 @@ public class TradeDetailStore extends BaseActivity {
     private TextView trade_prices2;
     private RelativeLayout rl;
     private TextView tv_trade;
+    private Button bt_buy;
     private ImageView imageView;
     private ImageView iv_back;
     int length;
-
-
     private Handler handler = new Handler() {
         public void handleMessage(android.os.Message msg) {
 
@@ -83,13 +83,24 @@ public class TradeDetailStore extends BaseActivity {
         rl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent();
-                intent.setClass(TradeDetailStore.this,StoreDetailsTrade.class);
+                Intent intent = new Intent();
+                intent.setClass(TradeDetailStore.this, StoreDetailsTrade.class);
                 intent.putExtra("id", tradedata.getStoreNumber());
                 startActivity(intent);
             }
         });
-
+        bt_buy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(TradeDetailStore.this, Order.class);
+                intent.putExtra("imageaddress", imagedata.get(0).getImageaddress());
+                intent.putExtra("tradepricess", tradedata.getPrice1());
+                intent.putExtra("tradename", tradedata.getStorename());
+                intent.putExtra("tradenumber", tradedata.getNumber());
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -102,9 +113,11 @@ public class TradeDetailStore extends BaseActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
+
     private void initview() {
         iv_back = (ImageView) findViewById(R.id.iv_back);
-        rl = (RelativeLayout)findViewById(R.id.rl);
+        rl = (RelativeLayout) findViewById(R.id.rl);
+        bt_buy = (Button) findViewById(R.id.bt_buy);
         iv_homepage_viewpager = (ViewPager) findViewById(R.id.iv_homepage_viewpager);
         trade_name = (TextView) findViewById(R.id.trade_name);
         trade_store_name = (TextView) findViewById(R.id.trade_store_name);
@@ -126,8 +139,8 @@ public class TradeDetailStore extends BaseActivity {
                 trade_name.setText(tradedata.getStorename());
                 trade_store_name.setText(tradedata.getStorenamezheng());
                 trade_location.setText(tradedata.getAddress());
-                trade_prices1.setText(tradedata.getPrice1());
-                trade_prices2.setText(tradedata.getPrice2());
+                trade_prices1.setText("¥"+tradedata.getPrice1());
+                trade_prices2.setText("¥"+tradedata.getPrice2());
                 trade_prices2.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
                 tv_trade.setText(tradedata.getJianjie());
             }
@@ -213,6 +226,7 @@ public class TradeDetailStore extends BaseActivity {
             imageView = new ImageView(getApplicationContext());
             imageView.setScaleType(ImageView.ScaleType.FIT_XY);
             imageView.setImageResource(R.mipmap.loge);
+
             x.image().bind(imageView, imagedata.get(position % length).getImageaddress());
             container.addView(imageView);
             return imageView;

@@ -121,8 +121,8 @@ public class TradeDetails extends BaseActivity {
                 trade_name.setText(tradedata.getStorename());
                 trade_store_name.setText(tradedata.getStorenamezheng());
                 trade_location.setText(tradedata.getAddress());
-                trade_prices1.setText(tradedata.getPrice1());
-                trade_prices2.setText(tradedata.getPrice2());
+                trade_prices1.setText("¥"+tradedata.getPrice1());
+                trade_prices2.setText("¥"+tradedata.getPrice2());
                 trade_prices2.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
                 tv_trade.setText(tradedata.getJianjie());
             }

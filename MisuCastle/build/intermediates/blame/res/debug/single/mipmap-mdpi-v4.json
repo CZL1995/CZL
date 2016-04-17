@@ -76,12 +76,12 @@
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\search_up.png"
     },
     {
-        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\home_tian2.png",
-        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\home_tian2.png"
-    },
-    {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\myhomeheardview.png",
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\myhomeheardview.png"
+    },
+    {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\home_tian2.png",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\home_tian2.png"
     },
     {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\location_up.png",
@@ -100,12 +100,20 @@
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\map_zan.png"
     },
     {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\decrease.png",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\decrease.png"
+    },
+    {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\index_button_ch_05.png",
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\index_button_ch_05.png"
     },
     {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\dianzan.png",
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\dianzan.png"
+    },
+    {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\increase.png",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\increase.png"
     },
     {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\phone.png",

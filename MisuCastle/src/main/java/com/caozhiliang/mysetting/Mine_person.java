@@ -90,9 +90,7 @@ public class Mine_person extends Activity {
         setContentView(R.layout.mine_person);
         ziliao1 = (TextView) findViewById(R.id.ziliao);
         tuichu = (Button) findViewById(R.id.tuichu_button);
-
         SharedPreferences sp = getApplication().getSharedPreferences("haha", MODE_PRIVATE);
-        //chuan();
         tuichu.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -237,6 +235,7 @@ public class Mine_person extends Activity {
                                     int position, long id) {
                 // TODO Auto-generated method stub
                 Intent intent = new Intent(Mine_person.this, Mine_person_addres.class);
+//                intent.putExtra("number",);
                 Mine_person.this.startActivity(intent);
                 Mine_person.this.finish();
             }

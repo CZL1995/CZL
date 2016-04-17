@@ -97,12 +97,26 @@ public class Mine_person_addres_tianjia extends Activity {
         try {
             mshouhuotext = URLEncoder.encode(mshouhuotext, "UTF-8");
             mshouhuotext = URLEncoder.encode(mshouhuotext, "UTF-8");
+            msjtext = URLEncoder.encode(msjtext, "UTF-8");
+            msjtext = URLEncoder.encode(msjtext, "UTF-8");
+            mchengs = URLEncoder.encode(mchengs, "UTF-8");
+            mchengs = URLEncoder.encode(mchengs, "UTF-8");
+            mshengf = URLEncoder.encode(mshengf, "UTF-8");
+            mshengf = URLEncoder.encode(mshengf, "UTF-8");
+            mxianc = URLEncoder.encode(mxianc, "UTF-8");
+            mxianc = URLEncoder.encode(mxianc, "UTF-8");
+            mdztext = URLEncoder.encode(mdztext, "UTF-8");
+            mdztext = URLEncoder.encode(mdztext, "UTF-8");
+            myztext = URLEncoder.encode(myztext, "UTF-8");
+            myztext = URLEncoder.encode(myztext, "UTF-8");
+
+
         } catch (Exception e) {
         }
         RequestParams params = new RequestParams(path + "/AddressServlet?pan=tian&bianh=" + bianh +
-                "&name=" + mshouhuotext + "&phone=" + msjtext + "&shengf=" + mchengs + "&chengs=" +
-                mxianc +
-                "&xianc=" + mdztext + "&xiangq=" +
+                "&name=" + mshouhuotext + "&phone=" + msjtext + "&shengf=" + mshengf + "&chengs=" +
+                mchengs +
+                "&xianc=" + mxianc + "&xiangq=" +mdztext+
                 "&youbian=" + myztext);
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
@@ -113,7 +127,7 @@ public class Mine_person_addres_tianjia extends Activity {
                             Mine_person_addres.class);
                     Mine_person_addres_tianjia.this.startActivity(intent);
                     Mine_person_addres_tianjia.this.finish();
-                }else{
+                } else {
                     System.out.println("返回值错误");
                 }
 

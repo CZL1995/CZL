@@ -60,6 +60,7 @@
         <activity android:name="com.caozhiliang.mysetting.Zhuce"/>
         <activity android:name="com.caozhiliang.mysetting.Denglu"/>
         <activity android:name="com.caozhiliang.fragment.StoreDetails"/>
+        <activity android:name="com.caozhiliang.fragment.Order"/>
         <activity android:name="com.caozhiliang.fragment.StoreDetailsTrade"/>
         <activity android:name="com.caozhiliang.fragment.TradeDetails"/>
         <activity android:name="com.caozhiliang.fragment.TradeDetailStore"/>
