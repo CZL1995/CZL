@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:2:1-83:12
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:2:1-85:12
 	package
 		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:3:5-35
 		INJECTED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml
@@ -62,7 +62,7 @@ ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:25
 	android:name
 		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:25:22-77
 application
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:27:5-81:19
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:27:5-83:19
 MERGED from [org.xutils:xutils:3.3.22] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\org.xutils\xutils\3.3.22\AndroidManifest.xml:12:5-20
 MERGED from [com.android.support:appcompat-v7:23.1.1] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.1.1] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
@@ -172,27 +172,35 @@ activity#com.caozhiliang.fragment.TradeDetails
 ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:65:9-73
 	android:name
 		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:65:19-71
+activity#com.caozhiliang.fragment.PayMent
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:66:9-68
+	android:name
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:66:19-66
+activity#com.caozhiliang.fragment.Order_person_addres
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:67:9-80
+	android:name
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:67:19-78
 activity#com.caozhiliang.fragment.TradeDetailStore
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:66:9-77
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:68:9-77
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:66:19-75
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:68:19-75
 activity#com.caozhiliang.location.ActivitySelectCity
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:67:9-69:20
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:69:9-71:20
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:67:19-77
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:69:19-77
 meta-data#com.google.android.gms.version
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:74:9-76:68
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:76:9-78:68
 MERGED from [com.google.android.gms:play-services-basement:8.1.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
 	android:value
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:76:13-66
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:78:13-66
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:75:13-58
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:77:13-58
 meta-data#com.baidu.lbsapi.API_KEY
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:77:9-79:63
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:79:9-81:63
 	android:value
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:79:13-61
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:81:13-61
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:78:13-52
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:80:13-52
 uses-sdk
 INJECTED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [org.xutils:xutils:3.3.22] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\org.xutils\xutils\3.3.22\AndroidManifest.xml:8:5-10:41

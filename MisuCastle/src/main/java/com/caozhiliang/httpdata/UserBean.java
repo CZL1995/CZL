@@ -4,6 +4,31 @@ public class UserBean {
 	String name;
 	String phone;
 	String key;
+	String usernumber;
+
+	public String getUsernumber() {
+		return usernumber;
+	}
+
+	public void setUsernumber(String usernumber) {
+		this.usernumber = usernumber;
+	}
+
+	@Override
+	public String toString() {
+		return "UserBean{" +
+				"name='" + name + '\'' +
+				", phone='" + phone + '\'' +
+				", key='" + key + '\'' +
+				", usernumber='" + usernumber + '\'' +
+				", shoucan='" + shoucan + '\'' +
+				", address='" + address + '\'' +
+				", chat='" + chat + '\'' +
+				", comment='" + comment + '\'' +
+				", image='" + image + '\'' +
+				'}';
+	}
+
 	String shoucan;
 	String address;
 	String chat;

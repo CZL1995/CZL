@@ -1,6 +1,7 @@
 package com.caozhiliang.fragment;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.os.Handler;
@@ -92,13 +93,18 @@ public class TradeDetailStore extends BaseActivity {
         bt_buy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                SharedPreferences sp = getApplication().getSharedPreferences("haha",
+                        MODE_PRIVATE);
+                SharedPreferences.Editor edt = sp.edit();
+                edt.putString("imageaddress", imagedata.get(0).getImageaddress());
+                edt.putString("tradepricess", tradedata.getPrice1());
+                edt.putString("tradename", tradedata.getStorename());
+                String number = String.valueOf(tradedata.getNumber());
+                edt.putString("tradenumber", number);
+                edt.commit();
                 Intent intent = new Intent();
                 intent.setClass(TradeDetailStore.this, Order.class);
-                intent.putExtra("imageaddress", imagedata.get(0).getImageaddress());
-                intent.putExtra("tradepricess", tradedata.getPrice1());
-                intent.putExtra("tradename", tradedata.getStorename());
-                String number= String.valueOf(tradedata.getNumber());
-                intent.putExtra("tradenumber", number);
                 startActivity(intent);
             }
         });

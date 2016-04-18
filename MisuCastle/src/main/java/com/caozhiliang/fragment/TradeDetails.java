@@ -1,6 +1,7 @@
 package com.caozhiliang.fragment;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.os.Handler;
@@ -92,13 +93,17 @@ public class TradeDetails extends BaseActivity {
         bt_buy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SharedPreferences sp = getApplication().getSharedPreferences("haha",
+                        MODE_PRIVATE);
+                SharedPreferences.Editor edt = sp.edit();
+                edt.putString("imageaddress", imagedata.get(0).getImageaddress());
+                edt.putString("tradepricess", tradedata.getPrice1());
+                edt.putString("tradename", tradedata.getStorename());
+                String number = String.valueOf(tradedata.getNumber());
+                edt.putString("tradenumber", number);
+                edt.commit();
                 Intent intent = new Intent();
                 intent.setClass(TradeDetails.this, Order.class);
-                intent.putExtra("imageaddress", imagedata.get(0).getImageaddress());
-                intent.putExtra("tradepricess", tradedata.getPrice1());
-                intent.putExtra("tradename", tradedata.getStorename());
-                String number= String.valueOf(tradedata.getNumber());
-                intent.putExtra("tradenumber",number);
                 startActivity(intent);
             }
         });
@@ -113,9 +118,10 @@ public class TradeDetails extends BaseActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
+
     private void initview() {
-        bt_buy = (Button)findViewById(R.id.bt_buy);
-        rl = (RelativeLayout)findViewById(R.id.rl);
+        bt_buy = (Button) findViewById(R.id.bt_buy);
+        rl = (RelativeLayout) findViewById(R.id.rl);
         iv_back = (ImageView) findViewById(R.id.iv_back);
         iv_homepage_viewpager = (ViewPager) findViewById(R.id.iv_homepage_viewpager);
         trade_name = (TextView) findViewById(R.id.trade_name);
@@ -138,8 +144,8 @@ public class TradeDetails extends BaseActivity {
                 trade_name.setText(tradedata.getStorename());
                 trade_store_name.setText(tradedata.getStorenamezheng());
                 trade_location.setText(tradedata.getAddress());
-                trade_prices1.setText("¥"+tradedata.getPrice1());
-                trade_prices2.setText("¥"+tradedata.getPrice2());
+                trade_prices1.setText("¥" + tradedata.getPrice1());
+                trade_prices2.setText("¥" + tradedata.getPrice2());
                 trade_prices2.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
                 tv_trade.setText(tradedata.getJianjie());
             }

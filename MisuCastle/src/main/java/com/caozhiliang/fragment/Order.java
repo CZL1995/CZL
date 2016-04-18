@@ -1,5 +1,6 @@
 package com.caozhiliang.fragment;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -8,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -41,6 +43,7 @@ public class Order extends BaseActivity {
     private TextView tv_order;
     private TextView tv_account;
     private EditText ed_notes;
+    private RelativeLayout rl1111;
     private TextView tradeprices;
     ImageOptions imageOptions1;
     int i = 1;
@@ -55,15 +58,14 @@ public class Order extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.order);
-        name = getIntent().getStringExtra("tradename");
-        image = getIntent().getStringExtra("imageaddress");
-        prices = getIntent().getStringExtra("tradepricess");
-        tradenumber = getIntent().getStringExtra("tradenumber");
-        System.out.println(tradenumber);
         SharedPreferences sp = getApplication().getSharedPreferences("haha", MODE_PRIVATE);
         bianh = sp.getString("bianh", "");
         System.out.println(bianh);
-        address111 = sp.getString("addressnumber","");
+        address111 = sp.getString("addressnumber", "");
+        name = sp.getString("tradename", "");
+        prices = sp.getString("tradepricess", "");
+        image = sp.getString("imageaddress", "");
+        tradenumber = sp.getString("tradenumber", "");
         System.out.println(address111);
         addressname = sp.getString("addressname", "");
         addressdetales = sp.getString("addressdetails", "");
@@ -118,13 +120,22 @@ public class Order extends BaseActivity {
                 RequestParams requestParams = new RequestParams(URL +
                         "/OrderServlet?pan=tian&&number=" + tradenumber + "&&count=" + i +
                         "&&usernumber=" + bianh + "&&zongjia=" + String.valueOf(pricess1 * i) +
-                        "&&liuyan=" + ed_notes.getText().toString() + "&&addressnumber=" + address111);
+                        "&&liuyan=" + ed_notes.getText().toString() + "&&addressnumber=" +
+                        address111);
                 x.http().get(requestParams, new Callback.CommonCallback<String>() {
                     @Override
                     public void onSuccess(String result) {
                         if (result.equals("订单添加成功")) {
-                            Toast.makeText(Order.this, "asda", Toast.LENGTH_SHORT).show();
 
+                            Intent intent = new Intent();
+                            intent.setClass(Order.this, PayMent.class);
+                            intent.putExtra("pri", String.valueOf(pricess1 * i));
+                            startActivity(intent);
+
+                        } else {
+                            if (addressname =="") {
+                                Toast.makeText(Order.this, "请输入收货地址", Toast.LENGTH_SHORT).show();
+                            }
                         }
 
                     }
@@ -149,7 +160,15 @@ public class Order extends BaseActivity {
 
             }
         });
-
+        rl1111.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(Order.this, Order_person_addres.class);
+                startActivity(intent);
+                Order.this.finish();
+            }
+        });
     }
 
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -172,11 +191,12 @@ public class Order extends BaseActivity {
         x.image().bind(iv_trade_image, image, imageOptions1);
         tv_trade_name.setText(name);
         tradeprices.setText("¥" + prices);
-        tv_buypeople.setText(addressname);
-        tv_buyaddress.setText(addressdetales);
+        tv_buypeople.setText("收货人：" + addressname);
+        tv_buyaddress.setText("收货地址：" + addressdetales);
     }
 
     private void initView() {
+        rl1111 = (RelativeLayout) findViewById(R.id.rl1111);
         button_bug = (Button) findViewById(R.id.button_bug);
         tv_order = (TextView) findViewById(R.id.tv_order);
         tv_buypeople = (TextView) findViewById(R.id.tv_buypeople);

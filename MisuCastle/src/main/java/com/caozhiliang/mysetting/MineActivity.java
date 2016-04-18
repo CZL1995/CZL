@@ -23,6 +23,7 @@ import com.caozhiliang.httpdata.FinalData;
 import com.caozhiliang.httpdata.UserBean;
 import com.caozhiliang.main.R;
 import com.caozhiliang.tools.StreamTool;
+import com.caozhiliang.view.Round;
 import com.caozhiliang.view.SortList;
 
 import java.io.InputStream;
@@ -55,7 +56,8 @@ public class MineActivity extends Fragment {
     Handler han = new Handler() {
         @SuppressLint("HandlerLeak")
         public void handleMessage(android.os.Message msg) {
-            deng.setImageBitmap((Bitmap) msg.obj);
+            Round round = new Round();
+            deng.setImageBitmap(round.toRoundBitmap((Bitmap) msg.obj));
         }
     };
     private View mineview;
