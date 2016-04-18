@@ -97,7 +97,8 @@ public class TradeDetailStore extends BaseActivity {
                 intent.putExtra("imageaddress", imagedata.get(0).getImageaddress());
                 intent.putExtra("tradepricess", tradedata.getPrice1());
                 intent.putExtra("tradename", tradedata.getStorename());
-                intent.putExtra("tradenumber", tradedata.getNumber());
+                String number= String.valueOf(tradedata.getNumber());
+                intent.putExtra("tradenumber", number);
                 startActivity(intent);
             }
         });

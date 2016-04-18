@@ -307,6 +307,7 @@
             android:textSize="18sp"/>
 
         <TextView
+            android:id="@+id/tv_buyaddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_buypeople"
@@ -389,6 +390,7 @@
         android:layout_marginTop="10dp">
 
         <TextView
+            android:id="@+id/total_prices"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"

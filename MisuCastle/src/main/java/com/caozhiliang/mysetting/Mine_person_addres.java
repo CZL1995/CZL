@@ -9,10 +9,12 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.caozhiliang.httpdata.AddressData;
 import com.caozhiliang.httpdata.FinalData;
@@ -99,6 +101,31 @@ public class Mine_person_addres extends Activity {
                 Mine_person_addres.this.finish();
             }
         });
+        lv_address.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                System.out.println(position);
+                Toast.makeText(Mine_person_addres.this, "长按设置默认地址", Toast.LENGTH_SHORT).show();
+            }
+        });
+        lv_address.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long
+                    id) {
+                SharedPreferences sp = getApplication().getSharedPreferences("haha",
+                        MODE_PRIVATE);
+                SharedPreferences.Editor edt = sp.edit();
+                edt.putString("addressname",list.get(position).getName());
+                edt.putString("addressdetails",list.get(position).getShengf() +
+                        list.get(position).getChengs() + list.get(position).getXianc()
+                        + list.get(position).getXiangq());
+                System.out.println(list.get(position).getAddnumber());
+                edt.putString("addressnumber",list.get(position).getAddnumber());
+                edt.commit();
+                Toast.makeText(Mine_person_addres.this, "设置完成", Toast.LENGTH_SHORT).show();
+                return true;
+            }
+        });
 
     }
 
@@ -153,7 +180,9 @@ public class Mine_person_addres extends Activity {
 
             }
             holder.tv_address_name.setText(list.get(position).getName());
-            holder.tv_address.setText(list.get(position).getXiangq());
+            holder.tv_address.setText(list.get(position).getShengf() +
+                     list.get(position).getChengs() + list.get(position).getXianc()
+                    + list.get(position).getXiangq());
             return convertView;
 
         }

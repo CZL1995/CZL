@@ -1,5 +1,6 @@
 package com.caozhiliang.fragment;
 
+import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.os.Handler;
@@ -8,6 +9,7 @@ import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -42,6 +44,7 @@ public class TradeDetails extends BaseActivity {
     private TextView trade_prices1;
     private RelativeLayout rl;
     private TextView trade_prices2;
+    private Button bt_buy;
     private TextView tv_trade;
     private ImageView imageView;
     private ImageView iv_back;
@@ -86,6 +89,19 @@ public class TradeDetails extends BaseActivity {
                 TradeDetails.this.finish();
             }
         });
+        bt_buy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(TradeDetails.this, Order.class);
+                intent.putExtra("imageaddress", imagedata.get(0).getImageaddress());
+                intent.putExtra("tradepricess", tradedata.getPrice1());
+                intent.putExtra("tradename", tradedata.getStorename());
+                String number= String.valueOf(tradedata.getNumber());
+                intent.putExtra("tradenumber",number);
+                startActivity(intent);
+            }
+        });
     }
 
 
@@ -98,6 +114,7 @@ public class TradeDetails extends BaseActivity {
         return super.onKeyDown(keyCode, event);
     }
     private void initview() {
+        bt_buy = (Button)findViewById(R.id.bt_buy);
         rl = (RelativeLayout)findViewById(R.id.rl);
         iv_back = (ImageView) findViewById(R.id.iv_back);
         iv_homepage_viewpager = (ViewPager) findViewById(R.id.iv_homepage_viewpager);

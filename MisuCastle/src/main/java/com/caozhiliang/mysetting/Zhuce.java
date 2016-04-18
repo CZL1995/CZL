@@ -151,7 +151,6 @@ public class Zhuce extends Activity {
                 edt.putString("key", password);
                 edt.putString("bianh", result);
                 System.out.println(result);
-
                 edt.commit();
                 if (!result.isEmpty()) {
                     Toast.makeText(getApplication(), "注册成功,2秒后自动跳转界面", Toast.LENGTH_LONG).show();
