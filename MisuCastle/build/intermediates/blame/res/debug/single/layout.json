@@ -260,16 +260,20 @@
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\layout\\denglu.xml"
     },
     {
-        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\layout\\trade.xml",
-        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\layout\\trade.xml"
-    },
-    {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\layout\\payment.xml",
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\layout\\payment.xml"
     },
     {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\layout\\trade.xml",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\layout\\trade.xml"
+    },
+    {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_screen_simple.xml"
+    },
+    {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\layout\\morea.xml",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\layout\\morea.xml"
     },
     {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\layout\\refresh_listview_footer.xml",

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
     <FrameLayout
         android:id="@+id/fl"
@@ -11,12 +11,19 @@
 
     </FrameLayout>
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fl"
+        android:layout_centerInParent="true"
+        android:src="@mipmap/ddiy"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:layout_above="@+id/rg"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:layout_above="@+id/rg"
         android:background="#ffa042">
 
     </LinearLayout>
@@ -25,39 +32,42 @@
         android:id="@+id/rg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:layout_above="@+id/llbuttom"
+        android:layout_marginTop="5dp"
         android:orientation="horizontal">
 
         <RadioButton
             android:id="@+id/rb_home"
             style="@style/RadioGroup"
             android:layout_weight="1"
-            android:drawableTop="@drawable/home_page"
-            android:text="首页" />
+            android:text="首页"/>
+
+
         <RadioButton
             android:id="@+id/rb_location"
             style="@style/RadioGroup"
             android:layout_weight="1"
 
-            android:drawableTop="@drawable/location"
-            android:text="附近" />
+            android:text="附近"/>
+
+        <RadioButton
+            android:id="@+id/rb_diy"
+            style="@style/RadioGroup"
+            android:layout_weight="1"
+            android:text="DIY"/>
 
         <RadioButton
             android:id="@+id/rb_search"
             style="@style/RadioGroup"
             android:layout_weight="1"
-
-            android:drawableTop="@drawable/scearch"
-            android:text="搜索" />
+            android:text="搜索"/>
 
         <RadioButton
             android:id="@+id/rb_my_home"
             style="@style/RadioGroup"
             android:layout_weight="1"
 
-            android:drawableTop="@drawable/myhome"
-            android:text="我的" />
+            android:text="我的"/>
     </RadioGroup>
 
     <LinearLayout
