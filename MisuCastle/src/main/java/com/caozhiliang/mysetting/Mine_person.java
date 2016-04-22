@@ -1,6 +1,5 @@
 package com.caozhiliang.mysetting;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -8,10 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,22 +24,18 @@ import com.caozhiliang.httpdata.FinalData;
 import com.caozhiliang.httpdata.UserBean;
 import com.caozhiliang.main.MainActivity;
 import com.caozhiliang.main.R;
-import com.caozhiliang.tools.StreamTool;
 import com.caozhiliang.view.SortList;
 
+import org.xutils.common.util.DensityUtil;
 import org.xutils.image.ImageOptions;
 import org.xutils.x;
-
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 
 
 public class Mine_person extends Activity {
     private static final int List1_ID = 1; // 最顶端的 图片显示
     private static final int List2_ID = 2;  // 中间分类
     private static final int List3_ID = 3;  // 下端显示
-    String a, password, imagepath;
+    String a, password, imagepath ,mpath;
     String path = FinalData.FUWU_PATH;
     public UserBean use;
     SortList List1, List2, List3;
@@ -56,7 +48,7 @@ public class Mine_person extends Activity {
     private ImageView image;
     SharedPreferences sp;
     private TextView ziliao1;
-    ImageOptions imageOptions;
+    private ImageOptions imageOptions1;
 
     Button tuichu;
     Bitmap btmap = null;
@@ -71,18 +63,6 @@ public class Mine_person extends Activity {
     private int List3Data[][] = new int[][]{
             {R.string.person_ziliao1_dizhi, R.string.person_ziliao1_gai}};
     private String ziliao[] = new String[5];
-
-    Handler han = new Handler() {
-            @SuppressLint("HandlerLeak")
-            public void handleMessage(android.os.Message msg) {
-                image = (ImageView) List1.getChildAt(0).findViewById(R.id.imageViewtou1);
-                image.setImageBitmap((Bitmap) msg.obj);
-            }
-
-            ;
-        };
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         x.Ext.init(getApplication());
@@ -99,21 +79,22 @@ public class Mine_person extends Activity {
                 dilg();
             }
         });
-
-
-        initResourceRefs();
-        initSettings();
         ziliao[0] = sp.getString("name", "");
         ziliao[1] = sp.getString("phone", "");
-        ziliao[2] = sp.getString("key", "");
+        ziliao[2] = "******";
         ziliao[3] = sp.getString("address", "");
         ziliao[4] = sp.getString("image", "");
-        imagepath = ziliao[4];
+        mpath=sp.getString("mimage", "");
+        if(mpath.isEmpty()){
+            imagepath = ziliao[4];
+
+        }else{
+            imagepath=mpath;
+
+        }
         System.out.println(imagepath);
-        getimage();
-
-
-
+        initResourceRefs();
+        initSettings();
     }
 
     public void dilg() {
@@ -139,43 +120,6 @@ public class Mine_person extends Activity {
         Dialog.setNegativeButton("取消", null);
         Dialog.create().show();
     }
-
-    public void getimage() {
-
-        Thread t = new Thread() {
-            public void run() {
-                try {
-                    URL url = new URL(imagepath);
-                    HttpURLConnection con = (HttpURLConnection) url.openConnection();
-                    con.setConnectTimeout(5000);
-                    con.setRequestMethod("GET");
-                    if (con.getResponseCode() == 200) {
-                        InputStream in = con.getInputStream();
-                        StreamTool st = new StreamTool();
-                        byte[] data = st.read(in);
-                        BitmapFactory.Options options = new BitmapFactory.Options();
-                        options.inJustDecodeBounds = true;
-                        Bitmap bit = BitmapFactory.decodeByteArray(data, 0, data.length,options);
-                        options.inJustDecodeBounds = false; //缩放比。由于是固定比例缩放，只用高或者宽其中一个数据进行计算即可
-                        int be = (int)(options.outHeight / (float)320);
-                        if (be <= 0)
-                            be = 1;
-                        options.inSampleSize = be; //重新读入图片，注意此时已经把 options.inJustDecodeBounds 设回 false 了
-                        bit = BitmapFactory.decodeByteArray(data, 0, data.length,options);
-
-                        Message mg = new Message();
-                        mg.obj = bit;
-                        han.sendMessage(mg);
-                    }
-
-                } catch (Exception e) {
-
-                }
-            }
-        };
-        t.start();
-    }
-
 
     public void initResourceRefs() {
         List1 = (SortList) findViewById(R.id.person_one);
@@ -320,15 +264,22 @@ public class Mine_person extends Activity {
             tou1 = new Touxiang();
             if (convertView == null) {
                 convertView = inflater.inflate(R.layout.person_ziliao_itemtou, null);
-                //tou1.img1 =(ImageView)convertView.findViewById(R.id.imageViewtou1);
+                tou1.img1 =(ImageView)convertView.findViewById(R.id.imageViewtou1);
                 tou1.text = (TextView) convertView.findViewById(R.id.person_one_ziliao_tou);
                 convertView.setTag(tou1);
             } else {
                 tou1 = (Touxiang) convertView.getTag();
             }
-            if (btmap != null) {
-                tou1.img1.setImageBitmap(btmap);
-            }
+
+                imageOptions1 = new ImageOptions.Builder()
+                        .setImageScaleType(ImageView.ScaleType.FIT_XY)
+                        .setRadius(DensityUtil.dip2px(5))
+                        .setLoadingDrawableId(R.mipmap.touxiang)
+                        .setPlaceholderScaleType(ImageView.ScaleType.FIT_XY)
+                        .setFailureDrawableId(R.mipmap.touxiang)
+                        .build();
+                x.image().bind(tou1.img1, imagepath, imageOptions1);
+
             tou1.text.setText(List1Data[position][1]);
             return convertView;
         }

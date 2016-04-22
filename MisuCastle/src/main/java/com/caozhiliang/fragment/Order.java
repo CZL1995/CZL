@@ -22,6 +22,8 @@ import org.xutils.http.RequestParams;
 import org.xutils.image.ImageOptions;
 import org.xutils.x;
 
+import java.net.URLEncoder;
+
 /**
  * @author CZL
  * @time 2016-04-17 20:55
@@ -31,6 +33,7 @@ public class Order extends BaseActivity {
     String image;
     String prices;
     String tradenumber;
+    String liuyan;
     private ImageView iv_trade_image;
     private Button button_bug;
     private ImageButton iv_decrease;
@@ -78,6 +81,7 @@ public class Order extends BaseActivity {
     private void initlistenter() {
         try {
             pricess1 = Integer.valueOf(prices).intValue();
+
         } catch (NumberFormatException e) {
             e.printStackTrace();
         }
@@ -117,49 +121,33 @@ public class Order extends BaseActivity {
         button_bug.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RequestParams requestParams = new RequestParams(URL +
-                        "/OrderServlet?pan=tian&&number=" + tradenumber + "&&count=" + i +
-                        "&&usernumber=" + bianh + "&&zongjia=" + String.valueOf(pricess1 * i) +
-                        "&&liuyan=" + ed_notes.getText().toString() + "&&addressnumber=" +
-                        address111);
-                x.http().get(requestParams, new Callback.CommonCallback<String>() {
-                    @Override
-                    public void onSuccess(String result) {
-                        if (result.equals("订单添加成功")) {
 
-                            Intent intent = new Intent();
-                            intent.setClass(Order.this, PayMent.class);
-                            intent.putExtra("pri", String.valueOf(pricess1 * i));
-                            startActivity(intent);
+                liuyan = ed_notes.getText().toString();
 
-                        } else {
-                            if (addressname =="") {
-                                Toast.makeText(Order.this, "请输入收货地址", Toast.LENGTH_SHORT).show();
-                            }
-                        }
+                try {
+                    liuyan = URLEncoder.encode(liuyan, "UTF-8");
+                    liuyan = URLEncoder.encode(liuyan, "UTF-8");
+                } catch (Exception e) {
+                }
 
-                    }
+                if (addressname == "") {
+                    Toast.makeText(Order.this, "请输入收货地址", Toast.LENGTH_SHORT).show();
+                } else {
 
-                    @Override
-                    public void onError(Throwable ex, boolean isOnCallback) {
-                        System.out.println("asd");
-
-                    }
-
-                    @Override
-                    public void onCancelled(CancelledException cex) {
-
-                    }
-
-                    @Override
-                    public void onFinished() {
-
-                    }
-                });
-
+                    Intent intent = new Intent();
+                    intent.setClass(Order.this, PayMent.class);
+                    intent.putExtra("pri", String.valueOf(pricess1 * i));
+                    intent.putExtra("liu", liuyan);
+                    intent.putExtra("i", String.valueOf(i));
+                    startActivity(intent);
+                }
 
             }
         });
+
+
+
+
         rl1111.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

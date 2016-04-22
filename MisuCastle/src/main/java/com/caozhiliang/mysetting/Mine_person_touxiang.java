@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -22,7 +20,9 @@ import android.widget.Toast;
 import com.caozhiliang.main.R;
 
 import org.xutils.common.Callback;
+import org.xutils.common.util.DensityUtil;
 import org.xutils.http.RequestParams;
+import org.xutils.image.ImageOptions;
 import org.xutils.x;
 
 import java.io.File;
@@ -40,6 +40,7 @@ public class Mine_person_touxiang extends Activity {
     String path, a;
     Uri photoUri;
     Uri url2;
+    private ImageOptions imageOptions1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -138,12 +139,28 @@ public class Mine_person_touxiang extends Activity {
                     int cut = cursor.getColumnIndexOrThrow(po[0]);
                     cursor.moveToFirst();
                     path = cursor.getString(cut);
+                    SharedPreferences sp = getApplication().getSharedPreferences("haha",
+                            MODE_PRIVATE);
+                    SharedPreferences.Editor edt = sp.edit();
+                    edt.putString("mimage", path);
+
+                    edt.commit();
+
+
                     cursor.close();
-                    Bitmap bmpDefaultPic;
-                    bmpDefaultPic = BitmapFactory.decodeFile(path, null);
-                    System.out.println(path);
-                    im.setImageBitmap(bmpDefaultPic);
+
                 }
+
+                imageOptions1 = new ImageOptions.Builder()
+                        .setImageScaleType(ImageView.ScaleType.FIT_XY)
+                        .setRadius(DensityUtil.dip2px(5))
+                        .setLoadingDrawableId(R.mipmap.loge)
+                        .setPlaceholderScaleType(ImageView.ScaleType.FIT_XY)
+                        .setFailureDrawableId(R.mipmap.loge)
+                        .build();
+                x.image().bind(im,path,imageOptions1);
+
+
             }
         } else if (arg0 == 4) {
             if (arg1 == Activity.RESULT_OK) {
@@ -164,20 +181,21 @@ public class Mine_person_touxiang extends Activity {
                     int cut = cursor.getColumnIndexOrThrow(po[0]);
                     cursor.moveToFirst();
                     path = cursor.getString(cut);
+                    SharedPreferences sp = getApplication().getSharedPreferences("haha",
+                            MODE_PRIVATE);
+                    SharedPreferences.Editor edt = sp.edit();
+                    edt.putString("mimage", path);
+                    edt.commit();
                     cursor.close();
                 }
-                BitmapFactory.Options options = new BitmapFactory.Options();
-                options.inJustDecodeBounds = true;
-                Bitmap bitmap = BitmapFactory.decodeFile(path, options); //此时返回 bm 为空
-                options.inJustDecodeBounds = false; //缩放比。由于是固定比例缩放，只用高或者宽其中一个数据进行计算即可
-                int be = (int)(options.outHeight / (float)320);
-                if (be <= 0)
-                    be = 1;
-                options.inSampleSize = be; //重新读入图片，注意此时已经把 options.inJustDecodeBounds 设回 false 了
-                bitmap=BitmapFactory.decodeFile(path,options);
-                System.out.println(path);
-                im.setImageBitmap(bitmap);
-
+                imageOptions1 = new ImageOptions.Builder()
+                        .setImageScaleType(ImageView.ScaleType.FIT_XY)
+                        .setRadius(DensityUtil.dip2px(5))
+                        .setLoadingDrawableId(R.mipmap.loge)
+                        .setPlaceholderScaleType(ImageView.ScaleType.FIT_XY)
+                        .setFailureDrawableId(R.mipmap.loge)
+                        .build();
+                x.image().bind(im,path,imageOptions1);
             }
         }
 

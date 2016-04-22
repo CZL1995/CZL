@@ -1,5 +1,6 @@
 package com.caozhiliang.base;
 
+import android.database.DataSetObserver;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
@@ -17,4 +18,5 @@ public class BaseActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         x.view().inject(this);
     }
+
 }

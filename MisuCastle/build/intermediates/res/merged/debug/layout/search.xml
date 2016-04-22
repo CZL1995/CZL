@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -22,29 +22,24 @@
                 android:id="@+id/bt1"
                 style="@style/RadioButton_search"
 
-                android:text="全部商家" />
+                android:text="全部商家"/>
 
             <RadioButton
                 android:id="@+id/bt2"
                 style="@style/RadioButton_search"
-                android:text="优惠商品" />
-
-
+                android:text="优惠商品"/>
 
 
         </RadioGroup>
 
     </RelativeLayout>
 
-<FrameLayout
-    android:id="@+id/fl_search"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    <FrameLayout
+        android:id="@+id/fl_search"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</FrameLayout>
-
-
-
+    </FrameLayout>
 
 
 </LinearLayout>

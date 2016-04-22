@@ -60,16 +60,15 @@
 
     <ImageView
         android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_below="@+id/button_persontouxiang_paizhao"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:layout_marginTop="10dp"
-        android:maxHeight="480dp"
-        android:maxWidth="480dp"
+        android:layout_marginTop="80dp"
+
          />
 
     <Button

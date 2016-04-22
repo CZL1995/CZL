@@ -42,8 +42,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.caozhiliang.main.MainActivity" >
-        </activity>
+        <activity android:name="com.caozhiliang.main.MainActivity" />
+        <activity android:name="com.caozhiliang.main.MyOrder" />
+        <activity android:name="com.caozhiliang.fragment.Order_addres_tianjia" />
         <activity android:name="com.caozhiliang.mysetting.Mine_cake" />
         <activity android:name="com.caozhiliang.mysetting.Mine_collection" />
         <activity android:name="com.caozhiliang.mysetting.Mine_new_version" />

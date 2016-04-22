@@ -133,6 +133,7 @@ public class MainStoreFragmen extends BaseFragment {
         x.http().get(requestParams, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
+                System.out.println(result);
                 getData(result, false);
                 //                System.out.println(result);
                 listview.onRefreshComplete(true);

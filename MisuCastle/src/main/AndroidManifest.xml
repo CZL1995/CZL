@@ -39,12 +39,9 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".MainActivity"
-            >
-
-        </activity>
-
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".MyOrder"/>
+        <activity android:name="com.caozhiliang.fragment.Order_addres_tianjia"/>
         <activity android:name="com.caozhiliang.mysetting.Mine_cake"/>
         <activity android:name="com.caozhiliang.mysetting.Mine_collection"/>
         <activity android:name="com.caozhiliang.mysetting.Mine_new_version"/>

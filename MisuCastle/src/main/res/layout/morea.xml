@@ -36,7 +36,6 @@
             android:layout_below="@+id/imageButton_denglu"
             android:layout_centerHorizontal="true"
             android:text="12344"
-            android:textColor="#000000"
             android:textSize="16sp"/>
 
     </RelativeLayout>
@@ -90,6 +89,7 @@
             android:background="#d1cfcf"/>
 
         <RelativeLayout
+            android:id="@+id/rl_order"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp">
@@ -138,6 +138,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/rl_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp">

@@ -1,39 +1,34 @@
 package com.caozhiliang.mysetting;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.caozhiliang.httpdata.FinalData;
 import com.caozhiliang.httpdata.UserBean;
+import com.caozhiliang.main.MyOrder;
 import com.caozhiliang.main.R;
-import com.caozhiliang.tools.StreamTool;
-import com.caozhiliang.view.Round;
 
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import org.xutils.common.util.DensityUtil;
+import org.xutils.image.ImageOptions;
+import org.xutils.x;
 
 public class MineActivity extends Fragment {
     TextView txt;
     private ImageView deng;
-    String a, image, password, imagepath;
+    String a, image, password, imagepath, mpath, ipath;
     String path = FinalData.FUWU_PATH;
     public UserBean use;
-
+    private ImageOptions imageOptions1;
     private TextView tv_myorder;
     private TextView tv_mydetails;
     private TextView tv_cake;
@@ -42,31 +37,39 @@ public class MineActivity extends Fragment {
     private TextView tv_mystore;
     private Drawable drawable;
     private Drawable drawablea;
-
-    Handler han = new Handler() {
-        @SuppressLint("HandlerLeak")
-        public void handleMessage(android.os.Message msg) {
-            Round round = new Round();
-            deng.setImageBitmap(round.toRoundBitmap((Bitmap) msg.obj));
-        }
-    };
     private View mineview;
+    private RelativeLayout rl_order;
+    private RelativeLayout rl_detail;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle
             savedInstanceState) {
 
         inintview();
-
-
         SharedPreferences sp = getContext().getSharedPreferences("haha", Context.MODE_PRIVATE);
         a = sp.getString("name", "");
-        imagepath = sp.getString("image", "");
+        mpath = sp.getString("mimage", "");
+        ipath = sp.getString("image", "");
+        if (mpath.isEmpty()) {
+            imagepath = ipath;
+        } else {
+            imagepath = mpath;
+
+        }
+        System.out.println(imagepath);
+
         if (a.equals("")) {
             txt.setText("点击登录");
         } else {
             txt.setText(a);
-            getimage();
+            imageOptions1 = new ImageOptions.Builder()
+                    .setImageScaleType(ImageView.ScaleType.FIT_XY)
+                    .setRadius(DensityUtil.dip2px(1000))
+                    .setLoadingDrawableId(R.mipmap.tx)
+                    .setPlaceholderScaleType(ImageView.ScaleType.FIT_XY)
+                    .setFailureDrawableId(R.mipmap.tx)
+                    .build();
+            x.image().bind(deng, imagepath, imageOptions1);
         }
         initlistener();
         return mineview;
@@ -82,11 +85,15 @@ public class MineActivity extends Fragment {
                     Intent intent = new Intent(getActivity(), Denglu.class);
                     MineActivity.this.startActivity(intent);
                     getActivity().finish();
+                } else {
+                    Intent intent = new Intent(getActivity(), Mine_person.class);
+                    MineActivity.this.startActivity(intent);
+                    getActivity().finish();
                 }
 
             }
         });
-        tv_mydetails.setOnClickListener(new View.OnClickListener() {
+        rl_detail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (!a.equals("")) {
@@ -102,6 +109,23 @@ public class MineActivity extends Fragment {
                 }
             }
         });
+        rl_order.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!a.equals("")) {
+
+                    Intent intent = new Intent(getContext(), MyOrder.class);
+                    MineActivity.this.startActivity(intent);
+                    getActivity().finish();
+
+                } else {
+                    Intent intent = new Intent(getContext(), Denglu.class);
+                    MineActivity.this.startActivity(intent);
+                    getActivity().finish();
+                }
+            }
+        });
+
     }
 
     private void inintview() {
@@ -119,45 +143,11 @@ public class MineActivity extends Fragment {
         deng = (ImageView) mineview.findViewById(R.id.imageButton_denglu);
         txt = (TextView) mineview.findViewById(R.id.dianji);
         tv_myorder = (TextView) mineview.findViewById(R.id.tv_myorder);
+        rl_detail = (RelativeLayout) mineview.findViewById(R.id.rl_detail);
+        rl_order = (RelativeLayout) mineview.findViewById(R.id.rl_order);
         tv_mydetails = (TextView) mineview.findViewById(R.id.tv_mydetails);
         tv_myversion = (TextView) mineview.findViewById(R.id.tv_myversion);
         tv_mystore = (TextView) mineview.findViewById(R.id.tv_mystore);
-    }
-
-
-    public void getimage() {
-        Thread t = new Thread() {
-            public void run() {
-                try {
-                    URL url = new URL(imagepath);
-                    HttpURLConnection con = (HttpURLConnection) url.openConnection();
-                    con.setConnectTimeout(5000);
-                    con.setRequestMethod("GET");
-                    if (con.getResponseCode() == 200) {
-                        InputStream in = con.getInputStream();
-                        StreamTool st = new StreamTool();
-                        byte[] data = st.read(in);
-                        BitmapFactory.Options options = new BitmapFactory.Options();
-                        options.inJustDecodeBounds = true;
-                        Bitmap bit = BitmapFactory.decodeByteArray(data, 0, data.length, options);
-                        options.inJustDecodeBounds = false; //缩放比。由于是固定比例缩放，只用高或者宽其中一个数据进行计算即可
-                        int be = (int) (options.outHeight / (float) 320);
-                        if (be <= 0)
-                            be = 1;
-                        options.inSampleSize = be; //重新读入图片，注意此时已经把 options.inJustDecodeBounds 设回
-                        // false 了
-                        bit = BitmapFactory.decodeByteArray(data, 0, data.length, options);
-                        Message mg = new Message();
-                        mg.obj = bit;
-                        han.sendMessage(mg);
-                    }
-
-                } catch (Exception e) {
-
-                }
-            }
-        };
-        t.start();
     }
 
 

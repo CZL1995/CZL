@@ -42,7 +42,7 @@ public class MainActivity extends BaseActivity {
     private Drawable drawableb;
     private Drawable drawablec;
     private Drawable drawabled;
-
+    private boolean isShow= true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,6 +96,17 @@ public class MainActivity extends BaseActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
                     case R.id.rb_home:
+                        if(!isShow) {
+                            ScaleAnimation scalez = new ScaleAnimation((float) 2.5, 1, (float) 2.5,
+                                    1, Animation
+                                    .RELATIVE_TO_SELF, 0.5f,
+                                    Animation.RELATIVE_TO_SELF, 0.5f);
+                            scalez.setDuration(1000);
+                            scalez.setFillAfter(true);
+                            rb_diy.startAnimation(scalez);
+                            isShow=true;
+                        }
+
                         FragmentManager fragmentmanger = getSupportFragmentManager();
                         //                        拿到FragmentManger对象
                         //开始初始化Fragment
@@ -105,19 +116,35 @@ public class MainActivity extends BaseActivity {
                         fragmentTS.commit();
                         break;
                     case R.id.rb_diy:
-                        ScaleAnimation scale = new ScaleAnimation( 1, (float)1.4, 1,
-                                (float)1.4, Animation
+                        ScaleAnimation scale = new ScaleAnimation(1, (float) 2.5, 1,
+                                (float) 2.5, Animation
                                 .RELATIVE_TO_SELF, 0.5f,
                                 Animation.RELATIVE_TO_SELF, 0.5f);
-                        scale.setDuration(2000);
-                                scale.setFillAfter(true);
-//                        scale.setRepeatCount(Integer.MAX_VALUE);
-//                        scale.setRepeatMode(Animation.REVERSE);
+                        scale.setDuration(1000);
+                        scale.setFillAfter(true);
                         rb_diy.startAnimation(scale);
-
+                        isShow = false;
+                        FragmentManager fragmentmangera = getSupportFragmentManager();
+                        //                        拿到FragmentManger对象
+                        //开始初始化Fragment
+                        FragmentTransaction fragmentTSa = fragmentmangera.beginTransaction();
+                        DIY diy = new DIY();
+                        fragmentTSa.replace(R.id.fl, diy);
+                        fragmentTSa.commit();
 
                         break;
                     case R.id.rb_location:
+                        if(!isShow) {
+                            ScaleAnimation scalec = new ScaleAnimation((float) 2.5, 1, (float) 2.5,
+                                    1, Animation
+                                    .RELATIVE_TO_SELF, 0.5f,
+                                    Animation.RELATIVE_TO_SELF, 0.5f);
+                            scalec.setDuration(1000);
+                            scalec.setFillAfter(true);
+                            rb_diy.startAnimation(scalec);
+                            isShow=true;
+                        }
+
                         FragmentManager fragmentlocation = getSupportFragmentManager();
                         //                        拿到FragmentManger对象
                         //开始初始化Fragment
@@ -129,6 +156,18 @@ public class MainActivity extends BaseActivity {
                         fragmentTlocation.commit();
                         break;
                     case R.id.rb_my_home:
+                        if(!isShow) {
+                            ScaleAnimation scalem = new ScaleAnimation((float) 2.5, 1, (float) 2.5,
+                                    1, Animation
+                                    .RELATIVE_TO_SELF, 0.5f,
+                                    Animation.RELATIVE_TO_SELF, 0.5f);
+                            scalem.setDuration(1000);
+                            scalem.setFillAfter(true);
+                            rb_diy.startAnimation(scalem);
+                            isShow=true;
+                        }
+
+
                         FragmentManager fragmentmohome = getSupportFragmentManager();
                         //                        拿到FragmentManger对象
                         //开始初始化Fragment
@@ -140,6 +179,17 @@ public class MainActivity extends BaseActivity {
                         fragmentTmyhome.commit();
                         break;
                     case R.id.rb_search:
+                        if(!isShow) {
+                            ScaleAnimation scalea = new ScaleAnimation((float) 2.5, 1, (float) 2.5,
+                                    1, Animation
+                                    .RELATIVE_TO_SELF, 0.5f,
+                                    Animation.RELATIVE_TO_SELF, 0.5f);
+                            scalea.setDuration(1000);
+                            scalea.setFillAfter(true);
+                            rb_diy.startAnimation(scalea);
+                            isShow=true;
+                        }
+
                         FragmentManager fragmentsearch = getSupportFragmentManager();
                         //                        拿到FragmentManger对象
                         //开始初始化Fragment
