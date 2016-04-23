@@ -61,6 +61,7 @@
         <activity android:name="com.caozhiliang.fragment.StoreDetailsTrade"/>
         <activity android:name="com.caozhiliang.fragment.TradeDetails"/>
         <activity android:name="com.caozhiliang.fragment.PayMent"/>
+        <activity android:name="com.caozhiliang.fragment.Evaluate"/>
         <activity android:name="com.caozhiliang.fragment.Order_person_addres"/>
         <activity android:name="com.caozhiliang.fragment.TradeDetailStore"/>
         <activity android:name="com.caozhiliang.location.ActivitySelectCity">

@@ -316,6 +316,10 @@
         "source": "F:\\AndroidStudio\\AndroidStudio\\MyApplication\\MisuCastle\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_btn_radio_material.xml"
     },
     {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable\\button_new1.xml",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\drawable\\button_new1.xml"
+    },
+    {
         "merged": "F:\\AndroidStudio\\AndroidStudio\\MyApplication\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\drawable\\wireframe_common.9.png",
         "source": "F:\\AndroidStudio\\AndroidStudio\\MyApplication\\MisuCastle\\src\\main\\res\\drawable\\wireframe_common.9.png"
     },

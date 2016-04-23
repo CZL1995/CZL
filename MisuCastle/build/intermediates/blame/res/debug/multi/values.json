@@ -17229,12 +17229,12 @@
                 "from": {
                     "file": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\values\\styles.xml",
                     "position": {
-                        "startLine": 41,
+                        "startLine": 51,
                         "startColumn": 4,
-                        "startOffset": 1768,
-                        "endLine": 44,
+                        "startOffset": 1778,
+                        "endLine": 54,
                         "endColumn": 12,
-                        "endOffset": 1920
+                        "endOffset": 1930
                     }
                 }
             },
@@ -20007,12 +20007,12 @@
                 "from": {
                     "file": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\values\\styles.xml",
                     "position": {
-                        "startLine": 46,
+                        "startLine": 56,
                         "startColumn": 4,
-                        "startOffset": 1926,
-                        "endLine": 55,
+                        "startOffset": 1936,
+                        "endLine": 65,
                         "endColumn": 12,
-                        "endOffset": 2317
+                        "endOffset": 2327
                     }
                 }
             },
@@ -20150,12 +20150,12 @@
                 "from": {
                     "file": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\values\\styles.xml",
                     "position": {
-                        "startLine": 30,
+                        "startLine": 40,
                         "startColumn": 4,
-                        "startOffset": 1234,
-                        "endLine": 39,
+                        "startOffset": 1244,
+                        "endLine": 49,
                         "endColumn": 12,
-                        "endOffset": 1762
+                        "endOffset": 1772
                     }
                 }
             },
@@ -20171,12 +20171,12 @@
                 "from": {
                     "file": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\values\\styles.xml",
                     "position": {
-                        "startLine": 17,
+                        "startLine": 27,
                         "startColumn": 4,
-                        "startOffset": 788,
-                        "endLine": 26,
+                        "startOffset": 798,
+                        "endLine": 36,
                         "endColumn": 12,
-                        "endOffset": 1226
+                        "endOffset": 1236
                     }
                 }
             },
@@ -23318,12 +23318,12 @@
                 "from": {
                     "file": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\values\\styles.xml",
                     "position": {
-                        "startLine": 9,
+                        "startLine": 19,
                         "startColumn": 4,
-                        "startOffset": 373,
-                        "endLine": 16,
+                        "startOffset": 383,
+                        "endLine": 26,
                         "endColumn": 12,
-                        "endOffset": 783
+                        "endOffset": 793
                     }
                 }
             }

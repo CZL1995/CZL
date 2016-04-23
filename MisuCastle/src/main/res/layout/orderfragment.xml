@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="5dp">
+
+    <ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/iv_image"
+        android:ellipsize="end"
+        android:maxEms="9"
+        android:singleLine="true"
+        />
+
+    <TextView
+        android:id="@+id/tv_prices1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_name"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/iv_image"
+        android:textColor="#ffa042"
+
+        android:textSize="18sp"
+        />
+
+    <TextView
+        android:id="@+id/tv_zhuangtai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="15dp"
+
+        />
+
+    <TextView
+        android:id="@+id/tv_zongjia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_prices1"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/iv_image"
+
+        />
+
+    <Button
+        android:id="@+id/bt_pingjia"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tv_prices1"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/button_new"
+        android:text="评价"
+        />
+
+    <RelativeLayout
+        android:id="@+id/rl_evaluate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_image"
+        android:visibility="gone">
+
+        <RatingBar
+            android:id="@+id/room_ratingbar"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:isIndicator="false"
+            android:numStars="5"
+            android:rating="4.6"
+            android:stepSize="0.2">
+
+        </RatingBar>
+
+
+        <TextView
+            android:id="@+id/tv_rank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@+id/room_ratingbar"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:hint="请点击星星评价"
+            android:textColor="#000000"/>
+
+        <EditText
+            android:id="@+id/ed_evaluate"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/tv_rank"
+            android:hint="评论"/>
+
+        <Button
+            android:id="@+id/bt_evaluate"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/ed_evaluate"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/button_new1"
+            android:text="确定"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
