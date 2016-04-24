@@ -1,6 +1,7 @@
 package com.caozhiliang.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.DataSetObserver;
 import android.os.Bundle;
@@ -48,7 +49,9 @@ public class OrderFragment extends BaseFragment {
     private boolean open = true;
     private String bianh;
     private String username;
+    private String ordernumber;
     private String xiangqing;
+    private String orderzhunagtai;
     Bundle mBundle;
 
     @Override
@@ -63,13 +66,18 @@ public class OrderFragment extends BaseFragment {
         mBundle = getArguments();
         mBundle.getString("arg");
         getServerData();
+        System.out.println(bianh);
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent =new Intent();
+                intent.setClass(getContext(),Evaluate.class);
+                intent.putExtra("evaluatetradenumber", String.valueOf(list.get(position).getNumber()));
+                System.out.println(list.get(position).getNumber());
+                startActivity(intent);
             }
         });
 
-        System.out.println(bianh);
         return view;
     }
 
@@ -167,80 +175,96 @@ public class OrderFragment extends BaseFragment {
             holder.tv_zhuangtai.setText(list.get(position).getZhuangtai());
             holder.tv_zongjia.setText("共" + list.get(position).getCount() + "件商品  合计：" + list
                     .get(position).getZongjia());
-            holder.bt_pingjia.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (open) {
-                        holder.rl_evaluate.setVisibility(View.VISIBLE);
+            ordernumber = String.valueOf(list.get(position).getOrdernumber());
+            if(holder.tv_zhuangtai.getText().toString().equals("评价完成")){
+                holder.bt_pingjia.setText("已评价");
+                holder.bt_pingjia.setClickable(false);
 
-                        holder.room_ratingbar.setOnRatingBarChangeListener(new RatingBar
-                                .OnRatingBarChangeListener() {
+            } else {
+
+                holder.bt_pingjia.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (open) {
+                            holder.rl_evaluate.setVisibility(View.VISIBLE);
+
+                            holder.room_ratingbar.setOnRatingBarChangeListener(new RatingBar
+                                    .OnRatingBarChangeListener() {
 
 
-                            @Override
-                            public void onRatingChanged(RatingBar ratingBar, float rating,
-                                                        boolean fromUser) {
-                                holder.tv_rank.setText(String.valueOf(rating));
-                            }
-                        });
-                        holder.bt_evaluate.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                System.out.println(list.get(position).getNumber());
-                                System.out.println(holder.tv_rank.getText().toString());
-                                System.out.println(holder.ed_evaluate.getText());
-                                xiangqing = holder.ed_evaluate.getText().toString();
-                                try {
-                                    xiangqing = URLEncoder.encode(xiangqing, "UTF-8");
-                                    xiangqing = URLEncoder.encode(xiangqing, "UTF-8");
-                                    username = URLEncoder.encode(username, "UTF-8");
-                                    username = URLEncoder.encode(username, "UTF-8");
-                                } catch (Exception e) {
+                                @Override
+                                public void onRatingChanged(RatingBar ratingBar, float rating,
+                                                            boolean fromUser) {
+                                    holder.tv_rank.setText(String.valueOf(rating));
                                 }
-                                RequestParams reparams = new RequestParams(URL +
-                                        "/PingjiaServlet?pan=tian&&usernumber=" + bianh +
-                                        "&&number=" + list.get(position).getNumber() +
-                                        "&&username=" + username +
-                                        "&&xingji=" + holder.tv_rank.getText().toString() +
-                                        "&&xiangqin=" +
-                                        xiangqing);
-                                x.http().get(reparams, new Callback.CommonCallback<String>() {
-                                    @Override
-                                    public void onSuccess(String result) {
-                                        if (result.equals("评论成功")) {
-                                            Toast.makeText(getContext(), "asdf", Toast
-                                                    .LENGTH_SHORT).show();
+                            });
+                            holder.bt_evaluate.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    System.out.println(list.get(position).getNumber());
+                                    System.out.println(holder.tv_rank.getText().toString());
+                                    System.out.println(holder.ed_evaluate.getText());
+                                    xiangqing = holder.ed_evaluate.getText().toString();
+                                    try {
+                                        xiangqing = URLEncoder.encode(xiangqing, "UTF-8");
+                                        xiangqing = URLEncoder.encode(xiangqing, "UTF-8");
+                                        username = URLEncoder.encode(username, "UTF-8");
+                                        username = URLEncoder.encode(username, "UTF-8");
+                                    } catch (Exception e) {
+                                    }
+                                    RequestParams reparams = new RequestParams(URL +
+                                            "/PingjiaServlet?pan=tian&&usernumber=" + bianh +
+                                            "&&number=" + list.get(position).getNumber() +
+                                            "&&username=" + username + "&&ordernumber=" + ordernumber +
+                                            "&&xingji=" + holder.tv_rank.getText().toString() +
+                                            "&&xiangqin=" +
+                                            xiangqing);
+                                    x.http().get(reparams, new Callback.CommonCallback<String>() {
+                                        @Override
+                                        public void onSuccess(String result) {
+                                            if (result.equals("评论成功")) {
+                                                Toast.makeText(getContext(), "评价成功", Toast
+                                                        .LENGTH_SHORT).show();
+                                                holder.rl_evaluate.setVisibility(View.GONE);
+                                                holder.bt_pingjia.setText("已评价");
+                                                holder.tv_zhuangtai.setText("评价完成");
+                                                holder.bt_pingjia.setClickable(false);
+                                                getServerData();
+                                            }
                                         }
-                                    }
 
-                                    @Override
-                                    public void onError(Throwable ex, boolean isOnCallback) {
-
-
-                                    }
-
-                                    @Override
-                                    public void onCancelled(CancelledException cex) {
-
-                                    }
-
-                                    @Override
-                                    public void onFinished() {
-
-                                    }
-                                });
-                            }
-                        });
+                                        @Override
+                                        public void onError(Throwable ex, boolean isOnCallback) {
 
 
-                        open = false;
-                    } else {
-                        holder.rl_evaluate.setVisibility(View.GONE);
-                        open = true;
+                                        }
+
+                                        @Override
+                                        public void onCancelled(CancelledException cex) {
+
+                                        }
+
+                                        @Override
+                                        public void onFinished() {
+
+                                        }
+                                    });
+                                }
+                            });
+
+
+                            open = false;
+                        } else {
+                            holder.rl_evaluate.setVisibility(View.GONE);
+                            open = true;
+                        }
                     }
-                }
 
-            });
+                });
+
+            }
+
+
 
 
             return convertView;

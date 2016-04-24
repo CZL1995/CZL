@@ -1,7 +1,6 @@
 package com.caozhiliang.fragment;
 
 import android.app.AlertDialog;
-import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -13,7 +12,6 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.caozhiliang.base.BaseActivity;
 import com.caozhiliang.main.MyOrder;
@@ -113,10 +111,27 @@ public class PayMent extends BaseActivity {
                 x.http().get(requestParams, new Callback.CommonCallback<String>() {
                     @Override
                     public void onSuccess(String result) {
+                        Dialog = new AlertDialog.Builder(PayMent.this);
+                        Dialog.setMessage("请问是否去订单界面");
+                        Dialog.setTitle("提示");
+                        Dialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
 
-                        Intent intent = new Intent(PayMent.this, MyOrder.class);
-                        PayMent.this.startActivity(intent);
-                        PayMent.this.finish();
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                // TODO Auto-generated method stub
+                                Intent intent = new Intent(PayMent.this, MyOrder.class);
+                                PayMent.this.startActivity(intent);
+                                PayMent.this.finish();
+                            }
+                        });
+                        Dialog.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                PayMent.this.finish();
+                            }
+                        });
+                        Dialog.create().show();
+
                     }
 
                     @Override

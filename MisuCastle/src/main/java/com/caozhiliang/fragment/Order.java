@@ -16,9 +16,7 @@ import android.widget.Toast;
 import com.caozhiliang.base.BaseActivity;
 import com.caozhiliang.main.R;
 
-import org.xutils.common.Callback;
 import org.xutils.common.util.DensityUtil;
-import org.xutils.http.RequestParams;
 import org.xutils.image.ImageOptions;
 import org.xutils.x;
 
@@ -140,6 +138,7 @@ public class Order extends BaseActivity {
                     intent.putExtra("liu", liuyan);
                     intent.putExtra("i", String.valueOf(i));
                     startActivity(intent);
+                    finish();
                 }
 
             }

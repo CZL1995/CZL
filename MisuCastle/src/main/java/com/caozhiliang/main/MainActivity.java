@@ -42,7 +42,8 @@ public class MainActivity extends BaseActivity {
     private Drawable drawableb;
     private Drawable drawablec;
     private Drawable drawabled;
-    private boolean isShow= true;
+    private boolean isShow = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,6 +80,7 @@ public class MainActivity extends BaseActivity {
                 init();
                 rb_my_home.performClick();
                 break;
+
             default:
                 init();
                 rb_home.performClick();
@@ -96,7 +98,7 @@ public class MainActivity extends BaseActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
                     case R.id.rb_home:
-                        if(!isShow) {
+                        if (!isShow) {
                             ScaleAnimation scalez = new ScaleAnimation((float) 2.5, 1, (float) 2.5,
                                     1, Animation
                                     .RELATIVE_TO_SELF, 0.5f,
@@ -104,7 +106,7 @@ public class MainActivity extends BaseActivity {
                             scalez.setDuration(1000);
                             scalez.setFillAfter(true);
                             rb_diy.startAnimation(scalez);
-                            isShow=true;
+                            isShow = true;
                         }
 
                         FragmentManager fragmentmanger = getSupportFragmentManager();
@@ -134,7 +136,7 @@ public class MainActivity extends BaseActivity {
 
                         break;
                     case R.id.rb_location:
-                        if(!isShow) {
+                        if (!isShow) {
                             ScaleAnimation scalec = new ScaleAnimation((float) 2.5, 1, (float) 2.5,
                                     1, Animation
                                     .RELATIVE_TO_SELF, 0.5f,
@@ -142,7 +144,7 @@ public class MainActivity extends BaseActivity {
                             scalec.setDuration(1000);
                             scalec.setFillAfter(true);
                             rb_diy.startAnimation(scalec);
-                            isShow=true;
+                            isShow = true;
                         }
 
                         FragmentManager fragmentlocation = getSupportFragmentManager();
@@ -156,7 +158,7 @@ public class MainActivity extends BaseActivity {
                         fragmentTlocation.commit();
                         break;
                     case R.id.rb_my_home:
-                        if(!isShow) {
+                        if (!isShow) {
                             ScaleAnimation scalem = new ScaleAnimation((float) 2.5, 1, (float) 2.5,
                                     1, Animation
                                     .RELATIVE_TO_SELF, 0.5f,
@@ -164,7 +166,7 @@ public class MainActivity extends BaseActivity {
                             scalem.setDuration(1000);
                             scalem.setFillAfter(true);
                             rb_diy.startAnimation(scalem);
-                            isShow=true;
+                            isShow = true;
                         }
 
 
@@ -179,7 +181,7 @@ public class MainActivity extends BaseActivity {
                         fragmentTmyhome.commit();
                         break;
                     case R.id.rb_search:
-                        if(!isShow) {
+                        if (!isShow) {
                             ScaleAnimation scalea = new ScaleAnimation((float) 2.5, 1, (float) 2.5,
                                     1, Animation
                                     .RELATIVE_TO_SELF, 0.5f,
@@ -187,7 +189,7 @@ public class MainActivity extends BaseActivity {
                             scalea.setDuration(1000);
                             scalea.setFillAfter(true);
                             rb_diy.startAnimation(scalea);
-                            isShow=true;
+                            isShow = true;
                         }
 
                         FragmentManager fragmentsearch = getSupportFragmentManager();
