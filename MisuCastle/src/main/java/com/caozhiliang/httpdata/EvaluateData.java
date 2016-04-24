@@ -25,6 +25,15 @@ public class EvaluateData {
     private double xingji;
     private String time;
     private String xiangqin;
+    private String userimage;
+
+    public String getUserimage() {
+        return userimage;
+    }
+
+    public void setUserimage(String userimage) {
+        this.userimage = userimage;
+    }
 
     @Override
     public String toString() {
@@ -37,8 +46,10 @@ public class EvaluateData {
                 ", xingji=" + xingji +
                 ", time='" + time + '\'' +
                 ", xiangqin='" + xiangqin + '\'' +
+                ", userimage='" + userimage + '\'' +
                 '}';
     }
+
 
     public void setOrdernumber(int ordernumber) {
         this.ordernumber = ordernumber;

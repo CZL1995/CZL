@@ -5,9 +5,6 @@
               android:orientation="vertical">
 
 
-
-
-
     <RelativeLayout
         android:id="@+id/ll_trade"
         android:layout_width="match_parent"
@@ -51,10 +48,10 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_below="@+id/iv_homepage_viewpager"
-        android:layout_marginTop="10dp"
-        android:background="#e2dcdc"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#e2dcdc"
         android:orientation="horizontal"
         >
     </LinearLayout>
@@ -107,10 +104,10 @@
         android:id="@+id/ll1"
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:layout_below="@+id/rl_buy"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_below="@+id/rl_buy"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:background="#e2dcdc"
         android:orientation="horizontal"
         >
@@ -138,10 +135,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/name"
-            android:textColor="#383737"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
             android:text="asdafa"
+            android:textColor="#383737"
             />
 
         <TextView
@@ -193,6 +190,7 @@
             android:text="商品信息"
             android:textColor="#000000"
             android:textSize="18sp"/>
+
         <TextView
             android:id="@+id/tv_trade"
             android:layout_width="match_parent"
@@ -227,6 +225,7 @@
             android:text="评论"
             android:textColor="#000000"
             android:textSize="18sp"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="1dp"
@@ -243,10 +242,69 @@
             android:layout_height="wrap_content">
 
             <ImageView
+                android:id="@+id/iv_image"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_margin="5dp"
-                android:src="@mipmap/loge"/>
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:src="@mipmap/loge"
+                />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/iv_image"
+                android:ellipsize="end"
+                android:maxEms="9"
+                android:singleLine="true"
+                android:text="1233"
+                />
+
+            <RatingBar
+                android:id="@+id/evaluate_ratingbar"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_name"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/iv_image"
+                android:isIndicator="true"
+                android:numStars="5"
+                android:rating="4.6"
+                android:stepSize="0.2"
+                >
+
+            </RatingBar>
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/tv_evaluate"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30dp"
+                android:gravity="center"
+                android:hint="请点击星星评价"
+                android:textColor="#000000"/>
+
+            <TextView
+                android:id="@+id/tv_evaluate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_image"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:hint="请点击星星评价"
+                android:maxEms="20"
+                android:singleLine="true"
+                android:text="1233"
+                android:textColor="#000000"/>
+
 
         </RelativeLayout>
 
@@ -265,13 +323,14 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/to_evaluate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
         android:drawableRight="@mipmap/toright"
         android:gravity="center_vertical"
-        android:layout_marginLeft="10dp"
-        android:textColor="#000000"
         android:text="查看全部评价"
+        android:textColor="#000000"
         />
 
     <LinearLayout

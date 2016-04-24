@@ -12,10 +12,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.caozhiliang.base.BaseActivity;
+import com.caozhiliang.httpdata.EvaluateData;
 import com.caozhiliang.httpdata.ImageData;
 import com.caozhiliang.httpdata.TradeBean;
 import com.caozhiliang.main.R;
@@ -49,7 +51,15 @@ public class TradeDetailStore extends BaseActivity {
     private Button bt_buy;
     private ImageView imageView;
     private ImageView iv_back;
+
+    private TextView tv_name;
+    private TextView tv_time;
+    private TextView to_evaluate;
+    private TextView tv_evaluate;
+    private ImageView iv_image;
+    private RatingBar evaluate_ratingbar;
     int length;
+    private List<EvaluateData> evaluatelist;
     private Handler handler = new Handler() {
         public void handleMessage(android.os.Message msg) {
 
@@ -70,7 +80,49 @@ public class TradeDetailStore extends BaseActivity {
         id = getIntent().getIntExtra("id", 0);
         GetTradeData();
         GetTradeImageData();
+        GetEvaluateData();
         initlistener();
+    }
+
+    private void GetEvaluateData() {
+
+        RequestParams requestParams = new RequestParams(URL + "/PingjiaServlet?pan=cha&&number="
+                + id);
+
+        x.http().get(requestParams, new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+                Gson gs = new Gson();
+                evaluatelist = gs.fromJson(result, new TypeToken<List<EvaluateData>>() {
+                }.getType());
+                System.out.println(evaluatelist);
+
+                tv_name.setText(evaluatelist.get(0).getUsername());
+                x.image().bind(iv_image, evaluatelist.get(0).getUserimage());
+                System.out.println(evaluatelist.get(0).getUserimage());
+                tv_time.setText(evaluatelist.get(0).getTime());
+                tv_evaluate.setText(evaluatelist.get(0).getXiangqin());
+                evaluate_ratingbar.setRating((float) (evaluatelist.get(0).getXingji()));
+
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
+
+
     }
 
     private void initlistener() {
@@ -108,6 +160,16 @@ public class TradeDetailStore extends BaseActivity {
                 startActivity(intent);
             }
         });
+        to_evaluate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent();
+                intent.setClass(TradeDetailStore.this, Evaluate.class);
+                intent.putExtra("evaluatetradenumber", String.valueOf(id));
+                startActivity(intent);
+
+            }
+        });
 
     }
 
@@ -125,6 +187,7 @@ public class TradeDetailStore extends BaseActivity {
         iv_back = (ImageView) findViewById(R.id.iv_back);
         rl = (RelativeLayout) findViewById(R.id.rl);
         bt_buy = (Button) findViewById(R.id.bt_buy);
+        to_evaluate = (TextView)findViewById(R.id.to_evaluate);
         iv_homepage_viewpager = (ViewPager) findViewById(R.id.iv_homepage_viewpager);
         trade_name = (TextView) findViewById(R.id.trade_name);
         trade_store_name = (TextView) findViewById(R.id.trade_store_name);
@@ -132,6 +195,14 @@ public class TradeDetailStore extends BaseActivity {
         trade_prices1 = (TextView) findViewById(R.id.trade_prices1);
         trade_prices2 = (TextView) findViewById(R.id.trade_prices2);
         tv_trade = (TextView) findViewById(R.id.tv_trade);
+        evaluate_ratingbar = (RatingBar) findViewById(R.id
+                .evaluate_ratingbar);
+        iv_image = (ImageView) findViewById(R.id.iv_image);
+        tv_evaluate = (TextView) findViewById(R.id.tv_evaluate);
+        tv_time = (TextView) findViewById(R.id.tv_time);
+        tv_name = (TextView) findViewById(R.id.tv_name);
+
+
     }
 
 
@@ -146,8 +217,8 @@ public class TradeDetailStore extends BaseActivity {
                 trade_name.setText(tradedata.getStorename());
                 trade_store_name.setText(tradedata.getStorenamezheng());
                 trade_location.setText(tradedata.getAddress());
-                trade_prices1.setText("¥"+tradedata.getPrice1());
-                trade_prices2.setText("¥"+tradedata.getPrice2());
+                trade_prices1.setText("¥" + tradedata.getPrice1());
+                trade_prices2.setText("¥" + tradedata.getPrice2());
                 trade_prices2.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
                 tv_trade.setText(tradedata.getJianjie());
             }

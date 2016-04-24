@@ -225,11 +225,12 @@ public class OrderFragment extends BaseFragment {
                                             if (result.equals("评论成功")) {
                                                 Toast.makeText(getContext(), "评价成功", Toast
                                                         .LENGTH_SHORT).show();
-                                                holder.rl_evaluate.setVisibility(View.GONE);
-                                                holder.bt_pingjia.setText("已评价");
-                                                holder.tv_zhuangtai.setText("评价完成");
-                                                holder.bt_pingjia.setClickable(false);
                                                 getServerData();
+                                                holder.rl_evaluate.setVisibility(View.GONE);
+                                                holder.bt_pingjia.setClickable(false);
+                                                mlistadapter.notifyDataSetChanged();
+
+
                                             }
                                         }
 
