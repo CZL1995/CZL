@@ -17,6 +17,7 @@ import com.caozhiliang.httpdata.FinalData;
 import com.caozhiliang.httpdata.UserBean;
 import com.caozhiliang.main.MyOrder;
 import com.caozhiliang.main.R;
+import com.caozhiliang.mystore.StoreMainActivity;
 
 import org.xutils.common.util.DensityUtil;
 import org.xutils.image.ImageOptions;
@@ -123,6 +124,15 @@ public class MineActivity extends Fragment {
                     MineActivity.this.startActivity(intent);
                     getActivity().finish();
                 }
+            }
+        });
+
+        tv_mystore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), StoreMainActivity.class);
+                MineActivity.this.startActivity(intent);
+                getActivity().finish();
             }
         });
 

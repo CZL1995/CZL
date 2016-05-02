@@ -65,8 +65,16 @@
         <activity android:name="com.caozhiliang.fragment.Order_person_addres"/>
         <activity android:name="com.caozhiliang.fragment.TradeDetailStore"/>
         <activity android:name="com.caozhiliang.location.ActivitySelectCity">
-
         </activity>
+
+        <activity android:name="com.caozhiliang.mystore.Store"></activity>
+        <activity android:name="com.caozhiliang.mystore.StoreMainActivity"></activity>
+        <activity android:name="com.caozhiliang.mystore.Commodity"></activity>
+        <activity android:name="com.caozhiliang.mystore.OurParter"></activity>
+        <activity android:name="com.caozhiliang.mystore.Account"></activity>
+        <activity android:name="com.caozhiliang.mystore.Setting"></activity>
+
+
 
 
         <!-- ATTENTION: This was auto-generated to add Google Play services to your project for

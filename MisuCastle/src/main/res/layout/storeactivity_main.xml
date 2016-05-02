@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.administrator.myapplication.MainActivity">
+
+
+    <LinearLayout
+        android:id="@+id/ll_group"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#ffa042">
+
+        <ImageView
+            android:id="@+id/order"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:background="@mipmap/order" />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/bt1"
+                style="@style/RadioButton"
+                android:background="@drawable/radiobutton_new"
+
+                android:text="新订单" />
+
+            <RadioButton
+                android:id="@+id/bt2"
+                style="@style/RadioButton"
+                android:background="@drawable/radiobutton_new"
+
+
+                android:text="未处理" />
+
+            <RadioButton
+                android:id="@+id/bt3"
+                style="@style/RadioButton"
+                android:background="@drawable/radiobutton_new"
+
+
+                android:text="已处理" />
+
+
+        </RadioGroup>
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_group">
+
+    </FrameLayout>
+
+</RelativeLayout>

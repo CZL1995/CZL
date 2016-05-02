@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:id="@+id/maplist"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/map_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="a" />
+
+    <TextView
+        android:id="@+id/map_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/map_name"
+        android:text="b" />
+
+    <TextView
+        android:id="@+id/map_address"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/map_phone"
+        android:text="asda" />
+
+    <TextView
+        android:id="@+id/map_prices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/map_phone"
+        android:text="333" />
+
+    <RatingBar
+        android:id="@+id/map_ratingbar"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/map_address"
+        android:layout_marginRight="2dp"
+        android:layout_marginTop="2dp"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:rating="4.6"
+        android:stepSize="0.2">
+
+    </RatingBar>
+
+    <TextView
+        android:id="@+id/map_evaluate"
+        android:layout_toRightOf="@+id/map_ratingbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/map_address"
+        android:text="123" />
+
+</RelativeLayout>

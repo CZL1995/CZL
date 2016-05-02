@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#ffa042"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_store"
+            style="@style/Title"
+            android:text="店铺管理" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="151dp"
+        android:background="@mipmap/store_background"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_store"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:src="@mipmap/store_heard" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_store"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:text="米苏城堡蛋糕店"
+            android:textColor="#faf8f8" />
+
+        <LinearLayout
+            android:id="@+id/ll_rank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_name"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RatingBar
+                android:id="@+id/room_ratingbar"
+
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:isIndicator="true"
+                android:numStars="5"
+                android:rating="4.6"
+                android:stepSize="0.2">
+
+            </RatingBar>
+
+
+            <TextView
+                android:id="@+id/tv_rank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_name"
+                android:gravity="center"
+                android:text="4.6"
+                android:textColor="#faf8f8" />
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_rank"
+            android:layout_marginLeft="12dp"
+            android:layout_marginStart="12dp"
+            android:layout_toEndOf="@+id/iv_store"
+            android:layout_toRightOf="@+id/iv_store"
+            android:background="@mipmap/pull_down" />
+
+        <ImageView
+            android:id="@+id/iv_first_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/iv_store"
+            android:layout_alignRight="@+id/iv_store"
+            android:layout_alignTop="@+id/imageView2"
+            android:layout_marginTop="5dp"
+            android:background="@mipmap/decrease" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/ll_rank"
+            android:layout_alignStart="@+id/ll_rank"
+            android:layout_alignTop="@+id/imageView"
+            android:layout_marginTop="10dp"
+            android:background="@mipmap/first_order" />
+
+
+    </RelativeLayout>
+
+    <RadioGroup
+        android:id="@+id/rg_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="3dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/store_details"
+            style="@style/RadioButton"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/radiobutton_new"
+            android:gravity="center"
+            android:text="店铺详情" />
+
+
+        <RadioButton
+            android:id="@+id/store_evaluate"
+            style="@style/RadioButton"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/radiobutton_new"
+            android:gravity="center"
+            android:text="评价" />
+
+
+    </RadioGroup>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vPager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:flipInterval="30"
+        android:persistentDrawingCache="animation" />
+
+
+</LinearLayout>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    tools:context="com.example.administrator.myapplication.MainActivity">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:background="#ffa042">
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl1"
+        android:layout_width="fill_parent"
+        android:layout_height="110dp"
+        android:layout_marginTop="30dp"
+        android:background="#ffeedd">
+
+        <ImageView
+            android:id="@+id/iv_heardpicture"
+            android:layout_width="60dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@mipmap/heardpicture" />
+
+        <TextView
+            android:id="@+id/tv_signature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="45dp"
+
+            android:text="新用户首单立减5元"
+            android:textColor="#211d1d"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_signature"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="15dp"
+            android:text="营业中" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/rl1"
+        android:background="#f1e6d3">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/store"
+                style="@style/MerchantHome"
+                android:drawableLeft="@mipmap/store"
+                android:text="店铺管理" />
+
+            <View style="@style/Line" />
+
+            <TextView
+                android:id="@+id/commodity"
+                style="@style/MerchantHome"
+                android:drawableLeft="@mipmap/commodity"
+                android:text="商品管理" />
+
+            <View style="@style/Line" />
+
+            <TextView
+                android:id="@+id/account"
+                style="@style/MerchantHome"
+                android:drawableLeft="@mipmap/account"
+                android:text="账户中心" />
+
+            <View style="@style/Line" />
+
+            <TextView
+                android:id="@+id/setting"
+                style="@style/MerchantHome"
+                android:drawableLeft="@mipmap/setting"
+                android:text="设置/打印机" />
+
+            <View style="@style/Line" />
+
+            <TextView
+                android:id="@+id/ourpartner"
+                style="@style/MerchantHome"
+                android:drawableLeft="@mipmap/ourpartner"
+                android:text="关于我们" />
+
+            <View style="@style/Line" />
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
