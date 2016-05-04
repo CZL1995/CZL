@@ -138,7 +138,6 @@ public class Order extends BaseActivity {
                     intent.putExtra("liu", liuyan);
                     intent.putExtra("i", String.valueOf(i));
                     startActivity(intent);
-                    finish();
                 }
 
             }

@@ -88,7 +88,8 @@ public class PayMent extends BaseActivity {
         tv_pay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PayMent.this.finish();
+
+                dilg();
 
             }
         });
@@ -97,7 +98,7 @@ public class PayMent extends BaseActivity {
             public void onClick(View v) {
                 text.setVisibility(View.VISIBLE);
                 handler.sendEmptyMessageDelayed(0, 2000);
-                zhuangtai="等待处理";
+                zhuangtai="等待收货";
                 try {
                     zhuangtai = URLEncoder.encode(zhuangtai, "UTF-8");
                     zhuangtai = URLEncoder.encode(zhuangtai, "UTF-8");

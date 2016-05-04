@@ -1,6 +1,8 @@
 package com.caozhiliang.main;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.view.PagerAdapter;
@@ -79,6 +81,7 @@ public class HomePage extends BaseFragment {
     private List<HomeDataBean> mviewpagers;
     private List<HomeDataBean> mpictures;
     private List<HomeDataBean> mlistviews;
+    private String  location;
 
 
     /**
@@ -103,11 +106,11 @@ public class HomePage extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle
             savedInstanceState) {
         //    头布局加入listview
-
-
+        SharedPreferences sp = getContext().getSharedPreferences("CityName", Context.MODE_PRIVATE);
+        location = sp.getString("lngCityName","");
         getServiceData();
-
         initview();
+        tv_location.setText(location);
         inintlocation();
 
         return neworderview;

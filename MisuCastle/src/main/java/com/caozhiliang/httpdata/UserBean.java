@@ -5,14 +5,7 @@ public class UserBean {
 	String phone;
 	String key;
 	String usernumber;
-
-	public String getUsernumber() {
-		return usernumber;
-	}
-
-	public void setUsernumber(String usernumber) {
-		this.usernumber = usernumber;
-	}
+	String sellernumber;
 
 	@Override
 	public String toString() {
@@ -21,12 +14,40 @@ public class UserBean {
 				", phone='" + phone + '\'' +
 				", key='" + key + '\'' +
 				", usernumber='" + usernumber + '\'' +
+				", sellernumber='" + sellernumber + '\'' +
+				", storenumber='" + storenumber + '\'' +
 				", shoucan='" + shoucan + '\'' +
 				", address='" + address + '\'' +
 				", chat='" + chat + '\'' +
 				", comment='" + comment + '\'' +
 				", image='" + image + '\'' +
 				'}';
+	}
+
+	public String getSellernumber() {
+		return sellernumber;
+	}
+
+	public void setSellernumber(String sellernumber) {
+		this.sellernumber = sellernumber;
+	}
+
+	public String getStorenumber() {
+		return storenumber;
+	}
+
+	public void setStorenumber(String storenumber) {
+		this.storenumber = storenumber;
+	}
+
+	String storenumber;
+
+	public String getUsernumber() {
+		return usernumber;
+	}
+
+	public void setUsernumber(String usernumber) {
+		this.usernumber = usernumber;
 	}
 
 	String shoucan;

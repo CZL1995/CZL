@@ -70,11 +70,40 @@ public class OrderFragment extends BaseFragment {
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent =new Intent();
-                intent.setClass(getContext(),Evaluate.class);
-                intent.putExtra("evaluatetradenumber", String.valueOf(list.get(position).getNumber()));
-                System.out.println(list.get(position).getNumber());
-                startActivity(intent);
+
+                switch (list.get(position).getZhuangtai()) {
+                    case "评价完成":
+                        Intent intent = new Intent();
+                        intent.setClass(getContext(), TradeDetailStore.class);
+                        intent.putExtra("id", list.get(position).getNumber());
+                        startActivity(intent);
+                        break;
+                    case "等待付款":
+                        Intent intent1 = new Intent();
+                        intent1.setClass(getContext(), PayGaiMent.class);
+                        intent1.putExtra("pri", String.valueOf(list.get(position).getZongjia()));
+                        System.out.println(list.get(position).getZongjia());
+                        intent1.putExtra("i", String.valueOf(list.get(position).getCount()));
+                        System.out.println(list.get(position).getCount());
+                        intent1.putExtra("dan", String.valueOf(list.get
+                                (position).getOrdernumber()));
+
+                        startActivity(intent1);
+                        break;
+                    case "等待收货":
+                        Toast.makeText(getContext(), "您的宝贝还在路上请稍等", Toast.LENGTH_SHORT).show();
+
+                        break;
+                    case "等待评价":
+                        Toast.makeText(getContext(), "请评价后继续操作", Toast.LENGTH_SHORT).show();
+                        break;
+
+                }
+
+
+
+
+
             }
         });
 
@@ -83,7 +112,7 @@ public class OrderFragment extends BaseFragment {
 
     public void getServerData() {
         RequestParams requestParams = new RequestParams(URL +
-                "/OrderChaServlet?usernumber=" + bianh + "&&zhuangtai=" + mBundle.getString
+                "/OrderServlet?pan=cha&&usernumber=" + bianh + "&&zhuangtai=" + mBundle.getString
                 ("arg"));
         x.http().get(requestParams, new Callback.CommonCallback<String>() {
             @Override
@@ -176,96 +205,116 @@ public class OrderFragment extends BaseFragment {
             holder.tv_zongjia.setText("共" + list.get(position).getCount() + "件商品  合计：" + list
                     .get(position).getZongjia());
             ordernumber = String.valueOf(list.get(position).getOrdernumber());
-            if(holder.tv_zhuangtai.getText().toString().equals("评价完成")){
-                holder.bt_pingjia.setText("已评价");
-                holder.bt_pingjia.setClickable(false);
 
-            } else {
+            switch (list.get(position).getZhuangtai()) {
+                case "评价完成":
+                    holder.bt_pingjia.setText("已评价");
+                    holder.bt_pingjia.setClickable(false);
+                    break;
+                case "等待付款":
+                    holder.bt_pingjia.setText("待付款");
+                    holder.bt_pingjia.setClickable(false);
+                    break;
+                case "等待收货":
+                    holder.bt_pingjia.setText("待收货");
+                    holder.bt_pingjia.setClickable(false);
+                    break;
+                case "等待评价":
+                    holder.bt_pingjia.setText("待评价");
+                    holder.bt_pingjia.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (open) {
+                                holder.rl_evaluate.setVisibility(View.VISIBLE);
 
-                holder.bt_pingjia.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        if (open) {
-                            holder.rl_evaluate.setVisibility(View.VISIBLE);
-
-                            holder.room_ratingbar.setOnRatingBarChangeListener(new RatingBar
-                                    .OnRatingBarChangeListener() {
+                                holder.room_ratingbar.setOnRatingBarChangeListener(new RatingBar
+                                        .OnRatingBarChangeListener() {
 
 
-                                @Override
-                                public void onRatingChanged(RatingBar ratingBar, float rating,
-                                                            boolean fromUser) {
-                                    holder.tv_rank.setText(String.valueOf(rating));
-                                }
-                            });
-                            holder.bt_evaluate.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                                    System.out.println(list.get(position).getNumber());
-                                    System.out.println(holder.tv_rank.getText().toString());
-                                    System.out.println(holder.ed_evaluate.getText());
-                                    xiangqing = holder.ed_evaluate.getText().toString();
-                                    try {
-                                        xiangqing = URLEncoder.encode(xiangqing, "UTF-8");
-                                        xiangqing = URLEncoder.encode(xiangqing, "UTF-8");
-                                        username = URLEncoder.encode(username, "UTF-8");
-                                        username = URLEncoder.encode(username, "UTF-8");
-                                    } catch (Exception e) {
+                                    @Override
+                                    public void onRatingChanged(RatingBar ratingBar, float rating,
+                                                                boolean fromUser) {
+                                        holder.tv_rank.setText(String.valueOf(rating));
                                     }
-                                    RequestParams reparams = new RequestParams(URL +
-                                            "/PingjiaServlet?pan=tian&&usernumber=" + bianh +
-                                            "&&number=" + list.get(position).getNumber() +
-                                            "&&username=" + username + "&&ordernumber=" + ordernumber +
-                                            "&&xingji=" + holder.tv_rank.getText().toString() +
-                                            "&&xiangqin=" +
-                                            xiangqing);
-                                    x.http().get(reparams, new Callback.CommonCallback<String>() {
-                                        @Override
-                                        public void onSuccess(String result) {
-                                            if (result.equals("评论成功")) {
-                                                Toast.makeText(getContext(), "评价成功", Toast
-                                                        .LENGTH_SHORT).show();
-                                                getServerData();
-                                                holder.rl_evaluate.setVisibility(View.GONE);
-                                                holder.bt_pingjia.setClickable(false);
-                                                mlistadapter.notifyDataSetChanged();
+                                });
+                                holder.bt_evaluate.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        System.out.println(list.get(position).getNumber());
+                                        System.out.println(holder.tv_rank.getText().toString());
+                                        System.out.println(holder.ed_evaluate.getText());
+                                        xiangqing = holder.ed_evaluate.getText().toString();
+                                        try {
+                                            xiangqing = URLEncoder.encode(xiangqing, "UTF-8");
+                                            xiangqing = URLEncoder.encode(xiangqing, "UTF-8");
+                                            username = URLEncoder.encode(username, "UTF-8");
+                                            username = URLEncoder.encode(username, "UTF-8");
+                                        } catch (Exception e) {
+                                        }
+                                        RequestParams reparams = new RequestParams(URL +
+                                                "/PingjiaServlet?pan=tian&&usernumber=" + bianh +
+                                                "&&number=" + list.get(position).getNumber() +
+                                                "&&username=" + username + "&&ordernumber=" +
+                                                ordernumber +
+                                                "&&xingji=" + holder.tv_rank.getText().toString() +
+                                                "&&xiangqin=" +
+                                                xiangqing);
+                                        x.http().get(reparams, new Callback.CommonCallback<String>() {
+                                            @Override
+                                            public void onSuccess(String result) {
+                                                if (result.equals("评论成功")) {
+                                                    Toast.makeText(getContext(), "评价成功", Toast
+                                                            .LENGTH_SHORT).show();
+                                                    getServerData();
+                                                    holder.rl_evaluate.setVisibility(View.GONE);
+                                                    holder.bt_pingjia.setClickable(false);
+                                                    mlistadapter.notifyDataSetChanged();
+
+
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onError(Throwable ex, boolean isOnCallback) {
 
 
                                             }
-                                        }
 
-                                        @Override
-                                        public void onError(Throwable ex, boolean isOnCallback) {
+                                            @Override
+                                            public void onCancelled(CancelledException cex) {
 
+                                            }
 
-                                        }
+                                            @Override
+                                            public void onFinished() {
 
-                                        @Override
-                                        public void onCancelled(CancelledException cex) {
-
-                                        }
-
-                                        @Override
-                                        public void onFinished() {
-
-                                        }
-                                    });
-                                }
-                            });
+                                            }
+                                        });
+                                    }
+                                });
 
 
-                            open = false;
-                        } else {
-                            holder.rl_evaluate.setVisibility(View.GONE);
-                            open = true;
+                                open = false;
+                            } else {
+                                holder.rl_evaluate.setVisibility(View.GONE);
+                                open = true;
+                            }
                         }
-                    }
 
-                });
+                    });
+
+                    break;
 
             }
 
 
+
+//            if (holder.tv_zhuangtai.getText().toString().equals("等待评价")) {
+//            } else {
+//
+//                holder.bt_pingjia.setClickable(false);
+//
+//            }
 
 
             return convertView;

@@ -3,6 +3,7 @@ package com.caozhiliang.main;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -63,12 +64,15 @@ public class SplashActivity extends BaseActivity {
     protected static final int CODE_URL_ERROR = 1;
     protected static final int CODE_NET_ERROR = 2;
     protected static final int CODE_ENTER_HOME = 3;// 进入主页面
+    private SharedPreferences mPref;
+
     JsonData a = new JsonData();
     private Handler handler = new Handler() {
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case CODE_UPDATE_DIALOG:
                     System.out.println("更新框");
+
                     showDailgo();
                     break;
                 case CODE_URL_ERROR:
@@ -98,8 +102,16 @@ public class SplashActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         x.Ext.init(getApplication());
         tv_versioncode_splash.setText("版本名称:" + getVersionname());
-        starAnim();
-        checkversion();
+        mPref = getSharedPreferences("config", MODE_PRIVATE);
+        boolean autoUpdate = mPref.getBoolean("update", true);
+        if (autoUpdate) {
+            starAnim();
+            checkversion();
+        } else {
+            starAnim();
+            enterhome();
+        }
+
 
 
 
@@ -234,7 +246,6 @@ public class SplashActivity extends BaseActivity {
         final long startTime = System.currentTimeMillis();
         new Thread() {
             public void run() {
-                //                Message msg=Message.obtain();
                 Message msg = Message.obtain();
                 HttpURLConnection httpurlconnection = null;
 

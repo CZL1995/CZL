@@ -69,7 +69,6 @@
         android:layout_below="@+id/tv_prices1"
         android:layout_marginRight="5dp"
         android:background="@drawable/button_new"
-        android:text="评价"
         />
 
     <RelativeLayout

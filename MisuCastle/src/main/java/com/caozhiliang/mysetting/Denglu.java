@@ -125,6 +125,9 @@ public class Denglu extends Activity {
                     edt.putString("key", use.getKey());
                     edt.putString("image", use.getImage());
                     edt.putString("bianh", use.getUsernumber());
+                    edt.putString("storesnumber", use.getStorenumber());
+                    edt.putString("sellersnumber", use.getSellernumber());
+                    System.out.println(use.getSellernumber());
                     edt.commit();
 
                     Toast.makeText(getApplicationContext(), "登录成功,3秒后自动跳转界面", Toast.LENGTH_LONG)

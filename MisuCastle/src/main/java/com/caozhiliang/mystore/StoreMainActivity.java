@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -13,6 +14,7 @@ import android.widget.PopupWindow;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import com.caozhiliang.main.MainActivity;
 import com.caozhiliang.main.R;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
@@ -75,7 +77,7 @@ public class StoreMainActivity extends SlidingFragmentActivity {
                 NewOrder newOrder = new NewOrder();
                 ft.replace(R.id.fl_content, newOrder, StoreMainActivity.TAG);
                 ft.commit();
-//                setButton(v);
+                //                setButton(v);
             }
         });
         bt2.setOnClickListener(new View.OnClickListener() {
@@ -86,7 +88,7 @@ public class StoreMainActivity extends SlidingFragmentActivity {
                 UntreatedOrder untreatedOrder = new UntreatedOrder();
                 ft.replace(R.id.fl_content, untreatedOrder, StoreMainActivity.TAG);
                 ft.commit();
-//                setButton(v);
+                //                setButton(v);
             }
         });
 
@@ -145,6 +147,20 @@ public class StoreMainActivity extends SlidingFragmentActivity {
 
     }
 
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+        if (keyCode == KeyEvent.KEYCODE_BACK
+                && event.getRepeatCount() == 0) {
+            Intent intent = new Intent();
+            intent.setClass(StoreMainActivity.this, MainActivity.class);
+            intent.putExtra("id", 1);
+            startActivity(intent);
+            StoreMainActivity.this.finish();
+
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
     private void initSlidingOnClick() {
 
         store.setOnClickListener(new View.OnClickListener() {

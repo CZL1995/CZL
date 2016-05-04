@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.PixelFormat;
 import android.os.Bundle;
 import android.os.Handler;
@@ -56,6 +57,8 @@ public class ActivitySelectCity extends Activity{
 	private LocationClient locationClient = null;
 	private EditText sh;
 	private TextView lng_city;
+
+	private SharedPreferences location;
 	private LinearLayout lng_city_lay;
 	private ProgressDialog progress;
 	private static final int SHOWDIALOG = 2;
@@ -72,7 +75,7 @@ public class ActivitySelectCity extends Activity{
 		sh = (EditText) findViewById(R.id.sh);
 		lng_city = (TextView) findViewById(R.id.lng_city);
 		imgback = (ImageView) findViewById(R.id.imgback);
-		
+		location=getSharedPreferences("CityName",MODE_PRIVATE);
 		letterListView.setOnTouchingLetterChangedListener((MyLetterListView.OnTouchingLetterChangedListener) new LetterListViewListener());
 		alphaIndexer = new HashMap<String, Integer>();
 		handler = new Handler();
@@ -83,6 +86,7 @@ public class ActivitySelectCity extends Activity{
 					long arg3) {
 				Intent intent = new Intent();
 				intent.putExtra("lngCityName", ShowCity_lists.get(arg2).name);
+				location.edit().putString("lngCityName",lngCityName).commit();
 				setResult(99,intent);
 				finish();
 			}
@@ -93,6 +97,7 @@ public class ActivitySelectCity extends Activity{
 			public void onClick(View v) {
 				Intent intent = new Intent();
 				intent.putExtra("lngCityName",lngCityName);
+				location.edit().putString("lngCityName",lngCityName).commit();
 				setResult(99,intent);
 				finish();
 			}

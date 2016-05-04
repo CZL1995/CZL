@@ -1,6 +1,8 @@
 package com.caozhiliang.mysetting;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
@@ -41,6 +43,8 @@ public class MineActivity extends Fragment {
     private View mineview;
     private RelativeLayout rl_order;
     private RelativeLayout rl_detail;
+    private String storesnumber;
+    private String sellersnumber;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle
@@ -51,6 +55,8 @@ public class MineActivity extends Fragment {
         a = sp.getString("name", "");
         mpath = sp.getString("mimage", "");
         ipath = sp.getString("image", "");
+        storesnumber = sp.getString("storesnumber", "");
+        sellersnumber = sp.getString("sellersnumber", "");
         if (mpath.isEmpty()) {
             imagepath = ipath;
         } else {
@@ -120,6 +126,7 @@ public class MineActivity extends Fragment {
                     getActivity().finish();
 
                 } else {
+
                     Intent intent = new Intent(getContext(), Denglu.class);
                     MineActivity.this.startActivity(intent);
                     getActivity().finish();
@@ -130,11 +137,57 @@ public class MineActivity extends Fragment {
         tv_mystore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), StoreMainActivity.class);
-                MineActivity.this.startActivity(intent);
+                if (a.equals("")) {
+
+                    Intent intent = new Intent(getContext(), Denglu.class);
+                    MineActivity.this.startActivity(intent);
+                    getActivity().finish();
+
+                } else {
+                    if (sellersnumber.equals("0")) {
+                        showDailgo();
+
+                    } else {
+                        Intent intent = new Intent(getContext(), StoreMainActivity.class);
+                        MineActivity.this.startActivity(intent);
+                        getActivity().finish();
+                    }
+                }
+
+
+            }
+        });
+        tv_myversion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(getContext(), NewVersion.class);
+                startActivity(intent);
                 getActivity().finish();
             }
         });
+
+    }
+    private void showDailgo() {
+
+
+        new AlertDialog.Builder(getContext())
+                .setTitle("是否成为商家？" )
+                .setMessage("点击确定进入商家界面")
+                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(getContext(), StoreMainActivity.class);
+                        MineActivity.this.startActivity(intent);
+                        getActivity().finish();
+                    }
+                })
+                .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                })
+                .show();
 
     }
 
