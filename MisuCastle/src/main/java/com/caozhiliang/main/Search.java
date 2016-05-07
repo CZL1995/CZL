@@ -57,10 +57,7 @@ public class Search extends BaseFragment {
                         //                        拿到FragmentManger对象
                         //开始初始化Fragment
                         FragmentTransaction fragmentTS = fragmentmanger.beginTransaction();
-
                         StoreSearch store_search = new StoreSearch();
-                        Bundle bundle1 = new Bundle();
-                        store_search.setArguments(bundle1);
                         fragmentTS.replace(R.id.fl_search, store_search);
                         fragmentTS.commit();
                         break;
@@ -71,9 +68,6 @@ public class Search extends BaseFragment {
                         FragmentTransaction fragmentTlocation = fragmentlocation
                                 .beginTransaction();
                         CommoditySearch commodity_search = new CommoditySearch();
-                        //                        Bundle bundle1 = new Bundle();
-                        //                        bundle1.putInt("keyss", st);
-                        //                        commodity_search.setArguments(bundle1);
                         fragmentTlocation.replace(R.id.fl_search, commodity_search);
                         fragmentTlocation.commit();
                         break;

@@ -21,6 +21,7 @@ import com.caozhiliang.httpdata.EvaluateData;
 import com.caozhiliang.httpdata.ImageData;
 import com.caozhiliang.httpdata.TradeBean;
 import com.caozhiliang.main.R;
+import com.caozhiliang.mysetting.Denglu;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -59,6 +60,8 @@ public class TradeDetailStore extends BaseActivity {
     private ImageView iv_image;
     private RatingBar evaluate_ratingbar;
     int length;
+    private String bianh;
+
     private List<EvaluateData> evaluatelist;
     private Handler handler = new Handler() {
         public void handleMessage(android.os.Message msg) {
@@ -78,6 +81,8 @@ public class TradeDetailStore extends BaseActivity {
         setContentView(R.layout.trade_detail);
         initview();
         id = getIntent().getIntExtra("id", 0);
+        SharedPreferences sp = getApplication().getSharedPreferences("haha", MODE_PRIVATE);
+        bianh = sp.getString("bianh", "");
         GetTradeData();
         GetTradeImageData();
         GetEvaluateData();
@@ -146,24 +151,32 @@ public class TradeDetailStore extends BaseActivity {
             @Override
             public void onClick(View v) {
 
-                SharedPreferences sp = getApplication().getSharedPreferences("haha",
-                        MODE_PRIVATE);
-                SharedPreferences.Editor edt = sp.edit();
-                edt.putString("imageaddress", imagedata.get(0).getImageaddress());
-                edt.putString("tradepricess", tradedata.getPrice1());
-                edt.putString("tradename", tradedata.getStorename());
-                String number = String.valueOf(tradedata.getNumber());
-                edt.putString("tradenumber", number);
-                edt.commit();
-                Intent intent = new Intent();
-                intent.setClass(TradeDetailStore.this, Order.class);
-                startActivity(intent);
+                if (bianh.isEmpty()) {
+                    Intent intent = new Intent(TradeDetailStore.this, Denglu.class);
+                    startActivity(intent);
+                    TradeDetailStore.this.finish();
+                } else {
+
+
+                    SharedPreferences sp = getApplication().getSharedPreferences("haha",
+                            MODE_PRIVATE);
+                    SharedPreferences.Editor edt = sp.edit();
+                    edt.putString("imageaddress", imagedata.get(0).getImageaddress());
+                    edt.putString("tradepricess", tradedata.getPrice1());
+                    edt.putString("tradename", tradedata.getStorename());
+                    String number = String.valueOf(tradedata.getNumber());
+                    edt.putString("tradenumber", number);
+                    edt.commit();
+                    Intent intent = new Intent();
+                    intent.setClass(TradeDetailStore.this, Order.class);
+                    startActivity(intent);
+                }
             }
         });
         to_evaluate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent =new Intent();
+                Intent intent = new Intent();
                 intent.setClass(TradeDetailStore.this, Evaluate.class);
                 intent.putExtra("evaluatetradenumber", String.valueOf(id));
                 startActivity(intent);
@@ -187,7 +200,7 @@ public class TradeDetailStore extends BaseActivity {
         iv_back = (ImageView) findViewById(R.id.iv_back);
         rl = (RelativeLayout) findViewById(R.id.rl);
         bt_buy = (Button) findViewById(R.id.bt_buy);
-        to_evaluate = (TextView)findViewById(R.id.to_evaluate);
+        to_evaluate = (TextView) findViewById(R.id.to_evaluate);
         iv_homepage_viewpager = (ViewPager) findViewById(R.id.iv_homepage_viewpager);
         trade_name = (TextView) findViewById(R.id.trade_name);
         trade_store_name = (TextView) findViewById(R.id.trade_store_name);

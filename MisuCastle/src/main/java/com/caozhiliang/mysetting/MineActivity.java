@@ -20,15 +20,18 @@ import com.caozhiliang.httpdata.UserBean;
 import com.caozhiliang.main.MyOrder;
 import com.caozhiliang.main.R;
 import com.caozhiliang.mystore.StoreMainActivity;
+import com.google.gson.Gson;
 
+import org.xutils.common.Callback;
 import org.xutils.common.util.DensityUtil;
+import org.xutils.http.RequestParams;
 import org.xutils.image.ImageOptions;
 import org.xutils.x;
 
 public class MineActivity extends Fragment {
     TextView txt;
     private ImageView deng;
-    String a, image, password, imagepath, mpath, ipath;
+    String a, key, password, imagepath, mpath, ipath,bianh;
     String path = FinalData.FUWU_PATH;
     public UserBean use;
     private ImageOptions imageOptions1;
@@ -53,9 +56,16 @@ public class MineActivity extends Fragment {
         inintview();
         SharedPreferences sp = getContext().getSharedPreferences("haha", Context.MODE_PRIVATE);
         a = sp.getString("name", "");
+        System.out.println("name="+a);
+        key = sp.getString("key", "");
+        System.out.println("key="+key);
+
+        password = sp.getString("phone", "");
+        bianh = sp.getString("bianh", "");
+        System.out.println("bianh="+bianh);
+        System.out.println("phone="+a);
         mpath = sp.getString("mimage", "");
         ipath = sp.getString("image", "");
-        storesnumber = sp.getString("storesnumber", "");
         sellersnumber = sp.getString("sellersnumber", "");
         if (mpath.isEmpty()) {
             imagepath = ipath;
@@ -144,11 +154,12 @@ public class MineActivity extends Fragment {
                     getActivity().finish();
 
                 } else {
-                    if (sellersnumber.equals("0")) {
+                    if (sellersnumber.equals("")) {
                         showDailgo();
 
                     } else {
                         Intent intent = new Intent(getContext(), StoreMainActivity.class);
+
                         MineActivity.this.startActivity(intent);
                         getActivity().finish();
                     }
@@ -177,9 +188,45 @@ public class MineActivity extends Fragment {
                 .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent intent = new Intent(getContext(), StoreMainActivity.class);
-                        MineActivity.this.startActivity(intent);
-                        getActivity().finish();
+                        RequestParams params = new RequestParams(path + "/DengluServlet?usernumber=" + bianh
+                                );
+                        x.http().get(params, new Callback.CommonCallback<String>() {
+                            @Override
+                            public void onSuccess(String result) {
+                                Gson gs = new Gson();
+                                use = gs.fromJson(result, UserBean.class);
+
+                                SharedPreferences sp = getContext().getSharedPreferences("haha",
+                                        Context.MODE_PRIVATE);
+                                SharedPreferences.Editor edt = sp.edit();
+                                edt.putString("storesnumberss", use.getStorenumber());
+                                System.out.println(use.getStorenumber());
+                                edt.putString("sellersnumber", use.getSellernumber());
+                                System.out.println(use.getSellernumber());
+                                edt.commit();
+                                Intent intent = new Intent(getContext(), StoreMainActivity.class);
+                                MineActivity.this.startActivity(intent);
+                                getActivity().finish();
+
+                            }
+
+                            @Override
+                            public void onError(Throwable ex, boolean isOnCallback) {
+                                System.out.println("网址错误");
+
+                            }
+
+                            @Override
+                            public void onCancelled(CancelledException cex) {
+                            }
+
+                            @Override
+                            public void onFinished() {
+                            }
+                        });
+
+
+
                     }
                 })
                 .setNegativeButton("取消", new DialogInterface.OnClickListener() {

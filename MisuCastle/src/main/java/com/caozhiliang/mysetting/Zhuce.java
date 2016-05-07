@@ -146,7 +146,7 @@ public class Zhuce extends Activity {
                 SharedPreferences sp = getApplication().getSharedPreferences("haha",
                         MODE_PRIVATE);
                 SharedPreferences.Editor edt = sp.edit();
-                edt.putString("name", "米苏城堡-" + phonea);
+                edt.putString("name", phonea);
                 edt.putString("phone", phonea);
                 edt.putString("key", password);
                 edt.putString("bianh", result);

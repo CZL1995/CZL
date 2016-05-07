@@ -21,10 +21,12 @@
             android:background="@mipmap/order" />
 
         <RadioGroup
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
             android:orientation="horizontal">
 
             <RadioButton
@@ -40,7 +42,7 @@
                 android:background="@drawable/radiobutton_new"
 
 
-                android:text="未处理" />
+                android:text="未完成" />
 
             <RadioButton
                 android:id="@+id/bt3"
@@ -48,7 +50,7 @@
                 android:background="@drawable/radiobutton_new"
 
 
-                android:text="已处理" />
+                android:text="已完成" />
 
 
         </RadioGroup>

@@ -90,9 +90,11 @@ public class OrderFragment extends BaseFragment {
 
                         startActivity(intent1);
                         break;
-                    case "等待收货":
-                        Toast.makeText(getContext(), "您的宝贝还在路上请稍等", Toast.LENGTH_SHORT).show();
+                    case "等待发货":
+                        Toast.makeText(getContext(), "您的宝贝还在准备请稍等", Toast.LENGTH_SHORT).show();
 
+                    case "等待收货":
+                        Toast.makeText(getContext(), "请点击确认收货", Toast.LENGTH_SHORT).show();
                         break;
                     case "等待评价":
                         Toast.makeText(getContext(), "请评价后继续操作", Toast.LENGTH_SHORT).show();
@@ -217,6 +219,10 @@ public class OrderFragment extends BaseFragment {
                     break;
                 case "等待收货":
                     holder.bt_pingjia.setText("待收货");
+                    holder.bt_pingjia.setClickable(false);
+                    break;
+                case "等待发货":
+                    holder.bt_pingjia.setText("待发货");
                     holder.bt_pingjia.setClickable(false);
                     break;
                 case "等待评价":

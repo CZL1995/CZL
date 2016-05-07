@@ -198,8 +198,6 @@ public class MainActivity extends BaseActivity {
                         FragmentTransaction fragmentTsearch = fragmentsearch.beginTransaction();
 
                         Search search = new Search();
-                        Bundle bundle = new Bundle();
-                        search.setArguments(bundle);
                         fragmentTsearch.replace(R.id.fl, search);
                         fragmentTsearch.commit();
                         break;

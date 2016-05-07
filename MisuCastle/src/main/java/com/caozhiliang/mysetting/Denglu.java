@@ -125,7 +125,8 @@ public class Denglu extends Activity {
                     edt.putString("key", use.getKey());
                     edt.putString("image", use.getImage());
                     edt.putString("bianh", use.getUsernumber());
-                    edt.putString("storesnumber", use.getStorenumber());
+                    edt.putString("storesnumberss", use.getStorenumber());
+                    System.out.println(use.getStorenumber());
                     edt.putString("sellersnumber", use.getSellernumber());
                     System.out.println(use.getSellernumber());
                     edt.commit();

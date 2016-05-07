@@ -88,7 +88,7 @@ public class PayGaiMent extends BaseActivity {
             public void onClick(View v) {
                 text.setVisibility(View.VISIBLE);
                 handler.sendEmptyMessageDelayed(0, 2000);
-                zhuangtai = "等待收货";
+                zhuangtai = "等待发货";
                 try {
                     zhuangtai = URLEncoder.encode(zhuangtai, "UTF-8");
                     zhuangtai = URLEncoder.encode(zhuangtai, "UTF-8");

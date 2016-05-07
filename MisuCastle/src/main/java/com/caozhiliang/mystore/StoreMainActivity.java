@@ -7,10 +7,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.KeyEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.PopupWindow;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
@@ -37,14 +34,7 @@ public class StoreMainActivity extends SlidingFragmentActivity {
     private RadioButton bt2;
     private RadioButton bt3;
 
-    private View currentButton;
     private ImageView order;
-
-    protected static final String TAG = "StoreMainActivity";
-
-    private View PopView;
-    private PopupWindow mPopupWindow;
-    private LinearLayout buttomBarGroup;
     private SharedPreferences mPref;
 
     @Override
@@ -67,7 +57,6 @@ public class StoreMainActivity extends SlidingFragmentActivity {
     }
 
 
-
     private void initButtonOnclick() {
         bt1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,7 +64,10 @@ public class StoreMainActivity extends SlidingFragmentActivity {
                 FragmentManager fm = getSupportFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
                 NewOrder newOrder = new NewOrder();
-                ft.replace(R.id.fl_content, newOrder, StoreMainActivity.TAG);
+                Bundle bundle1 = new Bundle();
+                bundle1.putString("zt", "weichuli");
+                newOrder.setArguments(bundle1);
+                ft.replace(R.id.fl_content, newOrder);
                 ft.commit();
                 //                setButton(v);
             }
@@ -86,7 +78,11 @@ public class StoreMainActivity extends SlidingFragmentActivity {
                 FragmentManager fm = getSupportFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
                 UntreatedOrder untreatedOrder = new UntreatedOrder();
-                ft.replace(R.id.fl_content, untreatedOrder, StoreMainActivity.TAG);
+                Bundle bundle1 = new Bundle();
+                bundle1.putString("zt", "yichuli");
+
+                untreatedOrder.setArguments(bundle1);
+                ft.replace(R.id.fl_content, untreatedOrder);
                 ft.commit();
                 //                setButton(v);
             }
@@ -98,15 +94,15 @@ public class StoreMainActivity extends SlidingFragmentActivity {
                 FragmentManager fm = getSupportFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
                 HandledOrder handledOrder = new HandledOrder();
-                ft.replace(R.id.fl_content, handledOrder, StoreMainActivity.TAG);
+                Bundle bundle1 = new Bundle();
+                bundle1.putString("zt", "quanbu");
+                handledOrder.setArguments(bundle1);
+                ft.replace(R.id.fl_content, handledOrder);
                 ft.commit();
-//                setButton(v);
+                //                setButton(v);
             }
         });
         bt1.performClick();
-        mPopupWindow = new PopupWindow(PopView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, true);
-
-
     }
 
     private void initMainView() {
@@ -114,7 +110,7 @@ public class StoreMainActivity extends SlidingFragmentActivity {
         bt2 = (RadioButton) findViewById(R.id.bt2);
         bt3 = (RadioButton) findViewById(R.id.bt3);
         order = (ImageView) findViewById(R.id.order);
-//        TextView textView = new TextView(this);
+        //        TextView textView = new TextView(this);
     }
 
     private void initSlidingView() {
@@ -134,7 +130,7 @@ public class StoreMainActivity extends SlidingFragmentActivity {
         SlidingMenu slidingMenu = getSlidingMenu();//获取侧滑菜单对象
         slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);//设置全屏触摸
         slidingMenu.setMode(SlidingMenu.LEFT);//设置侧滑的左右
-        slidingMenu.setBehindOffset(150);//设置侧滑剩余的空间
+        slidingMenu.setBehindOffset(250);//设置侧滑剩余的空间
         initSlidingView();
         initSlidingOnClick();
         order.setOnClickListener(new View.OnClickListener() {
@@ -161,12 +157,14 @@ public class StoreMainActivity extends SlidingFragmentActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
+
     private void initSlidingOnClick() {
 
         store.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Toast.makeText(MainActivity.this, "点击成功", Toast.LENGTH_SHORT).show();
+                //                Toast.makeText(MainActivity.this, "点击成功", Toast.LENGTH_SHORT)
+                // .show();
 
                 Intent intent = new Intent();
                 intent.setClass(StoreMainActivity.this, Store.class);
@@ -179,7 +177,8 @@ public class StoreMainActivity extends SlidingFragmentActivity {
             @Override
             public void onClick(View v) {
 
-//                Toast.makeText(MainActivity.this, "点击成功", Toast.LENGTH_SHORT).show();
+                //                Toast.makeText(MainActivity.this, "点击成功", Toast.LENGTH_SHORT)
+                // .show();
 
                 Intent intent = new Intent();
                 intent.setClass(StoreMainActivity.this, Account.class);
@@ -193,13 +192,15 @@ public class StoreMainActivity extends SlidingFragmentActivity {
                 Intent intent = new Intent();
                 intent.setClass(StoreMainActivity.this, Commodity.class);
                 startActivityForResult(intent, 3);
-//                Toast.makeText(MainActivity.this, "点击成功", Toast.LENGTH_SHORT).show();
+                //                Toast.makeText(MainActivity.this, "点击成功", Toast.LENGTH_SHORT)
+                // .show();
             }
         });
         partner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Toast.makeText(MainActivity.this, "点击成功", Toast.LENGTH_SHORT).show();
+                //                Toast.makeText(MainActivity.this, "点击成功", Toast.LENGTH_SHORT)
+                // .show();
 
 
                 Intent intent = new Intent();
@@ -210,7 +211,8 @@ public class StoreMainActivity extends SlidingFragmentActivity {
         setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Toast.makeText(MainActivity.this, "点击成功", Toast.LENGTH_SHORT).show();
+                //                Toast.makeText(MainActivity.this, "点击成功", Toast.LENGTH_SHORT)
+                // .show();
 
 
                 Intent intent = new Intent();
@@ -227,17 +229,18 @@ public class StoreMainActivity extends SlidingFragmentActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (resultCode) {
             case 1:
-//               toggle();
-//               Toast.makeText(MainActivity.this, "回调了", Toast.LENGTH_SHORT).show();
+                //               toggle();
+                //               Toast.makeText(MainActivity.this, "回调了", Toast.LENGTH_SHORT)
+                // .show();
                 break;
             case 2:
 
                 break;
             case 3:
-//               toggle();
+                //               toggle();
                 break;
             case 4:
-//               toggle();
+                //               toggle();
                 boolean open = mPref.getBoolean("check", true);
                 if (open) {
                     tv_open.setText("营业中");
@@ -246,16 +249,13 @@ public class StoreMainActivity extends SlidingFragmentActivity {
                 }
                 break;
             case 5:
-//               toggle();
+                //               toggle();
                 break;
 
         }
 
 
     }
-
-
-
 
 
 }
