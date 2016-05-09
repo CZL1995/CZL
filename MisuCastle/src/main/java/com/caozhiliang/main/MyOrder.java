@@ -29,7 +29,7 @@ public class MyOrder extends FragmentActivity {
     private TextView tv_order;
 
 
-    private static final String[] CONTENT = new String[]{"全部", "待付款", "待收货", "待评价"};
+    private static final String[] CONTENT = new String[]{"全部", "待评价", "待付款", "待收货"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,19 +112,19 @@ public class MyOrder extends FragmentActivity {
                 case 1:
                     fragment = new OrderFragment();
                     bundle = new Bundle();
-                    bundle.putString("arg", "fukuan");
+                    bundle.putString("arg", "pinjia");
                     fragment.setArguments(bundle);
                     break;
                 case 2:
                     fragment = new OrderFragment();
                     bundle = new Bundle();
-                    bundle.putString("arg", "shouhuo");
+                    bundle.putString("arg", "fukuan");
                     fragment.setArguments(bundle);
                     break;
                 case 3:
                     fragment = new OrderFragment();
                     bundle = new Bundle();
-                    bundle.putString("arg", "pinjia");
+                    bundle.putString("arg", "shouhuo");
                     fragment.setArguments(bundle);
                     break;
             }

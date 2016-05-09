@@ -92,9 +92,40 @@ public class OrderFragment extends BaseFragment {
                         break;
                     case "等待发货":
                         Toast.makeText(getContext(), "您的宝贝还在准备请稍等", Toast.LENGTH_SHORT).show();
-
+                        break;
                     case "等待收货":
-                        Toast.makeText(getContext(), "请点击确认收货", Toast.LENGTH_SHORT).show();
+                        orderzhunagtai = "等待评价";
+                        try {
+                            orderzhunagtai = URLEncoder.encode(orderzhunagtai, "UTF-8");
+                            orderzhunagtai = URLEncoder.encode(orderzhunagtai, "UTF-8");
+                        } catch (Exception e) {
+                        }
+                        RequestParams requestParams = new RequestParams(URL +
+                                "/OrderServlet?pan=gai&&ordernumber=" + list.get(position).getOrdernumber() +
+                                "&&zhuangtai=" + orderzhunagtai);
+                        x.http().get(requestParams, new Callback.CommonCallback<String>() {
+                            @Override
+                            public void onSuccess(String result) {
+                                Toast.makeText(getContext(), "收货成功，请去评价！", Toast.LENGTH_SHORT).show();
+                                getServerData();
+
+                            }
+
+                            @Override
+                            public void onError(Throwable ex, boolean isOnCallback) {
+
+                            }
+
+                            @Override
+                            public void onCancelled(CancelledException cex) {
+
+                            }
+
+                            @Override
+                            public void onFinished() {
+
+                            }
+                        });
                         break;
                     case "等待评价":
                         Toast.makeText(getContext(), "请评价后继续操作", Toast.LENGTH_SHORT).show();
@@ -218,7 +249,7 @@ public class OrderFragment extends BaseFragment {
                     holder.bt_pingjia.setClickable(false);
                     break;
                 case "等待收货":
-                    holder.bt_pingjia.setText("待收货");
+                    holder.bt_pingjia.setText("收货");
                     holder.bt_pingjia.setClickable(false);
                     break;
                 case "等待发货":
@@ -312,17 +343,6 @@ public class OrderFragment extends BaseFragment {
                     break;
 
             }
-
-
-
-//            if (holder.tv_zhuangtai.getText().toString().equals("等待评价")) {
-//            } else {
-//
-//                holder.bt_pingjia.setClickable(false);
-//
-//            }
-
-
             return convertView;
         }
 
