@@ -244,7 +244,7 @@ public class MainStoreFragmen extends BaseFragment {
             holder.tv_distance.setText("<" + list.get(position).getJuli() + "km");
             holder.tv_location.setText(list.get(position).getDiqu());
             holder.tv_dianzan.setText(list.get(position).getXfrenshu());
-
+            holder.room_ratingbar.setRating(Float.parseFloat(list.get(position).getXingpj()));
 
             x.image().bind(holder.iv_image, list.get(position).getImages(), imageOptions1);
             return convertView;

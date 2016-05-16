@@ -17,6 +17,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+
+
+
 }
 
 dependencies {
@@ -36,4 +40,5 @@ dependencies {
     compile project(':viewPagerIndicatorLibrary')
     compile project(':library')
     compile 'com.android.support:recyclerview-v7:23.1.1'
+    compile files('libs/jpush-android-2.1.5.jar')
 }

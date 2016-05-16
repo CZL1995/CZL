@@ -28,6 +28,8 @@ import org.xutils.http.RequestParams;
 import org.xutils.x;
 
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 public class Order_person_addres extends Activity {
@@ -115,14 +117,24 @@ public class Order_person_addres extends Activity {
                 SharedPreferences sp = getApplication().getSharedPreferences("haha",
                         MODE_PRIVATE);
                 SharedPreferences.Editor edt = sp.edit();
-                edt.putString("addressname",list.get(position).getName());
-                edt.putString("addressdetails",list.get(position).getShengf() +
+                edt.putString("addressname", list.get(position).getName());
+                edt.putString("addressdetails", list.get(position).getShengf() +
                         list.get(position).getChengs() + list.get(position).getXianc()
                         + list.get(position).getXiangq());
                 System.out.println(list.get(position).getAddnumber());
-                edt.putString("addressnumber",list.get(position).getAddnumber());
+                edt.putString("addressnumber", list.get(position).getAddnumber());
                 edt.commit();
                 Toast.makeText(Order_person_addres.this, "设置完成", Toast.LENGTH_SHORT).show();
+                new Timer().schedule(new TimerTask() {
+                    @Override
+                    public void run() {
+                        Intent intent = new Intent();
+                        intent.setClass(Order_person_addres.this, Order.class);
+                        startActivity(intent);
+                        Order_person_addres.this.finish();
+
+                    }
+                }, 1000);
                 return true;
             }
         });
@@ -181,7 +193,7 @@ public class Order_person_addres extends Activity {
             }
             holder.tv_address_name.setText(list.get(position).getName());
             holder.tv_address.setText(list.get(position).getShengf() +
-                     list.get(position).getChengs() + list.get(position).getXianc()
+                    list.get(position).getChengs() + list.get(position).getXianc()
                     + list.get(position).getXiangq());
             return convertView;
 

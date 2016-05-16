@@ -1,5 +1,6 @@
 package com.caozhiliang.mystore;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -11,10 +12,19 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import com.caozhiliang.httpdata.FinalData;
+import com.caozhiliang.httpdata.StoreBean;
 import com.caozhiliang.main.MainActivity;
 import com.caozhiliang.main.R;
+import com.google.gson.Gson;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
+
+import org.xutils.common.Callback;
+import org.xutils.common.util.DensityUtil;
+import org.xutils.http.RequestParams;
+import org.xutils.image.ImageOptions;
+import org.xutils.x;
 
 /**
  * Author:CZL
@@ -29,23 +39,32 @@ public class StoreMainActivity extends SlidingFragmentActivity {
     private TextView commodity;
     private TextView account;
     private TextView tv_open;
+    private TextView tv_signature;
+    private ImageView iv_heardpicture;
 
     private RadioButton bt1;
     private RadioButton bt2;
     private RadioButton bt3;
-
     private ImageView order;
     private SharedPreferences mPref;
+    private String bianh;
+    private String picture;
+    String path = FinalData.FUWU_PATH;
+    ImageOptions imageOptions1;
+    private StoreBean storedata;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.storeactivity_main);
         mPref = getSharedPreferences("config", MODE_PRIVATE);
-
+        SharedPreferences sp = getSharedPreferences("haha", Context.MODE_PRIVATE);
+        bianh = sp.getString("storesnumberss", "");
+        picture = sp.getString("mimage", "");
         initMainView();
 
         initSlidingMenu();
+        getStoreData();
         initButtonOnclick();
         boolean open = mPref.getBoolean("check", true);
         if (open) {
@@ -53,6 +72,52 @@ public class StoreMainActivity extends SlidingFragmentActivity {
         } else {
             tv_open.setText("暂停营业");
         }
+
+    }
+
+    private void getStoreData() {
+        RequestParams storeParams = new RequestParams(path + "/StoreServlet?Storenumber=" + bianh);
+
+        x.http().get(storeParams, new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+                imageOptions1 = new ImageOptions.Builder()
+                        .setImageScaleType(ImageView.ScaleType.FIT_XY)
+                        .setRadius(DensityUtil.dip2px(5))
+                        .setLoadingDrawableId(R.mipmap.loge)
+                        .setPlaceholderScaleType(ImageView.ScaleType.FIT_XY)
+                        .setFailureDrawableId(R.mipmap.loge)
+                        .build();
+                Gson gs = new Gson();
+                storedata = gs.fromJson(result, StoreBean.class);
+                if (picture.isEmpty()) {
+                    x.image().bind(iv_heardpicture,storedata.getImages(),imageOptions1);
+
+                } else {
+                    x.image().bind(iv_heardpicture,picture,imageOptions1);
+
+                }
+
+
+
+                        tv_signature.setText(storedata.getName());
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
 
     }
 
@@ -114,7 +179,8 @@ public class StoreMainActivity extends SlidingFragmentActivity {
     }
 
     private void initSlidingView() {
-
+        iv_heardpicture = (ImageView) findViewById(R.id.iv_heardpicture);
+        tv_signature = (TextView)findViewById(R.id.tv_signature);
         store = (TextView) findViewById(R.id.store);
         account = (TextView) findViewById(R.id.account);
         setting = (TextView) findViewById(R.id.setting);

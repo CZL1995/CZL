@@ -52,6 +52,10 @@
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\zhuce_fu.jpg"
     },
     {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\pictureaa.png",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\pictureaa.png"
+    },
+    {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\touxiang.png",
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\touxiang.png"
     },
@@ -84,12 +88,12 @@
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\home_hua4.jpg"
     },
     {
-        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\ddiy.png",
-        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\ddiy.png"
-    },
-    {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\map_zan.png",
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\map_zan.png"
+    },
+    {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\ddiy.png",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\ddiy.png"
     },
     {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\pull_down.png",
@@ -320,6 +324,10 @@
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\index_button_03.png"
     },
     {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\pen.png",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\pen.png"
+    },
+    {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\index_button_ch_03.png",
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\index_button_ch_03.png"
     },
@@ -374,6 +382,10 @@
     {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\xingxing.png",
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\xingxing.png"
+    },
+    {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\write.png",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\mipmap-mdpi\\write.png"
     },
     {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\r.png",

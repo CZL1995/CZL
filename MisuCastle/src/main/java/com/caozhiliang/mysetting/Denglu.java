@@ -27,6 +27,8 @@ import java.net.URLEncoder;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import cn.jpush.android.api.JPushInterface;
+
 public class Denglu extends Activity {
     //账号和密码
     public EditText edphone;
@@ -130,6 +132,9 @@ public class Denglu extends Activity {
                     edt.putString("sellersnumber", use.getSellernumber());
                     System.out.println(use.getSellernumber());
                     edt.commit();
+                    if(!use.getStorenumber().equals("0")){
+                        JPushInterface.setAlias(getApplicationContext(), use.getStorenumber(), null);
+                    }
 
                     Toast.makeText(getApplicationContext(), "登录成功,3秒后自动跳转界面", Toast.LENGTH_LONG)
                             .show();

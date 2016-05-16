@@ -21,20 +21,19 @@
 
         <ImageView
             android:id="@+id/iv_heardpicture"
-            android:layout_width="60dp"
+            android:layout_width="100dp"
             android:layout_height="70dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:src="@mipmap/heardpicture" />
+            />
 
         <TextView
             android:id="@+id/tv_signature"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="80dp"
-            android:layout_marginTop="45dp"
-
-            android:text="新用户首单立减5元"
+            android:layout_toRightOf="@+id/iv_heardpicture"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="35dp"
             android:textColor="#211d1d"
             android:textSize="16sp" />
 
@@ -42,9 +41,11 @@
             android:id="@+id/tv_open"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_signature"
-            android:layout_marginLeft="35dp"
-            android:layout_marginTop="15dp"
+            android:layout_below="@+id/iv_heardpicture"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="5dp"
+            android:textSize="18sp"
+            android:textColor="#ffa042"
             android:text="营业中" />
 
     </RelativeLayout>

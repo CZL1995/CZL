@@ -281,6 +281,7 @@
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="account01">账号/邮箱/手机号</string>
     <string name="account02">请输入常用的手机号码</string>
+    <string name="alias_hint">Alias为大小写字母，数字，下划线</string>
     <string name="app_name">米苏城堡</string>
     <string name="auth_google_play_services_client_facebook_display_name">Facebook</string>
     <string name="auth_google_play_services_client_google_display_name">Google</string>
@@ -1270,10 +1271,16 @@
     <string name="common_google_play_services_updating_text"><ns1:g id="app_name">%1$s</ns1:g> won\'t run without Google Play services, which are currently updating.</string>
     <string name="common_google_play_services_updating_title">Google Play services are updating</string>
     <string name="common_open_on_phone">Open on phone</string>
+    <string name="error_alias_empty">alias不能为空</string>
+    <string name="error_network">网络连接异常,初始化失败 请检查网络！</string>
+    <string name="error_style_empty">style不能为空</string>
+    <string name="error_tag_empty">tag不能为空</string>
+    <string name="error_tag_gs_empty">格式不对</string>
     <string name="exist">登录</string>
     <string name="forget_pwd">忘记密码？</string>
     <string name="login">立即注册</string>
     <string name="login1">注册</string>
+    <string name="logining">程序在后台执行, 请查看日志！</string>
     <string name="more_shangjia">我是商家</string>
     <string name="person_ziliao1_Password">密码</string>
     <string name="person_ziliao1_dizhi">常用地址</string>
@@ -1284,7 +1291,10 @@
     <string name="person_ziliao1_phone">手机号码</string>
     <string name="pwd">请输入您的密码</string>
     <string name="remember">记住密码</string>
+    <string name="setting_su">设置成功</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="style_hint">style为数字</string>
+    <string name="tag_hint">Tag为大小写字母，数字，下划线,中文， 多个用以逗号分隔</string>
     <style name="ActionBar_title_style">
         <item name="android:textSize">20.0sp</item>
         <item name="android:textColor">#fff</item>
@@ -2282,6 +2292,16 @@
 
         <item name="android:textSize">16sp</item>
     </style>
+    <style name="MyDialogStyle">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
     <style name="MyHometext">
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">40dp</item>
@@ -2694,6 +2714,19 @@
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@drawable/vpi__tab_text_color_indicator</item>
         <item name="android:maxLines">1</item>
+    </style>
+    <style name="push_alias">
+        <item name="android:hint">@string/alias_hint</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="push_style">
+        <item name="android:hint">@string/style_hint</item>
+        <item name="android:inputType">number</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="push_tag">
+        <item name="android:hint">@string/tag_hint</item>
+        <item name="android:textSize">14sp</item>
     </style>
     <style name="roomRatingBar" parent="@android:style/Widget.RatingBar">
         <item name="android:progressDrawable">@drawable/room_rating_bar</item>

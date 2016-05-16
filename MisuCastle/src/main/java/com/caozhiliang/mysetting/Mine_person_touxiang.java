@@ -205,7 +205,6 @@ public class Mine_person_touxiang extends Activity {
     public void chuan(View v) {
         RequestParams params = new RequestParams("http://119.29.148" +
                 ".150:8080/Fuwu1/GetImage?phone=" + a);
-        params.addBodyParameter("haha", "");
         params.addBodyParameter("file", new File(path));
         x.http().post(params, new Callback.CommonCallback<String>() {
             @Override

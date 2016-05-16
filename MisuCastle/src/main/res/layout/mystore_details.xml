@@ -1,10 +1,184 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:id="@+id/rl_detail"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="1"/>
+        android:layout_marginTop="30dp">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#d1cfcf"
+            android:orientation="horizontal"/>
+
+        <ImageView
+            android:id="@+id/tv_mydetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/linearLayout"
+
+            android:layout_alignStart="@+id/linearLayout"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/location"/>
+
+        <TextView
+            android:id="@+id/tv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="50dp"
+            android:textSize="16sp"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/tv_mydetails"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#d1cfcf"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_detaila"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="20dp">
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#d1cfcf"
+            android:orientation="horizontal"/>
+
+        <TextView
+            android:id="@+id/tv_mydetailsa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/linearLayout2"
+            android:layout_alignStart="@+id/linearLayout2"
+            android:layout_centerVertical="true"
+            android:drawableLeft="@mipmap/phone"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:text="联系方式:"
+            android:textSize="16sp"/>
+
+        <EditText
+            android:id="@+id/ed_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/tv_mydetailsa"
+            android:background="#00000000"
+            android:hint="电话号码"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/tv_mydetailsa"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#d1cfcf"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_detailas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <LinearLayout
+            android:id="@+id/linearLayout2s"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#d1cfcf"
+            android:orientation="horizontal"/>
+
+        <TextView
+            android:id="@+id/tv_mydetailsas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/linearLayout2s"
+            android:layout_alignStart="@+id/linearLayout2s"
+            android:drawableLeft="@mipmap/write"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:text="店铺详情:"
+            android:textSize="16sp"/>
+
+        <ScrollView
+            android:id="@+id/sll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:paddingBottom="10dp"
+            android:layout_below="@+id/tv_mydetailsas">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/tv2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableRight="@mipmap/pen"
+                    android:background="#00000000"
+                    />
+                <EditText
+                    android:id="@+id/tv3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#00000000"
+                    />
+
+
+                <EditText
+                    android:id="@+id/et_write"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#00000000"
+                    />
+
+
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:background="#d1cfcf"/>
+    </RelativeLayout>
+
+
 </LinearLayout>

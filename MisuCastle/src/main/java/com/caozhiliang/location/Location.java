@@ -98,23 +98,24 @@ public class Location extends Fragment implements OnGetPoiSearchResultListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle
             savedInstanceState) {
         initMapManager();
+
         mPoiSearch = PoiSearch.newInstance();
         mPoiSearch.setOnGetPoiSearchResultListener(this);
         view = View.inflate(getContext(), R.layout.location, null);
+
         requestLocButton1 = (Button) view.findViewById(R.id.button1);
         id_recyclerview_horizontal = (RecyclerView) view.findViewById(R.id.id_recyclerview_horizontal);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         id_recyclerview_horizontal.setLayoutManager(linearLayoutManager);
-
-
         parking = (Button) view.findViewById(R.id.parking);
         mapView = (MapView) view.findViewById(R.id.bmapView);
         init();
-        LocationData();
+
 
         mCurrentMode = LocationMode.NORMAL;
         requestLocButton1.setText("普通地图");
+        LocationData();
         Overlays();
         setListener();
         return view;

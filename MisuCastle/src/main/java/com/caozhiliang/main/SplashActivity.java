@@ -40,6 +40,8 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import cn.jpush.android.api.JPushInterface;
+
 /**
  * @author CZL
  * @time 2016-03-14 22:12
@@ -311,12 +313,6 @@ public class SplashActivity extends BaseActivity {
 
     }
 
-    private void initview() {
-//        rl_splash = (RelativeLayout) findViewById(R.id.rl_splash);
-//        tv_versioncode_splash = (TextView) findViewById(R.id.tv_versioncode_splash);
-//        pb_splash = (ProgressBar) findViewById(R.id.pb_splash);
-
-    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -354,6 +350,18 @@ public class SplashActivity extends BaseActivity {
 
         return -1;
     }
+    @Override
+    protected void onResume() {
+        JPushInterface.onResume(this);
+        super.onResume();
+    }
 
+
+    @Override
+    protected void onPause() {
+        JPushInterface.onPause(this);
+
+        super.onPause();
+    }
 
 }

@@ -72,6 +72,10 @@
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
     },
     {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\layout\\timeselect.xml",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\layout\\timeselect.xml"
+    },
+    {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\layout\\mine_person_key.xml",
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\layout\\mine_person_key.xml"
     },
@@ -396,12 +400,12 @@
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_action.xml",
-        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_media_action.xml"
-    },
-    {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\layout\\newversion.xml",
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\layout\\newversion.xml"
+    },
+    {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_action.xml",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_media_action.xml"
     },
     {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\layout\\person_ziliao_itemtou.xml",
