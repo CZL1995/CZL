@@ -68,6 +68,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.zfdang.multiple_images_selector.ImagesSelectorActivity"
+            android:configChanges="orientation|screenSize" />
         <activity android:name="com.caozhiliang.main.MainActivity" />
         <activity android:name="com.caozhiliang.main.MyOrder" />
         <activity android:name="com.caozhiliang.fragment.Order_addres_tianjia" />
@@ -97,13 +100,16 @@
         <activity android:name="com.caozhiliang.fragment.TradeDetailStore" />
         <activity android:name="com.caozhiliang.location.ActivitySelectCity" >
         </activity>
-        <activity android:name="com.caozhiliang.mystore.Store" />
+        <activity
+            android:name="com.caozhiliang.mystore.Store"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
         <activity android:name="com.caozhiliang.mystore.StoreMainActivity" />
         <activity android:name="com.caozhiliang.mystore.Commodity" />
         <activity android:name="com.caozhiliang.mystore.OurParter" />
         <activity android:name="com.caozhiliang.mystore.Account" />
         <activity android:name="com.caozhiliang.mystore.Setting" />
         <activity android:name="com.caozhiliang.mystore.MyStore_touxiang" />
+        <activity android:name="com.caozhiliang.mystore.ImageMore" />
 
         <service
             android:name="com.baidu.location.f"

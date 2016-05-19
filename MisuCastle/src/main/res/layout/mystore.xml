@@ -24,6 +24,17 @@
             android:text="店铺管理"
             android:textColorLink="#ffffff"
             android:textSize="20sp"/>
+        <TextView
+            android:id="@+id/tv_finish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="完成"
+            android:visibility="gone"
+            android:layout_marginRight="10dp"
+            android:textSize="18sp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"/>
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -55,8 +66,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             />
-
-        <TextView
+        <EditText
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -64,6 +74,8 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="5dp"
             android:textColor="#000000"
+            android:hint="店铺名字书写"
+            android:background="#00000000"
             android:textSize="16sp"/>
 
         <LinearLayout

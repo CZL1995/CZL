@@ -60,7 +60,7 @@ public class StoreMainActivity extends SlidingFragmentActivity {
         mPref = getSharedPreferences("config", MODE_PRIVATE);
         SharedPreferences sp = getSharedPreferences("haha", Context.MODE_PRIVATE);
         bianh = sp.getString("storesnumberss", "");
-        picture = sp.getString("mimage", "");
+        picture = sp.getString("mimageaa", "");
         initMainView();
 
         initSlidingMenu();
@@ -235,7 +235,7 @@ public class StoreMainActivity extends SlidingFragmentActivity {
                 Intent intent = new Intent();
                 intent.setClass(StoreMainActivity.this, Store.class);
                 startActivityForResult(intent, 1);
-
+                StoreMainActivity.this.finish();
             }
         });
 

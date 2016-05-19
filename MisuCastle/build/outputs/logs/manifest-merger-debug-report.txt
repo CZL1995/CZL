@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:2:1-260:12
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:2:1-265:12
 	package
 		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:3:5-35
 		INJECTED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml
@@ -104,16 +104,49 @@ ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:53
 	android:name
 		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:53:22-76
 application
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:56:5-258:19
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:56:5-263:19
 MERGED from [org.xutils:xutils:3.3.22] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\org.xutils\xutils\3.3.22\AndroidManifest.xml:12:5-20
-MERGED from [com.android.support:appcompat-v7:23.1.1] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.1] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.3.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-vector-drawable:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:animated-vector-drawable:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.3.0\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-vector-drawable:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-appindexing:8.1.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.1.0\AndroidManifest.xml:19:5-20
 MERGED from [com.google.android.gms:play-services-basement:8.1.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:20:5-24:19
-MERGED from [com.android.support:support-v4:23.1.1] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.1] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.1] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.1] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [My:multiple-images-selector:unspecified] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\My\multiple-images-selector\unspecified\AndroidManifest.xml:11:5-15:19
+MERGED from [com.android.support:appcompat-v7:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.3.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-vector-drawable:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:animated-vector-drawable:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.3.0\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-vector-drawable:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
 	android:label
 		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:60:9-41
 	android:supportsRtl
@@ -140,379 +173,464 @@ category#android.intent.category.LAUNCHER
 ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:67:17-76
 	android:name
 		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:67:27-74
+activity#com.zfdang.multiple_images_selector.ImagesSelectorActivity
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:70:9-72:61
+	android:configChanges
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:72:13-59
+	android:name
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:71:13-86
 activity#com.caozhiliang.main.MainActivity
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:71:9-49
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:73:9-49
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:71:19-47
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:73:19-47
 activity#com.caozhiliang.main.MyOrder
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:72:9-44
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:74:9-44
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:72:19-42
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:74:19-42
 activity#com.caozhiliang.fragment.Order_addres_tianjia
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:73:9-81
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:75:9-81
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:73:19-79
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:75:19-79
 activity#com.caozhiliang.mysetting.Mine_cake
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:74:9-71
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:76:9-71
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:74:19-69
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:76:19-69
 activity#com.caozhiliang.mysetting.Mine_collection
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:75:9-77
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:77:9-77
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:75:19-75
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:77:19-75
 activity#com.caozhiliang.mysetting.Mine_new_version
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:76:9-78
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:78:9-78
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:76:19-76
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:78:19-76
 activity#com.caozhiliang.mysetting.Mine_order
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:77:9-72
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:79:9-72
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:77:19-70
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:79:19-70
 activity#com.caozhiliang.mysetting.Mine_person
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:78:9-73
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:80:9-73
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:78:19-71
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:80:19-71
 activity#com.caozhiliang.mysetting.Mine_shangjia
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:79:9-75
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:81:9-75
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:79:19-73
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:81:19-73
 activity#com.caozhiliang.mysetting.Mine_person_touxiang
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:80:9-82
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:82:9-82
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:80:19-80
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:82:19-80
 activity#com.caozhiliang.mysetting.Mine_person_addres
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:81:9-80
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:83:9-80
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:81:19-78
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:83:19-78
 activity#com.caozhiliang.mysetting.Mine_person_key
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:82:9-77
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:84:9-77
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:82:19-75
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:84:19-75
 activity#com.caozhiliang.mysetting.NewVersion
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:83:9-72
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:85:9-72
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:83:19-70
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:85:19-70
 activity#com.caozhiliang.mysetting.Mine_person_name
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:84:9-78
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:86:9-78
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:84:19-76
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:86:19-76
 activity#com.caozhiliang.mysetting.Mine_person_phone
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:85:9-79
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:87:9-79
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:85:19-77
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:87:19-77
 activity#com.caozhiliang.mysetting.Mine_person_addres_tianjia
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:86:9-88
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:88:9-88
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:86:19-86
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:88:19-86
 activity#com.caozhiliang.mysetting.Zhuce
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:87:9-67
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:89:9-67
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:87:19-65
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:89:19-65
 activity#com.caozhiliang.mysetting.Denglu
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:88:9-68
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:90:9-68
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:88:19-66
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:90:19-66
 activity#com.caozhiliang.fragment.StoreDetails
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:89:9-73
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:91:9-73
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:89:19-71
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:91:19-71
 activity#com.caozhiliang.fragment.Order
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:90:9-66
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:92:9-66
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:90:19-64
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:92:19-64
 activity#com.caozhiliang.fragment.StoreDetailsTrade
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:91:9-78
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:93:9-78
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:91:19-76
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:93:19-76
 activity#com.caozhiliang.fragment.TradeDetails
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:92:9-73
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:94:9-73
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:92:19-71
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:94:19-71
 activity#com.caozhiliang.fragment.PayMent
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:93:9-68
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:95:9-68
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:93:19-66
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:95:19-66
 activity#com.caozhiliang.fragment.PayGaiMent
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:94:9-71
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:96:9-71
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:94:19-69
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:96:19-69
 activity#com.caozhiliang.fragment.Evaluate
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:95:9-69
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:97:9-69
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:95:19-67
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:97:19-67
 activity#com.caozhiliang.fragment.Order_person_addres
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:96:9-80
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:98:9-80
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:96:19-78
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:98:19-78
 activity#com.caozhiliang.fragment.TradeDetailStore
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:97:9-77
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:99:9-77
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:97:19-75
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:99:19-75
 activity#com.caozhiliang.location.ActivitySelectCity
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:98:9-99:20
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:100:9-101:20
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:98:19-77
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:100:19-77
 activity#com.caozhiliang.mystore.Store
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:101:9-75
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:103:9-105:74
+	android:windowSoftInputMode
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:105:13-72
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:101:19-63
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:104:13-57
 activity#com.caozhiliang.mystore.StoreMainActivity
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:102:9-87
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:106:9-87
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:102:19-75
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:106:19-75
 activity#com.caozhiliang.mystore.Commodity
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:103:9-79
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:107:9-79
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:103:19-67
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:107:19-67
 activity#com.caozhiliang.mystore.OurParter
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:104:9-79
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:108:9-79
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:104:19-67
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:108:19-67
 activity#com.caozhiliang.mystore.Account
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:105:9-77
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:109:9-77
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:105:19-65
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:109:19-65
 activity#com.caozhiliang.mystore.Setting
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:106:9-77
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:110:9-77
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:106:19-65
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:110:19-65
 activity#com.caozhiliang.mystore.MyStore_touxiang
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:107:9-86
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:111:9-86
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:107:19-74
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:111:19-74
+activity#com.caozhiliang.mystore.ImageMore
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:112:9-79
+	android:name
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:112:19-67
 service#com.baidu.location.f
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:109:9-117:19
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:114:9-122:19
 	android:enabled
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:111:13-35
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:116:13-35
 	android:process
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:112:13-38
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:117:13-38
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:110:13-48
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:115:13-48
 intent-filter#com.baidu.location.service_v2.2
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:113:13-116:29
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:118:13-121:29
 action#com.baidu.location.service_v2.2
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:114:17-115:26
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:119:17-120:26
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:114:25-71
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:119:25-71
 meta-data#com.google.android.gms.version
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:120:9-122:68
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:125:9-127:68
 MERGED from [com.google.android.gms:play-services-basement:8.1.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
 	android:value
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:122:13-66
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:127:13-66
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:121:13-58
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:126:13-58
 meta-data#com.baidu.lbsapi.API_KEY
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:123:9-125:63
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:128:9-130:63
 	android:value
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:125:13-61
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:130:13-61
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:124:13-52
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:129:13-52
 activity#com.example.jpushdemo.TestActivity
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:131:9-138:20
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:136:9-143:20
 	android:exported
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:133:13-37
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:138:13-37
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:132:13-62
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:137:13-62
 intent-filter#jpush.testAction+jpush.testCategory
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:134:13-137:29
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:139:13-142:29
 action#jpush.testAction
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:135:17-58
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:140:17-58
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:135:25-56
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:140:25-56
 category#jpush.testCategory
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:136:17-62
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:141:17-62
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:136:27-60
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:141:27-60
 activity#cn.jpush.android.ui.PopWinActivity
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:141:9-145:20
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:146:9-150:20
 	android:exported
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:143:13-37
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:148:13-37
 	android:theme
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:144:13-49
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:149:13-49
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:142:13-62
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:147:13-62
 activity#cn.jpush.android.ui.PushActivity
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:148:9-159:20
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:153:9-164:20
 	android:exported
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:151:13-37
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:156:13-37
 	android:configChanges
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:150:13-63
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:155:13-63
 	android:theme
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:152:13-60
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:157:13-60
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:149:13-60
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:154:13-60
 intent-filter#android.intent.category.DEFAULT+cn.jpush.android.ui.PushActivity+com.caozhiliang.main
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:153:13-158:29
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:158:13-163:29
 action#cn.jpush.android.ui.PushActivity
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:154:17-74
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:159:17-74
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:154:25-72
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:159:25-72
 category#android.intent.category.DEFAULT
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:156:17-75
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:161:17-75
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:156:27-73
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:161:27-73
 category#com.caozhiliang.main
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:157:17-64
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:162:17-64
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:157:27-62
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:162:27-62
 service#cn.jpush.android.service.DownloadService
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:161:9-165:19
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:166:9-170:19
 	android:enabled
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:163:13-35
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:168:13-35
 	android:exported
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:164:13-37
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:169:13-37
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:162:13-68
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:167:13-68
 service#cn.jpush.android.service.PushService
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:170:9-180:19
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:175:9-185:19
 	android:enabled
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:172:13-35
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:177:13-35
 	android:exported
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:173:13-37
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:178:13-37
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:171:13-64
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:176:13-64
 intent-filter#cn.jpush.android.intent.PUSH_TIME+cn.jpush.android.intent.PushService+cn.jpush.android.intent.REGISTER+cn.jpush.android.intent.REPORT
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:174:13-179:29
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:179:13-184:29
 action#cn.jpush.android.intent.REGISTER
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:175:17-74
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:180:17-74
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:175:25-72
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:180:25-72
 action#cn.jpush.android.intent.REPORT
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:176:17-72
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:181:17-72
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:176:25-70
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:181:25-70
 action#cn.jpush.android.intent.PushService
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:177:17-77
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:182:17-77
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:177:25-75
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:182:25-75
 action#cn.jpush.android.intent.PUSH_TIME
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:178:17-75
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:183:17-75
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:178:25-73
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:183:25-73
 service#cn.jpush.android.service.DaemonService
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:184:9-193:19
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:189:9-198:19
 	android:enabled
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:186:13-35
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:191:13-35
 	android:exported
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:187:13-36
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:192:13-36
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:185:13-66
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:190:13-66
 intent-filter#cn.jpush.android.intent.DaemonService+com.caozhiliang.main
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:188:13-191:29
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:193:13-196:29
 action#cn.jpush.android.intent.DaemonService
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:189:17-79
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:194:17-79
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:189:25-77
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:194:25-77
 receiver#cn.jpush.android.service.PushReceiver
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:196:9-217:20
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:201:9-222:20
 	android:enabled
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:198:13-35
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:203:13-35
 	android:exported
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:199:13-37
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:204:13-37
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:197:13-65
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:202:13-65
 intent-filter#cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY+com.caozhiliang.main
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:200:13-204:29
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:205:13-209:29
 	android:priority
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:200:28-51
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:205:28-51
 action#cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:201:17-93
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:206:17-93
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:201:25-91
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:206:25-91
 intent-filter#android.intent.action.USER_PRESENT+android.net.conn.CONNECTIVITY_CHANGE
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:205:13-208:29
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:210:13-213:29
 action#android.intent.action.USER_PRESENT
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:206:17-76
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:211:17-76
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:206:25-74
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:211:25-74
 action#android.net.conn.CONNECTIVITY_CHANGE
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:207:17-78
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:212:17-78
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:207:25-76
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:212:25-76
 intent-filter#android.intent.action.PACKAGE_ADDED+android.intent.action.PACKAGE_REMOVED
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:210:13-215:29
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:215:13-220:29
 action#android.intent.action.PACKAGE_ADDED
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:211:17-77
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:216:17-77
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:211:25-75
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:216:25-75
 action#android.intent.action.PACKAGE_REMOVED
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:212:17-79
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:217:17-79
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:212:25-77
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:217:25-77
 data
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:214:17-49
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:219:17-49
 	android:scheme
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:214:23-47
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:219:23-47
 receiver#cn.jpush.android.service.AlarmReceiver
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:220:9-222:39
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:225:9-227:39
 	android:exported
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:222:13-37
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:227:13-37
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:221:13-66
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:226:13-66
 receiver#com.example.jpushdemo.MyReceiver
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:225:9-245:20
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:230:9-250:20
 	android:enabled
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:227:13-35
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:232:13-35
 	android:exported
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:228:13-37
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:233:13-37
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:226:13-60
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:231:13-60
 intent-filter#cn.jpush.android.intent.ACTION_RICHPUSH_CALLBACK+cn.jpush.android.intent.CONNECTION+cn.jpush.android.intent.MESSAGE_RECEIVED+cn.jpush.android.intent.NOTIFICATION_OPENED+cn.jpush.android.intent.NOTIFICATION_RECEIVED+cn.jpush.android.intent.REGISTRATION+cn.jpush.android.intent.UNREGISTRATION+com.caozhiliang.main
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:229:13-244:29
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:234:13-249:29
 action#cn.jpush.android.intent.REGISTRATION
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:230:17-78
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:235:17-78
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:230:25-76
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:235:25-76
 action#cn.jpush.android.intent.UNREGISTRATION
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:232:17-80
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:237:17-80
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:232:25-78
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:237:25-78
 action#cn.jpush.android.intent.MESSAGE_RECEIVED
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:233:17-82
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:238:17-82
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:233:25-80
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:238:25-80
 action#cn.jpush.android.intent.NOTIFICATION_RECEIVED
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:235:17-87
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:240:17-87
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:235:25-85
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:240:25-85
 action#cn.jpush.android.intent.NOTIFICATION_OPENED
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:237:17-85
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:242:17-85
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:237:25-83
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:242:25-83
 action#cn.jpush.android.intent.ACTION_RICHPUSH_CALLBACK
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:239:17-90
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:244:17-90
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:239:25-88
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:244:25-88
 action#cn.jpush.android.intent.CONNECTION
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:241:17-76
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:246:17-76
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:241:25-74
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:246:25-74
 meta-data#JPUSH_CHANNEL
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:249:9-251:48
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:254:9-256:48
 	android:value
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:251:13-46
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:256:13-46
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:250:13-41
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:255:13-41
 meta-data#JPUSH_APPKEY
-ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:252:9-254:55
+ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:257:9-259:55
 	android:value
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:254:13-53
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:259:13-53
 	android:name
-		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:253:13-40
+		ADDED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml:258:13-40
 uses-sdk
 INJECTED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [org.xutils:xutils:3.3.22] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\org.xutils\xutils\3.3.22\AndroidManifest.xml:8:5-10:41
-MERGED from [com.android.support:appcompat-v7:23.1.1] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.1.1] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.3.0\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-vector-drawable:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:animated-vector-drawable:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.3.0\AndroidManifest.xml:5:5-44
+MERGED from [com.android.support:support-vector-drawable:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
 MERGED from [com.google.android.gms:play-services-appindexing:8.1.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.1.0\AndroidManifest.xml:18:5-42
 MERGED from [com.google.android.gms:play-services-basement:8.1.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:18:5-42
-MERGED from [com.android.support:support-v4:23.1.1] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
 MERGED from [My:viewPagerIndicatorLibrary:unspecified] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\My\viewPagerIndicatorLibrary\unspecified\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:support-v4:23.1.1] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
 MERGED from [My:library:unspecified] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\My\library\unspecified\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:support-v4:23.1.1] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:recyclerview-v7:23.1.1] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.1.1] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [My:multiple-images-selector:unspecified] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\My\multiple-images-selector\unspecified\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.3.0\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-vector-drawable:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:animated-vector-drawable:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.3.0\AndroidManifest.xml:5:5-44
+MERGED from [com.android.support:support-vector-drawable:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [io.reactivex:rxandroid:1.1.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\io.reactivex\rxandroid\1.1.0\AndroidManifest.xml:19:5-43
+MERGED from [com.facebook.fresco:fresco:0.10.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.facebook.fresco\fresco\0.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:0.10.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.facebook.fresco\drawee\0.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.facebook.fresco:fbcore:0.10.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.facebook.fresco\fbcore\0.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:0.10.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.facebook.fresco\fbcore\0.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:0.10.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline\0.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.facebook.fresco:fbcore:0.10.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.facebook.fresco\fbcore\0.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:0.10.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline-base\0.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.facebook.fresco:fbcore:0.10.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.facebook.fresco\fbcore\0.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:animated-gif:0.10.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.facebook.fresco\animated-gif\0.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.facebook.fresco:animated-base:0.10.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.facebook.fresco\animated-base\0.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.facebook.fresco:fbcore:0.10.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.facebook.fresco\fbcore\0.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:0.10.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline-base\0.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.facebook.fresco:fbcore:0.10.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.facebook.fresco\fbcore\0.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:0.10.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline\0.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.facebook.fresco:fbcore:0.10.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.facebook.fresco\fbcore\0.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:0.10.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline-base\0.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.facebook.fresco:fbcore:0.10.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.facebook.fresco\fbcore\0.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:0.10.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.facebook.fresco\fbcore\0.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:animated-webp:0.10.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.facebook.fresco\animated-webp\0.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.facebook.fresco:animated-base:0.10.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.facebook.fresco\animated-base\0.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.facebook.fresco:fbcore:0.10.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.facebook.fresco\fbcore\0.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:0.10.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline-base\0.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.facebook.fresco:fbcore:0.10.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.facebook.fresco\fbcore\0.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:0.10.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline\0.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.facebook.fresco:fbcore:0.10.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.facebook.fresco\fbcore\0.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:0.10.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline-base\0.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.facebook.fresco:fbcore:0.10.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.facebook.fresco\fbcore\0.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:0.10.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.facebook.fresco\fbcore\0.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:0.10.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline-base\0.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.facebook.fresco:fbcore:0.10.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.facebook.fresco\fbcore\0.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:webpsupport:0.10.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.facebook.fresco\webpsupport\0.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.facebook.fresco:fbcore:0.10.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.facebook.fresco\fbcore\0.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:0.10.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline-base\0.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.facebook.fresco:fbcore:0.10.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.facebook.fresco\fbcore\0.10.0\AndroidManifest.xml:5:5-7:41
+MERGED from [xyz.danoz:recyclerviewfastscroller:0.1.3] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\xyz.danoz\recyclerviewfastscroller\0.1.3\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:23.3.0] F:\AndroidStudioProject\My\MisuCastle\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.3.0\AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
 		INJECTED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml
 		INJECTED from F:\AndroidStudioProject\My\MisuCastle\src\main\AndroidManifest.xml

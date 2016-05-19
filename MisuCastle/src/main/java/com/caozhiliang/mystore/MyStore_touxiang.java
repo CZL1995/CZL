@@ -18,7 +18,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.caozhiliang.main.R;
-import com.caozhiliang.mysetting.Mine_person;
 
 import org.xutils.common.Callback;
 import org.xutils.common.util.DensityUtil;
@@ -38,7 +37,7 @@ public class MyStore_touxiang extends Activity {
     Button ben, chuan, pai;
     ImageView im;
     private TextView tv1;
-    String path, a;
+    String path, bianh;
     Uri photoUri;
     Uri url2;
     private ImageOptions imageOptions1;
@@ -54,7 +53,8 @@ public class MyStore_touxiang extends Activity {
         tv1 = (TextView) findViewById(R.id.tv1);
         im = (ImageView) findViewById(R.id.imageView1);
         SharedPreferences sp = getApplication().getSharedPreferences("haha", MODE_PRIVATE);
-        a = sp.getString("phone", "");
+//        a = sp.getString("phone", "");
+        bianh = sp.getString("storesnumberss", "");
         //		Toast.makeText(getApplicationContext(), a, Toast.LENGTH_LONG).show();
         ben.setOnClickListener(new OnClickListener() {
             @Override
@@ -143,7 +143,7 @@ public class MyStore_touxiang extends Activity {
                     SharedPreferences sp = getApplication().getSharedPreferences("haha",
                             MODE_PRIVATE);
                     Editor edt = sp.edit();
-                    edt.putString("mimage", path);
+                    edt.putString("mimageaa", path);
 
                     edt.commit();
 
@@ -185,7 +185,7 @@ public class MyStore_touxiang extends Activity {
                     SharedPreferences sp = getApplication().getSharedPreferences("haha",
                             MODE_PRIVATE);
                     Editor edt = sp.edit();
-                    edt.putString("mimage", path);
+                    edt.putString("mimageaa", path);
                     edt.commit();
                     cursor.close();
                 }
@@ -205,7 +205,8 @@ public class MyStore_touxiang extends Activity {
 
     public void chuan(View v) {
         RequestParams params = new RequestParams("http://119.29.148" +
-                ".150:8080/Fuwu1/GetImage?phone=" + a);
+                ".150:8080/Fuwu1/GetImage?pan=Store&&number=" + bianh);
+        params.addBodyParameter("filea", "星星傻逼");
         params.addBodyParameter("file", new File(path));
         x.http().post(params, new Callback.CommonCallback<String>() {
             @Override
@@ -216,7 +217,7 @@ public class MyStore_touxiang extends Activity {
                     SharedPreferences sp = getApplication().getSharedPreferences("haha",
                             MODE_PRIVATE);
                     Editor edt = sp.edit();
-                    edt.putString("image", result);
+                    edt.putString("imageaa", result);
                     edt.commit();
                     Toast.makeText(getApplicationContext(), "修改成功", Toast.LENGTH_LONG).show();
                     new Timer().schedule(new TimerTask() {

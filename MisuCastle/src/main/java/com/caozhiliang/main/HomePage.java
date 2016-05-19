@@ -3,15 +3,16 @@ package com.caozhiliang.main;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.ScaleAnimation;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -22,9 +23,11 @@ import com.caozhiliang.base.BaseFragment;
 import com.caozhiliang.httpdata.HomeDataBean;
 import com.caozhiliang.httpdata.HomeDataObject;
 import com.caozhiliang.httpdata.ShuaxinBean;
+import com.caozhiliang.httpdata.XianshiData;
 import com.caozhiliang.location.ActivitySelectCity;
 import com.caozhiliang.view.RefreshListView;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import org.xutils.common.Callback;
 import org.xutils.common.util.DensityUtil;
@@ -63,7 +66,7 @@ public class HomePage extends BaseFragment {
     private RefreshListView listview;
     private TextView tv_location;
     private TextView tv_1;
-    private TextView tv_2;
+    private TextView time;
     private TextView tv_3;
     private ImageView imageView;
     //    HomeViewpagerData homedata = new HomeViewpagerData();
@@ -71,18 +74,20 @@ public class HomePage extends BaseFragment {
     ImageOptions imageOptions;
     ImageOptions imageOptions1;
     View heardview;
+    private RecyclerView id_recyclerview_horizontal;
+
     private String url;
     private int i = 1;
     private boolean mMoreUrl = true;//跟多页面地址
     private listviewadpter mlistadapter;
-
+    private RecyclerViews mAdapter;
     HomeDataObject homedata = new HomeDataObject();
     ShuaxinBean homedata1 = new ShuaxinBean();
     private List<HomeDataBean> mviewpagers;
-    private List<HomeDataBean> mpictures;
+    private List<XianshiData> mpictures;
     private List<HomeDataBean> mlistviews;
-    private String  location;
-
+    private String location;
+    private int recLen = 0;
 
     /**
      * 判断是否自动滚动
@@ -98,22 +103,66 @@ public class HomePage extends BaseFragment {
 
         }
 
-        ;
     };
     private View neworderview;
-
+    Handler handleara = new Handler();
+    Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            recLen++;
+            time.setText("优惠结束时间：" + recLen);
+            handleara.postDelayed(this, 1000);
+        }
+    };
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle
             savedInstanceState) {
         //    头布局加入listview
         SharedPreferences sp = getContext().getSharedPreferences("CityName", Context.MODE_PRIVATE);
-        location = sp.getString("lngCityName","");
+        location = sp.getString("lngCityName", "");
         getServiceData();
+        getXianshiData();
         initview();
+        handleara.postDelayed(runnable, 1000);
         tv_location.setText(location);
         inintlocation();
 
         return neworderview;
+    }
+
+    private void getXianshiData() {
+
+
+
+        RequestParams requestParams = new RequestParams(URL + "/XianshiServlet");
+        x.http().get(requestParams, new Callback.CommonCallback<String>() {
+
+            @Override
+            public void onSuccess(String result) {
+                Gson gs = new Gson();
+
+                mpictures = gs.fromJson(result, new TypeToken<List<XianshiData>>() {
+                }.getType());
+                mAdapter = new RecyclerViews(getContext());
+                id_recyclerview_horizontal.setAdapter(mAdapter);
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+                listview.onRefreshComplete(false);
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
+
     }
 
     private void inintlocation() {
@@ -152,15 +201,22 @@ public class HomePage extends BaseFragment {
         listview = (RefreshListView) neworderview.findViewById(R.id.listview);
         listview.addHeaderView(heardview);
         tv_location = (TextView) neworderview.findViewById(R.id.tv_location);
+        time = (TextView) heardview.findViewById(R.id.time);
         iv_homepage_viewpager = (ViewPager) heardview.findViewById(R.id.iv_homepage_viewpager);
+        id_recyclerview_horizontal = (RecyclerView) heardview.findViewById(R.id
+                .id_recyclerview_horizontal);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        id_recyclerview_horizontal.setLayoutManager(linearLayoutManager);
         tv_intro = (TextView) heardview.findViewById(R.id.tv_intro);
         dot_layout = (LinearLayout) heardview.findViewById(R.id.dot_layout);
-        imageview1 = (ImageView) heardview.findViewById(R.id.imageview1);
-        imageview2 = (ImageView) heardview.findViewById(R.id.imageview2);
-        imageview3 = (ImageView) heardview.findViewById(R.id.imageview3);
-        tv_1 = (TextView) heardview.findViewById(R.id.tv_1);
-        tv_2 = (TextView) heardview.findViewById(R.id.tv_2);
-        tv_3 = (TextView) heardview.findViewById(R.id.tv_3);
+
+        //        imageview1 = (ImageView) heardview.findViewById(R.id.imageview1);
+        //        imageview2 = (ImageView) heardview.findViewById(R.id.imageview2);
+        //        imageview3 = (ImageView) heardview.findViewById(R.id.imageview3);
+        //        tv_1 = (TextView) heardview.findViewById(R.id.tv_1);
+        //        tv_2 = (TextView) heardview.findViewById(R.id.tv_2);
+        //        tv_3 = (TextView) heardview.findViewById(R.id.tv_3);
         initDots();
         handler.sendEmptyMessageDelayed(0, 2000);
     }
@@ -187,7 +243,7 @@ public class HomePage extends BaseFragment {
                         getServiceData();
                         iv_homepage_viewpager.setAdapter(new toViewpager());
 
-                        pictureview();
+                        //                        pictureview();
                     }
 
                     @Override
@@ -207,7 +263,7 @@ public class HomePage extends BaseFragment {
                     }
                 });
 
-                pictureview();//多次使用，让其一直动
+//                pictureview();//多次使用，让其一直动
 
             }
 
@@ -275,11 +331,10 @@ public class HomePage extends BaseFragment {
 
 
             homedata = gs.fromJson(result, HomeDataObject.class);
-            mpictures = homedata.getVp();
             mlistviews = homedata.getList();
             mviewpagers = homedata.getPic();
             System.out.println(mviewpagers.size());
-            pictureview();
+//            pictureview();
 
             updateIntroAndDot();
 
@@ -358,47 +413,45 @@ public class HomePage extends BaseFragment {
 
     }
 
-    public void pictureview() {
-        imageOptions = new ImageOptions.Builder()
-                .setImageScaleType(ImageView.ScaleType.FIT_XY)
-                .setRadius(DensityUtil.dip2px(5))
-                .setLoadingDrawableId(R.mipmap.loge)
-                .setPlaceholderScaleType(ImageView.ScaleType.FIT_XY)
-                .setFailureDrawableId(R.mipmap.loge)
-                .build();
-        x.image().bind(imageview1, mpictures.get(0).getImageurl(), imageOptions);
-        x.image().bind(imageview2, mpictures.get(1).getImageurl(), imageOptions);
-        x.image().bind(imageview3, mpictures.get(2).getImageurl(), imageOptions);
-
-        ScaleAnimation scale = new ScaleAnimation((float) 0.8, 1, (float) 0.8,
-                1, Animation
-                .RELATIVE_TO_SELF, 0.5f,
-                Animation.RELATIVE_TO_SELF, 0.5f);
-        scale.setDuration(2000);
-        //        scale.setFillAfter(true);
-        scale.setRepeatCount(Integer.MAX_VALUE);
-        scale.setRepeatMode(Animation.REVERSE);
-        imageview1.startAnimation(scale);
-
-        imageview1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getContext(), "dian", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-
-        imageview2.startAnimation(scale);
-
-        imageview3.startAnimation(scale);
-        tv_1.setText(mpictures.get(0).getWenzi());
-        tv_2.setText(mpictures.get(1).getWenzi());
-        tv_3.setText(mpictures.get(2).getWenzi());
-
-
-
-
-    }
+//    public void pictureview() {
+//        imageOptions = new ImageOptions.Builder()
+//                .setImageScaleType(ImageView.ScaleType.FIT_XY)
+//                .setRadius(DensityUtil.dip2px(5))
+//                .setLoadingDrawableId(R.mipmap.loge)
+//                .setPlaceholderScaleType(ImageView.ScaleType.FIT_XY)
+//                .setFailureDrawableId(R.mipmap.loge)
+//                .build();
+//        x.image().bind(imageview1, mpictures.get(0).getImageurl(), imageOptions);
+//        x.image().bind(imageview2, mpictures.get(1).getImageurl(), imageOptions);
+//        x.image().bind(imageview3, mpictures.get(2).getImageurl(), imageOptions);
+//
+//        ScaleAnimation scale = new ScaleAnimation((float) 0.8, 1, (float) 0.8,
+//                1, Animation
+//                .RELATIVE_TO_SELF, 0.5f,
+//                Animation.RELATIVE_TO_SELF, 0.5f);
+//        scale.setDuration(2000);
+//        //        scale.setFillAfter(true);
+//        scale.setRepeatCount(Integer.MAX_VALUE);
+//        scale.setRepeatMode(Animation.REVERSE);
+//        imageview1.startAnimation(scale);
+//
+//        imageview1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(getContext(), "dian", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//
+//
+//        imageview2.startAnimation(scale);
+//
+//        imageview3.startAnimation(scale);
+//        tv_1.setText(mpictures.get(0).getWenzi());
+//        tv_2.setText(mpictures.get(1).getWenzi());
+//        tv_3.setText(mpictures.get(2).getWenzi());
+//
+//
+//    }
 
 
     class listviewadpter extends BaseAdapter {
@@ -426,18 +479,16 @@ public class HomePage extends BaseFragment {
                     .setPlaceholderScaleType(ImageView.ScaleType.FIT_XY)
                     .setFailureDrawableId(R.mipmap.loge)
                     .build();
-
-
-            ViewHolder holder;
+            ViewHoldera holder;
             if (convertView == null) {
                 convertView = View.inflate(getContext(), R.layout.homepagerlistviewadapter, null);
-                holder = new ViewHolder();
+                holder = new ViewHoldera();
                 holder.ivPic = (ImageView) convertView.findViewById(R.id.iv);
                 //                holder.tvDate = (TextView) convertView.findViewById(R.id.tv);
                 holder.ivPic.setScaleType(ImageView.ScaleType.FIT_XY);
                 convertView.setTag(holder);
             } else {
-                holder = (ViewHolder) convertView.getTag();
+                holder = (ViewHoldera) convertView.getTag();
 
             }
 
@@ -446,7 +497,7 @@ public class HomePage extends BaseFragment {
         }
     }
 
-    static class ViewHolder {
+    static class ViewHoldera {
 
         public TextView tvDate;
         public ImageView ivPic;
@@ -474,14 +525,80 @@ public class HomePage extends BaseFragment {
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
             imageView = new ImageView(getContext());
-            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+//            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
             imageView.setImageResource(R.mipmap.loge);
-
-
+            imageOptions = new ImageOptions.Builder()
+                    .setImageScaleType(ImageView.ScaleType.FIT_XY)
+                    .setRadius(DensityUtil.dip2px(5))
+                    .setLoadingDrawableId(R.mipmap.loge)
+                    .setPlaceholderScaleType(ImageView.ScaleType.FIT_XY)
+                    .setFailureDrawableId(R.mipmap.loge)
+                    .build();
             x.image().bind(imageView, mviewpagers.get(position % mviewpagers.size()).getImageurl(),
                     imageOptions);
             container.addView(imageView);
             return imageView;
         }
     }
+
+
+    class RecyclerViews extends RecyclerView.Adapter<RecyclerViews.ViewHolder> {
+
+        private LayoutInflater mInflater;
+
+
+        public RecyclerViews(Context context) {
+            mInflater = LayoutInflater.from(context);
+
+        }
+
+        @Override
+        public RecyclerViews.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
+            View view = mInflater.inflate(R.layout.homepicturelist,
+                    parent, false);
+            ViewHolder viewHolder = new ViewHolder(view);
+            viewHolder.tv_2 = (TextView) view.findViewById(R.id.tv_2);
+            viewHolder.tv_3 = (TextView) view.findViewById(R.id.tv_3);
+            viewHolder.imageview2 = (ImageView) view.findViewById(R.id.imageview2);
+            return viewHolder;
+
+        }
+
+        @Override
+        public void onBindViewHolder(RecyclerViews.ViewHolder holder, int position) {
+            imageOptions1 = new ImageOptions.Builder()
+                    .setImageScaleType(ImageView.ScaleType.FIT_XY)
+                    .setRadius(DensityUtil.dip2px(5))
+                    .setLoadingDrawableId(R.mipmap.loge)
+                    .setPlaceholderScaleType(ImageView.ScaleType.FIT_XY)
+                    .setFailureDrawableId(R.mipmap.loge)
+                    .build();
+            holder.tv_2.setText(String.valueOf("¥"+mpictures.get(position).getPrice1()));
+            holder.tv_3.setText(String.valueOf("¥"+mpictures.get(position).getPrice2()));
+            holder.tv_3.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
+            x.image().bind(holder.imageview2,mpictures.get(position).getImage(),imageOptions1);
+
+        }
+
+        @Override
+        public int getItemCount() {
+            return mpictures.size();
+        }
+
+
+        public class ViewHolder extends RecyclerView.ViewHolder {
+            public ViewHolder(View itemView) {
+                super(itemView);
+            }
+
+            TextView tv_2;
+            TextView tv_3;
+            ImageView imageview2;
+
+        }
+
+
+    }
+
 }

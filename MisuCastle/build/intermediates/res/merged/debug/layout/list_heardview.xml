@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -32,7 +32,7 @@
                 android:ellipsize="end"
                 android:singleLine="true"
                 android:textColor="#ffffff"
-                android:textSize="16sp" />
+                android:textSize="16sp"/>
 
             <LinearLayout
                 android:id="@+id/dot_layout"
@@ -47,89 +47,142 @@
 
     </RelativeLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="限时秒杀"
+            android:textColor="#ffa042"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
+            android:text="限时秒杀"
+            android:textSize="20sp"/>
+
+
+    </RelativeLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="90dp"
-        android:background="#ffffff">
+        android:layout_height="1dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:background="#c7c3c3"></LinearLayout>
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/id_recyclerview_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:scrollbars="none"/>
 
-            <ImageView
-                android:id="@+id/imageview1"
-                android:layout_width="110dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:background="#c7c3c3"></LinearLayout>
 
-                android:layout_height="60dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:layout_gravity="center"
-                android:src="@mipmap/loge" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="#45d23b"
+        android:layout_marginLeft="5dp"
+        android:text="专题精选"/>
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="90dp"-->
+    <!--android:background="#ffffff">-->
 
-            <TextView
-                android:id="@+id/tv_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="sdsdadasd"
-                android:textColor="#000000"
-                android:textSize="14sp" />
-        </LinearLayout>
+    <!--<LinearLayout-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_weight="1"-->
+    <!--android:orientation="vertical">-->
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="90dp"
-            android:layout_weight="1"
-            android:orientation="vertical">
+    <!--<ImageView-->
+    <!--android:id="@+id/imageview1"-->
+    <!--android:layout_width="110dp"-->
 
-            <ImageView
+    <!--android:layout_height="60dp"-->
+    <!--android:layout_marginTop="5dp"-->
+    <!--android:layout_marginBottom="5dp"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:src="@mipmap/loge" />-->
 
-                android:id="@+id/imageview2"
-                android:layout_width="110dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:layout_gravity="center"
+    <!--<TextView-->
+    <!--android:id="@+id/tv_1"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:text="sdsdadasd"-->
+    <!--android:textColor="#000000"-->
+    <!--android:textSize="14sp" />-->
+    <!--</LinearLayout>-->
 
-                android:src="@mipmap/loge" />
+    <!--<LinearLayout-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="90dp"-->
+    <!--android:layout_weight="1"-->
+    <!--android:orientation="vertical">-->
 
-            <TextView
-                android:id="@+id/tv_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="sdsdadasd"
-                android:textColor="#000000"
-                android:textSize="14sp" />
-        </LinearLayout>
+    <!--<ImageView-->
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="90dp"
-            android:layout_weight="1"
-            android:orientation="vertical">
+    <!--android:id="@+id/imageview2"-->
+    <!--android:layout_width="110dp"-->
+    <!--android:layout_height="60dp"-->
+    <!--android:layout_marginTop="5dp"-->
+    <!--android:layout_marginBottom="5dp"-->
+    <!--android:layout_gravity="center"-->
 
-            <ImageView
+    <!--android:src="@mipmap/loge" />-->
 
-                android:id="@+id/imageview3"
-                android:layout_width="110dp"
+    <!--<TextView-->
+    <!--android:id="@+id/tv_2"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:text="sdsdadasd"-->
+    <!--android:textColor="#000000"-->
+    <!--android:textSize="14sp" />-->
+    <!--</LinearLayout>-->
 
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:src="@mipmap/loge" />
+    <!--<LinearLayout-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="90dp"-->
+    <!--android:layout_weight="1"-->
+    <!--android:orientation="vertical">-->
 
-            <TextView
-                android:id="@+id/tv_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="sdsdadasd"
-                android:textColor="#000000"
-                android:textSize="14sp" />
-        </LinearLayout>
-    </LinearLayout>
+    <!--<ImageView-->
+
+    <!--android:id="@+id/imageview3"-->
+    <!--android:layout_width="110dp"-->
+
+    <!--android:layout_height="60dp"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:layout_marginTop="5dp"-->
+    <!--android:layout_marginBottom="5dp"-->
+    <!--android:src="@mipmap/loge" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/tv_3"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:text="sdsdadasd"-->
+    <!--android:textColor="#000000"-->
+    <!--android:textSize="14sp" />-->
+    <!--</LinearLayout>-->
+    <!--</LinearLayout>-->
 </LinearLayout>

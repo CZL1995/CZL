@@ -138,14 +138,13 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <EditText
+                <TextView
                     android:id="@+id/tv2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="10dp"
                     android:drawableRight="@mipmap/pen"
-                    android:background="#00000000"
                     />
                 <EditText
                     android:id="@+id/tv3"
@@ -154,9 +153,8 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="10dp"
                     android:background="#00000000"
+                    android:hint="门店服务信息书写"
                     />
-
-
                 <EditText
                     android:id="@+id/et_write"
                     android:layout_width="wrap_content"
@@ -164,6 +162,7 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="10dp"
                     android:background="#00000000"
+                    android:hint="门店介绍书写"
                     />
 
 
