@@ -219,7 +219,7 @@ public class MyStore_touxiang extends Activity {
                     Editor edt = sp.edit();
                     edt.putString("imageaa", result);
                     edt.commit();
-                    Toast.makeText(getApplicationContext(), "修改成功", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "图片已上传，等待服务器处理更新！", Toast.LENGTH_LONG).show();
                     new Timer().schedule(new TimerTask() {
                         @Override
                         public void run() {

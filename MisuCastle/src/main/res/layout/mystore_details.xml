@@ -129,9 +129,9 @@
             android:id="@+id/sll"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_below="@+id/tv_mydetailsas"
             android:layout_marginBottom="10dp"
-            android:paddingBottom="10dp"
-            android:layout_below="@+id/tv_mydetailsas">
+            android:paddingBottom="10dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -146,24 +146,56 @@
                     android:layout_marginTop="10dp"
                     android:drawableRight="@mipmap/pen"
                     />
-                <EditText
-                    android:id="@+id/tv3"
+
+                <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="10dp"
-                    android:background="#00000000"
-                    android:hint="门店服务信息书写"
-                    />
-                <EditText
-                    android:id="@+id/et_write"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/aa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="10dp"
+                        android:text="门店服务："
+                        android:textSize="18sp"/>
+
+                    <EditText
+                        android:id="@+id/tv3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_toRightOf="@+id/aa"
+                        android:background="#00000000"
+                        android:hint="门店服务信息书写"
+                        android:textSize="16sp"
+                        />
+                </RelativeLayout>
+
+                <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="10dp"
-                    android:background="#00000000"
-                    android:hint="门店介绍书写"
-                    />
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/aaa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="10dp"
+                        android:text="门店介绍："
+                        android:textSize="18sp"/>
+
+                    <EditText
+                        android:id="@+id/et_write"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_toRightOf="@+id/aaa"
+                        android:background="#00000000"
+                        android:hint="门店介绍书写"
+                        android:textSize="16sp"
+                        />
+                </RelativeLayout>
 
 
             </LinearLayout>
@@ -173,9 +205,9 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginBottom="5dp"
             android:background="#d1cfcf"/>
     </RelativeLayout>
 

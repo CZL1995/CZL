@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/llrexianshi"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="gone"
+
+    >
+<RelativeLayout
+    android:id="@+id/rexianshi"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    >
+
+    <TextView
+        android:id="@+id/pia"
+        android:layout_width="58dp"
+        android:layout_height="58dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/yuanjiao"
+        android:drawableTop="@mipmap/pictureaa"
+        android:gravity="center"
+        android:text="10张"/>
+
+    <Button
+        android:id="@+id/wanc"
+        android:layout_width="58dp"
+        android:layout_height="58dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/yuanjiao"
+        android:gravity="center"
+        android:text="完成"
+        android:visibility="gone"/>
+    <!--android:background="?android:attr/selectableItemBackgroundBorderless"-->
+
+    <ImageView
+        android:id="@+id/iv_trade"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:src="@mipmap/loge"
+        />
+
+    <EditText
+        android:id="@+id/tv_tradename"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_trade"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:background="#00000000"
+        android:hint="商品名字书写"
+        android:textColor="#000000"
+        android:textSize="20sp"/>
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_tradename"
+        android:orientation="horizontal">
+
+
+        <EditText
+            android:id="@+id/tv_prices1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:gravity="center"
+            android:hint="原价"
+            android:textColor="#000000"
+            android:textSize="18sp"/>
+
+        <EditText
+            android:id="@+id/tv_prices2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:background="#00000000"
+
+            android:gravity="center"
+            android:hint="优惠价"
+            android:textColor="#000000"
+            android:textSize="18sp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_mytrade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll"
+        android:layout_marginLeft="10dp"
+        android:drawableLeft="@mipmap/write"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:text="点击修改商品信息:"
+        android:textSize="16sp"/>
+
+    <EditText
+        android:id="@+id/tv_xinxi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_mytrade"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="5dp"
+        android:background="#00000000"
+        android:gravity="center"
+        android:hint="商品信息"
+        android:textColor="#000000"
+        android:textSize="18sp"/>
+
+</RelativeLayout>
+    </LinearLayout>

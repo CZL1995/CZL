@@ -35,6 +35,7 @@ import org.xutils.http.RequestParams;
 import org.xutils.image.ImageOptions;
 import org.xutils.x;
 
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -59,10 +60,8 @@ public class HomePage extends BaseFragment {
     //    @ViewInject(R.id.imageview2)
     private ImageView imageview2;
 
-    //    @ViewInject(R.id.imageview3)
     private ImageView imageview3;
 
-    //    @ViewInject(R.id.listview)
     private RefreshListView listview;
     private TextView tv_location;
     private TextView tv_1;
@@ -89,6 +88,24 @@ public class HomePage extends BaseFragment {
     private String location;
     private int recLen = 0;
 
+
+    private int dataday = 25;
+    private int datahour = 23;
+    private int dataminute = 59;
+    private int datasecond = 59;
+
+    private int currentday;
+    private int currenthour;
+    private int currentminute;
+    private int currentsecond;
+
+
+    private int day;
+    private int hour;
+    private int minute;
+    private int second;
+
+
     /**
      * 判断是否自动滚动
      */
@@ -109,11 +126,27 @@ public class HomePage extends BaseFragment {
     Runnable runnable = new Runnable() {
         @Override
         public void run() {
-            recLen++;
-            time.setText("优惠结束时间：" + recLen);
-            handleara.postDelayed(this, 1000);
+
+            Calendar c = Calendar.getInstance();
+            currentday=c.get(Calendar.DAY_OF_MONTH);
+            currenthour=c.get(Calendar.HOUR_OF_DAY);
+            currentminute=c.get(Calendar.MINUTE);
+            currentsecond=c.get(Calendar.SECOND);
+            day=dataday-currentday;
+            hour=datahour-currenthour;
+            minute=dataminute-currentminute;
+            second=datasecond-currentsecond;
+            if(day>=0){
+                time.setText(day+"天"+hour+"小时"+minute+"分钟"+second+"秒");
+                handleara.postDelayed(this, 1000);
+
+            } else {
+                time.setText("活动已结束");
+
+            }
         }
     };
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle
             savedInstanceState) {
@@ -126,12 +159,11 @@ public class HomePage extends BaseFragment {
         handleara.postDelayed(runnable, 1000);
         tv_location.setText(location);
         inintlocation();
-
+        System.out.println("当前时间:"+currentday+currenthour+currentminute+currentsecond);
         return neworderview;
     }
 
     private void getXianshiData() {
-
 
 
         RequestParams requestParams = new RequestParams(URL + "/XianshiServlet");
@@ -263,7 +295,7 @@ public class HomePage extends BaseFragment {
                     }
                 });
 
-//                pictureview();//多次使用，让其一直动
+                //                pictureview();//多次使用，让其一直动
 
             }
 
@@ -334,7 +366,7 @@ public class HomePage extends BaseFragment {
             mlistviews = homedata.getList();
             mviewpagers = homedata.getPic();
             System.out.println(mviewpagers.size());
-//            pictureview();
+            //            pictureview();
 
             updateIntroAndDot();
 
@@ -413,45 +445,45 @@ public class HomePage extends BaseFragment {
 
     }
 
-//    public void pictureview() {
-//        imageOptions = new ImageOptions.Builder()
-//                .setImageScaleType(ImageView.ScaleType.FIT_XY)
-//                .setRadius(DensityUtil.dip2px(5))
-//                .setLoadingDrawableId(R.mipmap.loge)
-//                .setPlaceholderScaleType(ImageView.ScaleType.FIT_XY)
-//                .setFailureDrawableId(R.mipmap.loge)
-//                .build();
-//        x.image().bind(imageview1, mpictures.get(0).getImageurl(), imageOptions);
-//        x.image().bind(imageview2, mpictures.get(1).getImageurl(), imageOptions);
-//        x.image().bind(imageview3, mpictures.get(2).getImageurl(), imageOptions);
-//
-//        ScaleAnimation scale = new ScaleAnimation((float) 0.8, 1, (float) 0.8,
-//                1, Animation
-//                .RELATIVE_TO_SELF, 0.5f,
-//                Animation.RELATIVE_TO_SELF, 0.5f);
-//        scale.setDuration(2000);
-//        //        scale.setFillAfter(true);
-//        scale.setRepeatCount(Integer.MAX_VALUE);
-//        scale.setRepeatMode(Animation.REVERSE);
-//        imageview1.startAnimation(scale);
-//
-//        imageview1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(getContext(), "dian", Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//
-//
-//        imageview2.startAnimation(scale);
-//
-//        imageview3.startAnimation(scale);
-//        tv_1.setText(mpictures.get(0).getWenzi());
-//        tv_2.setText(mpictures.get(1).getWenzi());
-//        tv_3.setText(mpictures.get(2).getWenzi());
-//
-//
-//    }
+    //    public void pictureview() {
+    //        imageOptions = new ImageOptions.Builder()
+    //                .setImageScaleType(ImageView.ScaleType.FIT_XY)
+    //                .setRadius(DensityUtil.dip2px(5))
+    //                .setLoadingDrawableId(R.mipmap.loge)
+    //                .setPlaceholderScaleType(ImageView.ScaleType.FIT_XY)
+    //                .setFailureDrawableId(R.mipmap.loge)
+    //                .build();
+    //        x.image().bind(imageview1, mpictures.get(0).getImageurl(), imageOptions);
+    //        x.image().bind(imageview2, mpictures.get(1).getImageurl(), imageOptions);
+    //        x.image().bind(imageview3, mpictures.get(2).getImageurl(), imageOptions);
+    //
+    //        ScaleAnimation scale = new ScaleAnimation((float) 0.8, 1, (float) 0.8,
+    //                1, Animation
+    //                .RELATIVE_TO_SELF, 0.5f,
+    //                Animation.RELATIVE_TO_SELF, 0.5f);
+    //        scale.setDuration(2000);
+    //        //        scale.setFillAfter(true);
+    //        scale.setRepeatCount(Integer.MAX_VALUE);
+    //        scale.setRepeatMode(Animation.REVERSE);
+    //        imageview1.startAnimation(scale);
+    //
+    //        imageview1.setOnClickListener(new View.OnClickListener() {
+    //            @Override
+    //            public void onClick(View v) {
+    //                Toast.makeText(getContext(), "dian", Toast.LENGTH_SHORT).show();
+    //            }
+    //        });
+    //
+    //
+    //        imageview2.startAnimation(scale);
+    //
+    //        imageview3.startAnimation(scale);
+    //        tv_1.setText(mpictures.get(0).getWenzi());
+    //        tv_2.setText(mpictures.get(1).getWenzi());
+    //        tv_3.setText(mpictures.get(2).getWenzi());
+    //
+    //
+    //    }
 
 
     class listviewadpter extends BaseAdapter {
@@ -525,7 +557,7 @@ public class HomePage extends BaseFragment {
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
             imageView = new ImageView(getContext());
-//            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+            //            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
             imageView.setImageResource(R.mipmap.loge);
             imageOptions = new ImageOptions.Builder()
                     .setImageScaleType(ImageView.ScaleType.FIT_XY)
@@ -574,10 +606,10 @@ public class HomePage extends BaseFragment {
                     .setPlaceholderScaleType(ImageView.ScaleType.FIT_XY)
                     .setFailureDrawableId(R.mipmap.loge)
                     .build();
-            holder.tv_2.setText(String.valueOf("¥"+mpictures.get(position).getPrice1()));
-            holder.tv_3.setText(String.valueOf("¥"+mpictures.get(position).getPrice2()));
+            holder.tv_2.setText(String.valueOf("¥" + mpictures.get(position).getPrice1()));
+            holder.tv_3.setText(String.valueOf("¥" + mpictures.get(position).getPrice2()));
             holder.tv_3.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
-            x.image().bind(holder.imageview2,mpictures.get(position).getImage(),imageOptions1);
+            x.image().bind(holder.imageview2, mpictures.get(position).getImage(), imageOptions1);
 
         }
 

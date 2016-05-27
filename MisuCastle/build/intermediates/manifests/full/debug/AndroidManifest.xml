@@ -104,12 +104,16 @@
             android:name="com.caozhiliang.mystore.Store"
             android:windowSoftInputMode="adjustUnspecified|stateHidden" />
         <activity android:name="com.caozhiliang.mystore.StoreMainActivity" />
-        <activity android:name="com.caozhiliang.mystore.Commodity" />
+        <activity
+            android:name="com.caozhiliang.mystore.Commodity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
         <activity android:name="com.caozhiliang.mystore.OurParter" />
         <activity android:name="com.caozhiliang.mystore.Account" />
         <activity android:name="com.caozhiliang.mystore.Setting" />
         <activity android:name="com.caozhiliang.mystore.MyStore_touxiang" />
         <activity android:name="com.caozhiliang.mystore.ImageMore" />
+        <activity android:name="com.caozhiliang.mystore.StoreTradeImage" />
+        <activity android:name="com.caozhiliang.mystore.TradeImageMore" />
 
         <service
             android:name="com.baidu.location.f"

@@ -159,7 +159,7 @@ public class MineActivity extends Fragment {
 
                     } else {
                         Intent intent = new Intent(getContext(), StoreMainActivity.class);
-
+                        intent.putExtra("idd","guan");
                         MineActivity.this.startActivity(intent);
                         getActivity().finish();
                     }

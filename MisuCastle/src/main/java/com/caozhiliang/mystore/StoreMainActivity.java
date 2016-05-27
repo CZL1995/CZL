@@ -48,6 +48,7 @@ public class StoreMainActivity extends SlidingFragmentActivity {
     private ImageView order;
     private SharedPreferences mPref;
     private String bianh;
+    private String idd;
     private String picture;
     String path = FinalData.FUWU_PATH;
     ImageOptions imageOptions1;
@@ -73,6 +74,7 @@ public class StoreMainActivity extends SlidingFragmentActivity {
             tv_open.setText("暂停营业");
         }
 
+
     }
 
     private void getStoreData() {
@@ -91,16 +93,15 @@ public class StoreMainActivity extends SlidingFragmentActivity {
                 Gson gs = new Gson();
                 storedata = gs.fromJson(result, StoreBean.class);
                 if (picture.isEmpty()) {
-                    x.image().bind(iv_heardpicture,storedata.getImages(),imageOptions1);
+                    x.image().bind(iv_heardpicture, storedata.getImages(), imageOptions1);
 
                 } else {
-                    x.image().bind(iv_heardpicture,picture,imageOptions1);
+                    x.image().bind(iv_heardpicture, picture, imageOptions1);
 
                 }
 
 
-
-                        tv_signature.setText(storedata.getName());
+                tv_signature.setText(storedata.getName());
             }
 
             @Override
@@ -180,7 +181,7 @@ public class StoreMainActivity extends SlidingFragmentActivity {
 
     private void initSlidingView() {
         iv_heardpicture = (ImageView) findViewById(R.id.iv_heardpicture);
-        tv_signature = (TextView)findViewById(R.id.tv_signature);
+        tv_signature = (TextView) findViewById(R.id.tv_signature);
         store = (TextView) findViewById(R.id.store);
         account = (TextView) findViewById(R.id.account);
         setting = (TextView) findViewById(R.id.setting);
@@ -197,6 +198,12 @@ public class StoreMainActivity extends SlidingFragmentActivity {
         slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);//设置全屏触摸
         slidingMenu.setMode(SlidingMenu.LEFT);//设置侧滑的左右
         slidingMenu.setBehindOffset(250);//设置侧滑剩余的空间
+        idd = getIntent().getStringExtra("idd");
+        if (idd.equals("kai")) {
+            toggle();
+        } else {
+            //            Toast.makeText(StoreMainActivity.this, "asda", Toast.LENGTH_SHORT).show();
+        }
         initSlidingView();
         initSlidingOnClick();
         order.setOnClickListener(new View.OnClickListener() {
@@ -257,9 +264,8 @@ public class StoreMainActivity extends SlidingFragmentActivity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(StoreMainActivity.this, Commodity.class);
-                startActivityForResult(intent, 3);
-                //                Toast.makeText(MainActivity.this, "点击成功", Toast.LENGTH_SHORT)
-                // .show();
+                startActivity(intent);
+
             }
         });
         partner.setOnClickListener(new View.OnClickListener() {
@@ -295,7 +301,7 @@ public class StoreMainActivity extends SlidingFragmentActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (resultCode) {
             case 1:
-                //               toggle();
+                //                toggle();
                 //               Toast.makeText(MainActivity.this, "回调了", Toast.LENGTH_SHORT)
                 // .show();
                 break;

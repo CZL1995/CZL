@@ -178,7 +178,7 @@ public class Store extends Activity {
         tv_name = (EditText) findViewById(R.id.tv_name);
         tv_rank = (TextView) findViewById(R.id.tv_rank);
         pia = (TextView) findViewById(R.id.pia);
-        tv_finish = (TextView)findViewById(R.id.tv_finish);
+        tv_finish = (TextView) findViewById(R.id.tv_finish);
         tv_location = (TextView) view1.findViewById(R.id.tv_location);
         ed_phone = (EditText) view1.findViewById(R.id.ed_phone);
         et_write = (EditText) view1.findViewById(R.id.et_write);
@@ -221,10 +221,10 @@ public class Store extends Activity {
                 }
                 tv_name.setText(storedata.getName());
                 tv2.setText("营业时间：" + storedata.getTime());
-                tv3.setText("门店服务：" + storedata.getFuwu());
+                tv3.setText(storedata.getFuwu());
                 tv_rank.setText(storedata.getXingpj());
                 room_ratingbar.setRating(Float.parseFloat(storedata.getXingpj()));
-                et_write.setText("门店介绍：" + storedata.getXiangq());
+                et_write.setText(storedata.getXiangq());
                 ed_phone.setText(storedata.getPhone());
 
             }
@@ -339,12 +339,14 @@ public class Store extends Activity {
         });
 
     }
+
     public boolean onKeyDown(int keyCode, KeyEvent event) {
 
         if (keyCode == KeyEvent.KEYCODE_BACK
                 && event.getRepeatCount() == 0) {
             Intent intent = new Intent();
             intent.setClass(Store.this, StoreMainActivity.class);
+            intent.putExtra("idd", "kai");
             startActivity(intent);
             Store.this.finish();
 
@@ -352,12 +354,14 @@ public class Store extends Activity {
         }
         return super.onKeyDown(keyCode, event);
     }
+
     private void initOnclick() {
         tv_store.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(Store.this, StoreMainActivity.class);
+                intent.putExtra("idd", "kai");
                 startActivity(intent);
                 Store.this.finish();
             }
@@ -374,7 +378,6 @@ public class Store extends Activity {
         iv_store.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent intent = new Intent();
                 intent.setClass(mContext, MyStore_touxiang.class);
                 startActivity(intent);
@@ -446,7 +449,6 @@ public class Store extends Activity {
                         tv3.setEnabled(false);
                         tv_name.setEnabled(false);
 
-
                         mphone = ed_phone.getText().toString();
                         mdetail = et_write.getText().toString();
                         mname = tv_name.getText().toString();
@@ -471,10 +473,10 @@ public class Store extends Activity {
                             locationb = URLEncoder.encode(locationb, "UTF-8");
                         } catch (Exception e) {
                         }
-
                         RequestParams requestParams = new RequestParams(URL +
                                 "/StoreServlet?pan=gai&&Storenumber=" + bianh +
-                                "&&name=" + mname + "&&phone=" + mphone + "&&fuwu=" + mfuwu + "&&diqu=" +
+                                "&&name=" + mname + "&&phone=" + mphone + "&&fuwu=" + mfuwu +
+                                "&&diqu=" +
                                 locationb +
                                 "&&time=" + mtime + "&&xiangq=" + mdetail +
                                 "&&address=" + mlocation
@@ -505,7 +507,6 @@ public class Store extends Activity {
                         });
 
 
-
                     }
                 });
             }
@@ -524,82 +525,82 @@ public class Store extends Activity {
 
     }
 
-//    @Override
-//    public boolean onTouchEvent(MotionEvent event) {
-//
-//        if (ed_phone.isEnabled()) {
-//            ed_phone.setEnabled(false);
-//            et_write.setEnabled(false);
-//            tv3.setEnabled(false);
-//            tv_name.setEnabled(false);
-//
-//
-//            mphone = ed_phone.getText().toString();
-//            mdetail = et_write.getText().toString();
-//            mname = tv_name.getText().toString();
-//            mlocation = tv_location.getText().toString();
-//            mtime = starehour + ":" + stareminute + "-"
-//                    + endhour + ":" + endminute;
-//            mfuwu = tv3.getText().toString();
-//            try {
-//                mphone = URLEncoder.encode(mphone, "UTF-8");
-//                mphone = URLEncoder.encode(mphone, "UTF-8");
-//                mdetail = URLEncoder.encode(mdetail, "UTF-8");
-//                mdetail = URLEncoder.encode(mdetail, "UTF-8");
-//                mname = URLEncoder.encode(mname, "UTF-8");
-//                mname = URLEncoder.encode(mname, "UTF-8");
-//                mlocation = URLEncoder.encode(mlocation, "UTF-8");
-//                mlocation = URLEncoder.encode(mlocation, "UTF-8");
-//                mtime = URLEncoder.encode(mtime, "UTF-8");
-//                mtime = URLEncoder.encode(mtime, "UTF-8");
-//                mfuwu = URLEncoder.encode(mfuwu, "UTF-8");
-//                mfuwu = URLEncoder.encode(mfuwu, "UTF-8");
-//                locationb = URLEncoder.encode(locationb, "UTF-8");
-//                locationb = URLEncoder.encode(locationb, "UTF-8");
-//            } catch (Exception e) {
-//            }
-//
-//            RequestParams requestParams = new RequestParams(URL +
-//                    "/StoreServlet?pan=gai&&Storenumber=" + bianh +
-//                    "&&name=" + mname + "&&phone=" + mphone + "&&fuwu=" + mfuwu + "&&diqu=" +
-//                    locationb +
-//                    "&&time=" + mtime + "&&xiangq=" + mdetail +
-//                    "&&address=" + mlocation
-//            );
-//            x.http().get(requestParams, new Callback.CommonCallback<String>() {
-//                @Override
-//                public void onSuccess(String result) {
-//                    Toast.makeText(mContext, "修改成功", Toast.LENGTH_SHORT).show();
-//                }
-//
-//                @Override
-//                public void onError(Throwable ex, boolean isOnCallback) {
-//                    Toast.makeText(mContext, "修改失败", Toast.LENGTH_SHORT).show();
-//
-//                }
-//
-//                @Override
-//                public void onCancelled(CancelledException cex) {
-//
-//                }
-//
-//                @Override
-//                public void onFinished() {
-//
-//                }
-//            });
-//
-//
-//        } else {
-//            //            Toast.makeText(Store.this, "bbbb", Toast.LENGTH_SHORT).show();
-//
-//        }
-//
-//
-//        return super.onTouchEvent(event);
-//
-//
-//    }
+    //    @Override
+    //    public boolean onTouchEvent(MotionEvent event) {
+    //
+    //        if (ed_phone.isEnabled()) {
+    //            ed_phone.setEnabled(false);
+    //            et_write.setEnabled(false);
+    //            tv3.setEnabled(false);
+    //            tv_name.setEnabled(false);
+    //
+    //
+    //            mphone = ed_phone.getText().toString();
+    //            mdetail = et_write.getText().toString();
+    //            mname = tv_name.getText().toString();
+    //            mlocation = tv_location.getText().toString();
+    //            mtime = starehour + ":" + stareminute + "-"
+    //                    + endhour + ":" + endminute;
+    //            mfuwu = tv3.getText().toString();
+    //            try {
+    //                mphone = URLEncoder.encode(mphone, "UTF-8");
+    //                mphone = URLEncoder.encode(mphone, "UTF-8");
+    //                mdetail = URLEncoder.encode(mdetail, "UTF-8");
+    //                mdetail = URLEncoder.encode(mdetail, "UTF-8");
+    //                mname = URLEncoder.encode(mname, "UTF-8");
+    //                mname = URLEncoder.encode(mname, "UTF-8");
+    //                mlocation = URLEncoder.encode(mlocation, "UTF-8");
+    //                mlocation = URLEncoder.encode(mlocation, "UTF-8");
+    //                mtime = URLEncoder.encode(mtime, "UTF-8");
+    //                mtime = URLEncoder.encode(mtime, "UTF-8");
+    //                mfuwu = URLEncoder.encode(mfuwu, "UTF-8");
+    //                mfuwu = URLEncoder.encode(mfuwu, "UTF-8");
+    //                locationb = URLEncoder.encode(locationb, "UTF-8");
+    //                locationb = URLEncoder.encode(locationb, "UTF-8");
+    //            } catch (Exception e) {
+    //            }
+    //
+    //            RequestParams requestParams = new RequestParams(URL +
+    //                    "/StoreServlet?pan=gai&&Storenumber=" + bianh +
+    //                    "&&name=" + mname + "&&phone=" + mphone + "&&fuwu=" + mfuwu + "&&diqu=" +
+    //                    locationb +
+    //                    "&&time=" + mtime + "&&xiangq=" + mdetail +
+    //                    "&&address=" + mlocation
+    //            );
+    //            x.http().get(requestParams, new Callback.CommonCallback<String>() {
+    //                @Override
+    //                public void onSuccess(String result) {
+    //                    Toast.makeText(mContext, "修改成功", Toast.LENGTH_SHORT).show();
+    //                }
+    //
+    //                @Override
+    //                public void onError(Throwable ex, boolean isOnCallback) {
+    //                    Toast.makeText(mContext, "修改失败", Toast.LENGTH_SHORT).show();
+    //
+    //                }
+    //
+    //                @Override
+    //                public void onCancelled(CancelledException cex) {
+    //
+    //                }
+    //
+    //                @Override
+    //                public void onFinished() {
+    //
+    //                }
+    //            });
+    //
+    //
+    //        } else {
+    //            //            Toast.makeText(Store.this, "bbbb", Toast.LENGTH_SHORT).show();
+    //
+    //        }
+    //
+    //
+    //        return super.onTouchEvent(event);
+    //
+    //
+    //    }
 
     public class MyViewPagerAdapter extends PagerAdapter {
         private List<View> mListViews;

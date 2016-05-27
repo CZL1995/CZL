@@ -4,12 +4,12 @@
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\layout\\person_ziliao_item.xml"
     },
     {
-        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\layout\\more_list_item.xml",
-        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\layout\\more_list_item.xml"
-    },
-    {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\layout\\storeevaluatelist.xml",
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\layout\\storeevaluatelist.xml"
+    },
+    {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\layout\\more_list_item.xml",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\layout\\more_list_item.xml"
     },
     {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\layout\\zhuce.xml",
@@ -278,6 +278,10 @@
     {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\layout\\mine_person_addres.xml",
         "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\layout\\mine_person_addres.xml"
+    },
+    {
+        "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\layout\\storestrde.xml",
+        "source": "F:\\AndroidStudioProject\\My\\MisuCastle\\src\\main\\res\\layout\\storestrde.xml"
     },
     {
         "merged": "F:\\AndroidStudioProject\\My\\MisuCastle\\build\\intermediates\\res\\merged\\debug\\layout\\mine_person_nicheng.xml",

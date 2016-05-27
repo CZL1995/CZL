@@ -30,6 +30,7 @@ import org.xutils.http.RequestParams;
 import org.xutils.image.ImageOptions;
 import org.xutils.x;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -63,15 +64,13 @@ public class ImageMore extends Activity {
 
         initview();
         inintclicklistener();
-
-
         getStorePictureData();
     }
 
     private void initview() {
         viewpicture = (GridView) findViewById(R.id.viewpicture);
         tv_storepicture = (TextView) findViewById(R.id.tv_storepicture);
-        iv_add = (ImageView)findViewById(R.id.iv_add);
+        iv_add = (ImageView) findViewById(R.id.iv_add);
         iv_homepage_viewpager = (ViewPager) findViewById(R.id.iv_homepage_viewpager);
     }
 
@@ -150,7 +149,8 @@ public class ImageMore extends Activity {
                 // show camera or not
                 intent.putExtra(SelectorSettings.SELECTOR_SHOW_CAMERA, true);
                 // pass current selected images as the initial value
-                intent.putStringArrayListExtra(SelectorSettings.SELECTOR_INITIAL_SELECTED_LIST, mResults);
+                intent.putStringArrayListExtra(SelectorSettings.SELECTOR_INITIAL_SELECTED_LIST,
+                        mResults);
                 // start the selector
                 startActivityForResult(intent, REQUEST_CODE);
 
@@ -166,7 +166,7 @@ public class ImageMore extends Activity {
 
             if (select) {
                 iv_homepage_viewpager.setVisibility(View.GONE);
-                select=false;
+                select = false;
             } else {
                 Intent intent = new Intent();
                 intent.setClass(ImageMore.this, Store.class);
@@ -249,31 +249,43 @@ public class ImageMore extends Activity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        // get selected images from selector
-        if(requestCode == REQUEST_CODE) {
-            if(resultCode == RESULT_OK) {
+        if (requestCode == REQUEST_CODE) {
+            if (resultCode == RESULT_OK) {
                 mResults = data.getStringArrayListExtra(SelectorSettings.SELECTOR_RESULTS);
                 assert mResults != null;
-
-                // show results in textview
-                StringBuilder sb = new StringBuilder();
-                sb.append(String.format("Totally %d images selected:", mResults.size())).append("\n");
-                for(String result : mResults) {
+                RequestParams params = new RequestParams("http://119.29.148" +
+                        ".150:8080/Fuwu1/GetImage2?pan=Store&&number=" + bianh);
+                for (String result : mResults) {
                     System.out.println(result);
-
-                    sb.append(result).append("\n");
+                    params.addBodyParameter("filea" + result, "星星傻逼");
+                    params.addBodyParameter("file" + result, new File(result));
                 }
+                x.http().post(params, new Callback.CommonCallback<String>() {
+                    @Override
+                    public void onSuccess(String result) {
+                        Toast.makeText(getApplicationContext(), "添加成功", Toast.LENGTH_LONG)
+                                .show();
+                        getStorePictureData();
+                    }
 
-                Toast.makeText(ImageMore.this, sb.toString(), Toast.LENGTH_SHORT).show();
+                    @Override
+                    public void onError(Throwable ex, boolean isOnCallback) {
+                        Toast.makeText(getApplicationContext(), "添加失败", Toast.LENGTH_LONG)
+                                .show();
+                    }
 
-//                tvResults.setText(sb.toString());
+                    @Override
+                    public void onCancelled(CancelledException cex) {
+                    }
+
+                    @Override
+                    public void onFinished() {
+                    }
+                });
+
             }
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
-
-
-
-
 
 }
